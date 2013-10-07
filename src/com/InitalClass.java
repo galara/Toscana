@@ -11,5 +11,6 @@ package com;
 public class InitalClass {
     /**
      * This is the initial class
+     * it was just to create the git repository
      */
 }
