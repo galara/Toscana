@@ -1,24 +1,6 @@
 package com.model.products;
 
 public class Product {
-<<<<<<< HEAD
- 
-	private int ID;
-	 
-	private String name;
-	 
-	private double price;
-	 
-	private String description;
-	 
-	private double discount;
-	 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-=======
-
     /*
      * Class methods
      */
@@ -78,5 +60,4 @@ public class Product {
     private double price;
     private String description;
     private double discount;
->>>>>>> c3ac92f6d1cb04f42c3b8fa393fa0ba4dd7b492c
 }
