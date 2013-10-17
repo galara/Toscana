@@ -3,13 +3,22 @@ package com.model.products;
 import java.util.ArrayList;
 
 public class Menu {
-     /*
-      * Class methods
+
+    /*
+     * Class methods
      */
-    
-     /*
+    /*
      * Getters and Setters
      */
+    public ArrayList getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList products) {
+        this.products = products;
+    }
+
+    
      /*
      * Inner methods
      */

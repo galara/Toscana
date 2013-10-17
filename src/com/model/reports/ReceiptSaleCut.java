@@ -5,13 +5,54 @@ import com.model.sessions.User;
 import com.model.reports.templates.ReceiptTemplate;
 
 public class ReceiptSaleCut {
-     /*
-      * Class methods
+
+    /*
+     * Class methods
      */
-    
-     /*
+    /*
      * Getters and Setters
      */
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
+    public User getAuthorizerAdmin() {
+        return authorizerAdmin;
+    }
+
+    public void setAuthorizerAdmin(User authorizerAdmin) {
+        this.authorizerAdmin = authorizerAdmin;
+    }
+
+    public double getTotalCash() {
+        return totalCash;
+    }
+
+    public void setTotalCash(double totalCash) {
+        this.totalCash = totalCash;
+    }
+
+    public ReceiptTemplate getReceiptTempleate() {
+        return receiptTempleate;
+    }
+
+    public void setReceiptTempleate(ReceiptTemplate receiptTempleate) {
+        this.receiptTempleate = receiptTempleate;
+    }
+
+    
      /*
      * Inner methods
      */
