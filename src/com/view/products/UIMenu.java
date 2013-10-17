@@ -4,6 +4,9 @@
  */
 package com.view.products;
 
+import java.awt.event.KeyEvent;
+import javax.swing.KeyStroke;
+
 /**
  *
  * @author Arandi
@@ -32,6 +35,11 @@ public class UIMenu extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Toscana - Menu");
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         menuTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -67,6 +75,13 @@ public class UIMenu extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ESCAPE){
+            this.dispose();
+        }
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments
