@@ -4,10 +4,20 @@ import com.model.reports.templates.ReceiptTemplate;
 import com.model.sales.DataSale;
 
 public class ReceiptSale {
- 
-	private ReceiptTemplate receipt;
-	 
-	private DataSale dataSale;
-	 
+     /*
+      * Class methods
+     */
+    
+     /*
+     * Getters and Setters
+     */
+     /*
+     * Inner methods
+     */
+    
+     /*
+     * Attributes
+     */
+    private ReceiptTemplate receipt;
+    private DataSale dataSale;
 }
- 
