@@ -1,0 +1,23 @@
+#	Git Ignore archive	#
+#	
+#	Here there are include the files to not be commited in the developer local staging area.
+#
+#
+#	You can add the files you consider to not be commited in futures compiles.
+
+#	Compilations products	#
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+#	Temporal files	#
+/tmp/
+
+#	Enviroment properties #
+/nbproject/private/private.xml
+/nbproject/private/private.properties
+
+#	End File #
