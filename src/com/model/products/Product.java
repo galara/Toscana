@@ -12,5 +12,9 @@ public class Product {
 	 
 	private double discount;
 	 
+	public void setName(String name)
+	{
+		this.name = name;
+	}
 }
  
