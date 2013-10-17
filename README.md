@@ -11,3 +11,7 @@ Este proyecto es desarrollado por:
 - Gabriela Briceño
 - Miguel Coronel
 - Arandi López
+
+Información
+-----------
+Este proyecto es desarrollado mediante Netbeans IDE
