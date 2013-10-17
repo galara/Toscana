@@ -1,16 +1,23 @@
 package com.model.products;
 
 public class Product {
- 
-	private int ID;
-	 
-	private String name;
-	 
-	private double price;
-	 
-	private String description;
-	 
-	private double discount;
-	 
+     /*
+      * Class methods
+     */
+    
+     /*
+     * Getters and Setters
+     */
+     /*
+     * Inner methods
+     */
+    
+     /*
+     * Attributes
+     */
+    private int ID;
+    private String name;
+    private double price;
+    private String description;
+    private double discount;
 }
- 

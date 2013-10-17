@@ -10,7 +10,7 @@ Este proyecto es desarrollado por:
 
 - Gabriela Briceño
 - Miguel Coronel
-- Arandi López
+- Arandi López (arandilopez.93@gmail.com)
 
 Información
 -----------

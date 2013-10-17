@@ -3,8 +3,19 @@ package com.model.products;
 import java.util.ArrayList;
 
 public class Menu {
- 
-	private ArrayList products;
-	 
+     /*
+      * Class methods
+     */
+    
+     /*
+     * Getters and Setters
+     */
+     /*
+     * Inner methods
+     */
+    
+     /*
+     * Attributes
+     */
+    private ArrayList products;
 }
- 
