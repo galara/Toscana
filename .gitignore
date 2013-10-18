@@ -17,7 +17,7 @@
 /tmp/
 
 #	Enviroment properties #
-/nbproject/private/
+nbproject/private/
 
 #	End File #
 /build/
