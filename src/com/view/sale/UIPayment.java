@@ -136,8 +136,8 @@ public class UIPayment extends javax.swing.JDialog {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 136, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(0, 127, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
 
         pack();
