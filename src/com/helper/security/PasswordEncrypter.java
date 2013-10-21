@@ -27,11 +27,11 @@ public class PasswordEncrypter {
 
     public static String getEncryptedPassword(String inp_password) {
         String encryptedPassword;
-        encryptedPassword = encrypPassword(inp_password);
+        encryptedPassword = encryptPassword(inp_password);
         return encryptedPassword;
     }
-    
-    private static String encrypPassword(String inp_password){
+        
+    private static String encryptPassword(String inp_password){
         String encryptedPassword;
         try {
             messageDigester = MessageDigest.getInstance(encryptionAlgorithm);
