@@ -15,37 +15,38 @@ import java.util.logging.Logger;
  */
 public class Encrypter {
 
-    private static MessageDigest md;
+    private static String encryptionAlgorithm="MD5";
+    private static MessageDigest messageDigester;
 
-    public static String encryptPassword(char[] passwd) {
-        String password = new String(passwd);
+    public static String encryptPassword(char[] inp_password) {
+        String uncrypted_password = new String(inp_password);
         try {
-            md = MessageDigest.getInstance("MD5");
-            byte[] passBytes = password.getBytes();
-            md.reset();
-            byte[] digested = md.digest(passBytes);
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < digested.length; i++) {
-                sb.append(Integer.toHexString(0xff & digested[i]));
+            messageDigester = MessageDigest.getInstance(encryptionAlgorithm);
+            byte[] passwordBytes = uncrypted_password.getBytes();
+            messageDigester.reset();
+            byte[] digestedBytes = messageDigester.digest(passwordBytes);
+            StringBuilder encryptedPasswordBuilder = new StringBuilder();
+            for (int i = 0; i < digestedBytes.length; i++) {
+                encryptedPasswordBuilder.append(Integer.toHexString(0xff & digestedBytes[i]));
             }
-            return sb.toString();
+            return encryptedPasswordBuilder.toString();
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Encrypter.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
 
-    public static String encryptPassword(String passwd) {
+    public static String encryptPassword(String inp_password) {
         try {
-            md = MessageDigest.getInstance("MD5");
-            byte[] passBytes = passwd.getBytes();
-            md.reset();
-            byte[] digested = md.digest(passBytes);
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < digested.length; i++) {
-                sb.append(Integer.toHexString(0xff & digested[i]));
+            messageDigester = MessageDigest.getInstance(encryptionAlgorithm);
+            byte[] passwordBytes = inp_password.getBytes();
+            messageDigester.reset();
+            byte[] digestedBytes = messageDigester.digest(passwordBytes);
+            StringBuilder encryptedPasswordBuilder = new StringBuilder();
+            for (int i = 0; i < digestedBytes.length; i++) {
+                encryptedPasswordBuilder.append(Integer.toHexString(0xff & digestedBytes[i]));
             }
-            return sb.toString();
+            return encryptedPasswordBuilder.toString();
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Encrypter.class.getName()).log(Level.SEVERE, null, ex);
         }
