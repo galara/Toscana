@@ -21,23 +21,8 @@ public class PasswordEncrypter {
     public static String getEncryptedPassword(char[] inp_password) {
         String uncrypted_password = new String(inp_password);
         String encryptedPassword;
-        try {
-            messageDigester = MessageDigest.getInstance(encryptionAlgorithm);
-            byte[] passwordBytes = uncrypted_password.getBytes();
-            messageDigester.reset();
-            byte[] digestedBytes = messageDigester.digest(passwordBytes);
-            StringBuilder encryptedPasswordBuilder = new StringBuilder();
-            
-            for (int i = 0; i < digestedBytes.length; i++) {
-                encryptedPasswordBuilder.append(Integer.toHexString(0xff & digestedBytes[i]));
-            }
-            encryptedPassword=encryptedPasswordBuilder.toString();
-            
-            return encryptedPassword;
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(PasswordEncrypter.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+        encryptedPassword = getEncryptedPassword(uncrypted_password);
+        return encryptedPassword;
     }
 
     public static String getEncryptedPassword(String inp_password) {
