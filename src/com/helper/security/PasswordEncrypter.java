@@ -27,6 +27,12 @@ public class PasswordEncrypter {
 
     public static String getEncryptedPassword(String inp_password) {
         String encryptedPassword;
+        encryptedPassword = encrypPassword(inp_password);
+        return encryptedPassword;
+    }
+    
+    private static String encrypPassword(String inp_password){
+        String encryptedPassword;
         try {
             messageDigester = MessageDigest.getInstance(encryptionAlgorithm);
             byte[] passwordBytes = inp_password.getBytes();
@@ -43,6 +49,5 @@ public class PasswordEncrypter {
             Logger.getLogger(PasswordEncrypter.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
-
     }
 }
