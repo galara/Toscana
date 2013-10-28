@@ -1,11 +1,12 @@
 package com.toscana.model.reports.types;
 
 import com.toscana.model.sessions.Session;
+import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
 @Table (name ="summaryPayments")
-public class SummaryPaymentsType {
+public class SummaryPaymentsType implements Serializable {
 
     /*
      * Class' methods
@@ -37,6 +38,15 @@ public class SummaryPaymentsType {
         this.session = session;
     }
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+    
+
     
      /*
      * Inner methods
@@ -45,6 +55,11 @@ public class SummaryPaymentsType {
     /*
      * Attributes
      */
+    @Id
+    @Column (name ="id")
+    @GeneratedValue
+    private int ID;
+    
     @Column (name = "currency")
     private String currency;
     
