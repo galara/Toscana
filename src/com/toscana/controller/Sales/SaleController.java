@@ -1,4 +1,6 @@
-package com.toscana.model.sales;
+package com.toscana.controller.Sales;
+
+import com.toscana.model.sales.DataSale;
 
 public class SaleController {
 

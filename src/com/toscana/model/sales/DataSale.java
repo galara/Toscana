@@ -1,10 +1,14 @@
 package com.toscana.model.sales;
 
+import com.toscana.model.products.Product;
+import com.toscana.model.reports.types.PaymentType;
 import java.util.ArrayList;
 import java.util.Date;
 import com.toscana.model.sessions.Session;
-import java.util.List;
+import javax.persistence.*;
 
+@Entity
+@Table (name = "sales")
 public class DataSale {
     
      /*
@@ -26,7 +30,7 @@ public class DataSale {
         return productsInSale;
     }
 
-    public void setProductsInSale(ArrayList productsInSale) {
+    public void setProductsInSale(ArrayList<Product> productsInSale) {
         this.productsInSale = productsInSale;
     }
 
@@ -46,20 +50,20 @@ public class DataSale {
         this.session = session;
     }
 
-    public List getPaymentTypes() {
+    public ArrayList<PaymentType> getPaymentTypes() {
         return paymentTypes;
     }
 
-    public void setPaymentTypes(List paymentTypes) {
+    public void setPaymentTypes(ArrayList<PaymentType> paymentTypes) {
         this.paymentTypes = paymentTypes;
     }
 
     public double getTotal() {
-        return total;
+        return totalAmount;
     }
 
     public void setTotal(double total) {
-        this.total = total;
+        this.totalAmount = total;
     }
     
      /*
@@ -69,10 +73,27 @@ public class DataSale {
      /*
      * Attributes
      */
+    @Id
+    @Column (name = "ID")
+    @GeneratedValue
     private int ID;
-    private ArrayList productsInSale;
+    
+    @Column (name = "product")
+    @OneToMany
+    private ArrayList<Product> productsInSale;
+    
+    @Column (name = "date")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date date;
+    
+    @Column (name = "session")
+    @ManyToOne
     private Session session;
-    private List paymentTypes;
-    private double total;
+    
+    @Column (name = "paymentypes")
+    @OneToMany
+    private ArrayList<PaymentType> paymentTypes;
+    
+    @Column (name = "totalamount")
+    private double totalAmount;
 }
