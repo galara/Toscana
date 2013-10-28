@@ -1,7 +1,6 @@
 package com.toscana.model.reports;
 
 import com.toscana.model.sessions.Session;
-import com.toscana.model.reports.types.CurrencyType;
 import com.toscana.model.reports.templates.ReceiptTemplate;
 
 public class ReceiptCashOut {
@@ -36,11 +35,11 @@ public class ReceiptCashOut {
         this.retirementAmount = retirementAmount;
     }
 
-    public CurrencyType getCurrencyType() {
+    public String getCurrencyType() {
         return currencyType;
     }
 
-    public void setCurrencyType(CurrencyType currencyType) {
+    public void setCurrencyType(String currencyType) {
         this.currencyType = currencyType;
     }
 
@@ -63,6 +62,6 @@ public class ReceiptCashOut {
     private int ID;
     private Session session;
     private double retirementAmount;
-    private CurrencyType currencyType;
+    private String currencyType;
     private ReceiptTemplate receiptTempleate;
 }

@@ -1,10 +1,11 @@
 package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
-import com.toscana.model.reports.types.CurrencyType;
 import com.toscana.model.reports.ReceiptCashOut;
 import javax.persistence.*;
 
+@Entity
+@Table (name = "cashusersession")
 public class CashUserSession {
 
     /*
@@ -37,11 +38,11 @@ public class CashUserSession {
         this.amountInCash = amountInCash;
     }
 
-    public CurrencyType getCurrencyType() {
+    public String getCurrencyType() {
         return currencyType;
     }
 
-    public void setCurrencyType(CurrencyType currencyType) {
+    public void setCurrencyType(String currencyType) {
         this.currencyType = currencyType;
     }
 
@@ -73,8 +74,7 @@ public class CashUserSession {
     private double amountInCash;
     
     @Column (name = "currencyType")
-    @OneToOne
-    private CurrencyType currencyType;
+    private String currencyType;
     
     @Column (name = "cashOut")
     private ReceiptCashOut cashOut;
