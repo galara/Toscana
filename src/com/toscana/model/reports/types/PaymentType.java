@@ -1,5 +1,9 @@
 package com.toscana.model.reports.types;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name ="paymenttypes")
 public class PaymentType {
 
     /*
@@ -24,20 +28,20 @@ public class PaymentType {
         this.amountReceived = amountReceived;
     }
 
-    public CurrencyType getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(CurrencyType currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 
-    public int getID_sale() {
-        return ID_sale;
+    public int getSale() {
+        return sale;
     }
 
-    public void setID_sale(int ID_sale) {
-        this.ID_sale = ID_sale;
+    public void setSale(int sale) {
+        this.sale = sale;
     }
 
     
@@ -48,8 +52,18 @@ public class PaymentType {
      /*
      * Attributes
      */
+    @Id
+    @Column (name="id")
+    @GeneratedValue
     private int ID;
+    
+    @Column (name ="amountreceived")
     private double amountReceived;
-    private CurrencyType currency;
-    private int ID_sale;
+    
+    @Column (name ="currency")
+    private String currency;
+    
+    @Column (name ="sale")
+    @OneToMany
+    private int sale;
 }
