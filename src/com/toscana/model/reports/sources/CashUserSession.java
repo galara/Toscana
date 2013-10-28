@@ -3,6 +3,7 @@ package com.toscana.model.reports.sources;
 import com.toscana.model.sessions.Session;
 import com.toscana.model.reports.types.CurrencyType;
 import com.toscana.model.reports.ReceiptCashOut;
+import javax.persistence.*;
 
 public class CashUserSession {
 
@@ -59,9 +60,22 @@ public class CashUserSession {
     /*
      * Attributes
      */
+    @Id
+    @Column (name ="Id") 
+    @GeneratedValue
     private int ID;
+    
+    @Column (name = "session")
+    @OneToOne
     private Session session;
+    
+    @Column (name ="amountInCash")
     private double amountInCash;
+    
+    @Column (name = "currencyType")
+    @OneToOne
     private CurrencyType currencyType;
+    
+    @Column (name = "cashOut")
     private ReceiptCashOut cashOut;
 }

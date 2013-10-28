@@ -1,7 +1,10 @@
 package com.toscana.model.sessions;
 
 import java.util.Date;
+import javax.persistence.*;
 
+@Entity
+@Table (name = "sessions")
 public class Session {
     
     /*
@@ -58,9 +61,19 @@ public class Session {
      /*
      * Attributes 
      */
+    @Id
+    @Column (name = "ID")
+    @GeneratedValue
     private int ID;
+    @Column (name = "initialtime")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date initialTime;
+    @Column (name = "finaltime")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date finalTime;
+    @Column (name = "user")
+    @ManyToOne
     private User user;
+    @Column (name = "isover")
     private boolean isOver;
 }

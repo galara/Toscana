@@ -1,7 +1,10 @@
 package com.toscana.model.sessions;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name="users")
 public class User {
-    
      /*
      * Class' Methods
      */
@@ -41,12 +44,12 @@ public class User {
         this.nickname = nickname;
     }
 
-    public boolean isPrivalageAdmin() {
-        return privalageAdmin;
+    public boolean isPrivalegeAdmin() {
+        return privilegeAdmin;
     }
 
-    public void setPrivalageAdmin(boolean privalageAdmin) {
-        this.privalageAdmin = privalageAdmin;
+    public void setPrivalegeAdmin(boolean privalageAdmin) {
+        this.privilegeAdmin = privalageAdmin;
     }
     /*
      * Inner methods
@@ -55,9 +58,16 @@ public class User {
     /*
      * Attributes
      */
+    @Id
+    @Column (name="ID")
+    @GeneratedValue
     private int ID;
+    @Column (name="name")
     private String name;
+    @Column (name="password")
     private String password;
+    @Column (name="nickname")
     private String nickname;
-    private boolean privalageAdmin;
+    @Column (name="privilege")
+    private boolean privilegeAdmin;
 }
