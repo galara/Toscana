@@ -30,7 +30,7 @@ public class UserDAOManager {
         }
     }
     public ArrayList<User> findAll(){
-        ArrayList<User> users = new ArrayList<User>();
+        ArrayList<User> users = new ArrayList<>();
         try {
             ToscanaHibernateUtil.beginTransaction();
             users = (ArrayList<User>) userDAO.findAll(User.class);
