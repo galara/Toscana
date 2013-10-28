@@ -1,5 +1,9 @@
 package com.toscana.model.products;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name="products")
 public class Product {
     /*
      * Class methods
@@ -55,9 +59,16 @@ public class Product {
      /*
      * Attributes
      */
+    @Id
+    @Column (name="ID")
+    @GeneratedValue
     private int ID;
+    @Column (name="name")
     private String name;
+    @Column (name="price")
     private double price;
+    @Column (name="description")
     private String description;
+    @Column (name="discount")
     private double discount;
 }
