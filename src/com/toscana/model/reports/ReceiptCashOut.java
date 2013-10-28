@@ -2,7 +2,10 @@ package com.toscana.model.reports;
 
 import com.toscana.model.sessions.Session;
 import com.toscana.model.reports.templates.ReceiptTemplate;
+import javax.persistence.*;
 
+@Entity
+@Table (name = "cashout")
 public class ReceiptCashOut {
 
     /*
@@ -59,9 +62,17 @@ public class ReceiptCashOut {
      /*
      * Attributes
      */
+    @Id
+    @Column (name = "ID")
+    @GeneratedValue
     private int ID;
+    @Column (name = "session")
+    @OneToOne
     private Session session;
+    @Column (name = "amount")
     private double retirementAmount;
+    @Column (name = "curencytype")
     private String currencyType;
+    
     private ReceiptTemplate receiptTempleate;
 }
