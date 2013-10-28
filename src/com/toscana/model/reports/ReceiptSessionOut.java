@@ -1,7 +1,9 @@
 package com.toscana.model.reports;
 
 import com.toscana.model.sessions.Session;
-
+import javax.persistence.*;
+@Entity
+@Table (name = "sessionsout")
 public class ReceiptSessionOut {
 
     /*
@@ -26,11 +28,11 @@ public class ReceiptSessionOut {
         this.session = session;
     }
 
-    public Session getCashSession() {
+    public double getCashSession() {
         return cashSession;
     }
 
-    public void setCashSession(Session cashSession) {
+    public void setCashSession(double cashSession) {
         this.cashSession = cashSession;
     }
 
@@ -42,7 +44,15 @@ public class ReceiptSessionOut {
      /*
      * Attributes
      */
+    @Id
+    @Column (name = "id")
+    @GeneratedValue
     private int ID_sessionOut;
+    
+    @Column (name = "session")
+    @OneToOne
     private Session session;
-    private Session cashSession;
+    
+    @Column (name = "cashsession")
+    private double cashSession;
 }
