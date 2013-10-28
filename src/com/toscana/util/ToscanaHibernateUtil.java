@@ -4,6 +4,7 @@
  */
 package com.toscana.util;
 
+import org.hibernate.Session;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 
@@ -32,4 +33,26 @@ public class ToscanaHibernateUtil {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+    public static Session beginTransaction() {
+            Session hibernateSession = ToscanaHibernateUtil.getSession();
+            hibernateSession.beginTransaction();
+            return hibernateSession;
+        }
+ 
+        public static void commitTransaction() {
+            ToscanaHibernateUtil.getSession().getTransaction().commit();
+        }
+ 
+        public static void rollbackTransaction() {
+            ToscanaHibernateUtil.getSession().getTransaction().rollback();
+        }
+ 
+        public static void closeSession() {
+            ToscanaHibernateUtil.getSession().close();
+        }
+ 
+        public static Session getSession() {
+            Session hibernateSession = sessionFactory.getCurrentSession();
+            return hibernateSession;
+        }        
 }
