@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name ="summaryPayments")
-public class SummaryPaymentsType implements Serializable {
+public class SummaryPaymentsType {
 
     /*
      * Class' methods
