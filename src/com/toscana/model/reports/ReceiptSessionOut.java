@@ -2,10 +2,10 @@ package com.toscana.model.reports;
 
 import com.toscana.model.sessions.Session;
 import javax.persistence.*;
+
 @Entity
 @Table (name = "sessionsout")
 public class ReceiptSessionOut {
-
     /*
      * Class methods
      */
@@ -35,8 +35,6 @@ public class ReceiptSessionOut {
     public void setCashSession(double cashSession) {
         this.cashSession = cashSession;
     }
-
-    
      /*
      * Inner methods
      */
@@ -49,8 +47,9 @@ public class ReceiptSessionOut {
     @GeneratedValue
     private int ID_sessionOut;
     
-    @Column (name = "session")
     @OneToOne
+    @JoinColumn(name = "id_session")
+    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID") 
     private Session session;
     
     @Column (name = "cashsession")

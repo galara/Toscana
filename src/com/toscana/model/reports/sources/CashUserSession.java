@@ -62,12 +62,13 @@ public class CashUserSession {
      * Attributes
      */
     @Id
-    @Column (name ="Id") 
+    @Column (name ="id") 
     @GeneratedValue
     private int ID;
-    
-    @Column (name = "session")
+       
     @OneToOne
+    @JoinColumn (name = "id_session")
+    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")
     private Session session;
     
     @Column (name ="amountInCash")
@@ -76,6 +77,5 @@ public class CashUserSession {
     @Column (name = "currencyType")
     private String currencyType;
     
-    @Column (name = "cashOut")
     private ReceiptCashOut cashOut;
 }

@@ -3,6 +3,7 @@ package com.toscana.model.reports;
 import com.toscana.model.sessions.Session;
 import com.toscana.model.sessions.User;
 import com.toscana.model.reports.templates.ReceiptTemplate;
+import javax.persistence.*;
 
 public class ReceiptSaleCut {
 
@@ -60,9 +61,23 @@ public class ReceiptSaleCut {
      /*
      * Attributes
      */
+    @Id
+    @Column (name = "id")
+    @GeneratedValue
     private int ID;
+    
+    @OneToOne
+    @JoinColumn(name = "id_session")
+    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")   
     private Session session;
+    
+    @OneToOne
+    @JoinColumn(name = "id_user")
+    @org.hibernate.annotations.ForeignKey(name="FK_USER_ID") 
     private User authorizerAdmin;
+    
+    @Column (name = "totalcash")
     private double totalCash;
+    
     private ReceiptTemplate receiptTempleate;
 }

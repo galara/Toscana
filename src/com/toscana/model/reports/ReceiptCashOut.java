@@ -44,17 +44,7 @@ public class ReceiptCashOut {
 
     public void setCurrencyType(String currencyType) {
         this.currencyType = currencyType;
-    }
-
-    public ReceiptTemplate getReceiptTempleate() {
-        return receiptTempleate;
-    }
-
-    public void setReceiptTempleate(ReceiptTemplate receiptTempleate) {
-        this.receiptTempleate = receiptTempleate;
-    }
-
-    
+    }  
      /*
      * Inner methods
      */
@@ -66,13 +56,16 @@ public class ReceiptCashOut {
     @Column (name = "ID")
     @GeneratedValue
     private int ID;
-    @Column (name = "session")
+    
     @OneToOne
+    @JoinColumn(name = "ID_SESSION")
+    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")   
     private Session session;
+    
     @Column (name = "amount")
     private double retirementAmount;
+    
     @Column (name = "curencytype")
     private String currencyType;
     
-    private ReceiptTemplate receiptTempleate;
 }
