@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class PasswordEncrypter {
 
     private static String encryptionAlgorithm="MD5";
-    private static MessageDigest messageDigester;
+    private static MessageDigest passwordDigester;
 
     public static String getEncryptedPassword(char[] inp_password) {
         String uncrypted_password = new String(inp_password);
@@ -34,10 +34,11 @@ public class PasswordEncrypter {
     private static String encryptPassword(String inp_password){
         String encryptedPassword;
         try {
-            messageDigester = MessageDigest.getInstance(encryptionAlgorithm);
+            
+            passwordDigester = MessageDigest.getInstance(encryptionAlgorithm);
+            passwordDigester.reset();
             byte[] passwordBytes = inp_password.getBytes();
-            messageDigester.reset();
-            byte[] digestedBytes = messageDigester.digest(passwordBytes);
+            byte[] digestedBytes = passwordDigester.digest(passwordBytes);
             StringBuilder encryptedPasswordBuilder = new StringBuilder();
             
             for (int i = 0; i < digestedBytes.length; i++) {

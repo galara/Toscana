@@ -20,29 +20,29 @@ public class UserDAOManager {
         userDAO = new UserDAOImplementation();
     }
 
-    public void add(User user) {
+    public void add(User inp_user) { //inp_user or userAdd
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userDAO.add(user);
+            userDAO.add(inp_user);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public void delete(User user){
+    public void delete(User inp_user){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userDAO.delete(user);
+            userDAO.delete(inp_user);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
         }
     }
     
-    public void update(User user){
+    public void update(User inp_user){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userDAO.update(user);
+            userDAO.update(inp_user);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
@@ -50,27 +50,27 @@ public class UserDAOManager {
     }
     
     public User findByID(Integer ID){
-        User user=null;
+        User userFound=null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            user =  userDAO.findByID(User.class, ID);
+            userFound =  userDAO.findByID(User.class, ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
         }
         
-        return user;
+        return userFound;
     }
     
     public ArrayList<User> findAll(){
-        ArrayList<User> users = new ArrayList<>();
+        ArrayList<User> allUsers = new ArrayList<>();
         try {
             ToscanaHibernateUtil.beginTransaction();
-            users = (ArrayList<User>) userDAO.findAll(User.class);
+            allUsers = (ArrayList<User>) userDAO.findAll(User.class);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
         }
         
-        return users;
+        return allUsers;
     }
     private UserDAO userDAO;
 }

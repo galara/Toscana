@@ -21,30 +21,30 @@ public class DataSaleDAOManager {
         dataSaleDAO = new DataSaleDAOImplementation();
     }
     
-    public void add(DataSale dataSale){
+    public void add(DataSale inp_dataSale){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleDAO.add(dataSale);
+            dataSaleDAO.add(inp_dataSale);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public void delete(DataSale dataSale){
+    public void delete(DataSale inp_dataSale){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleDAO.delete(dataSale);
+            dataSaleDAO.delete(inp_dataSale);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public void update(DataSale dataSale){
+    public void update(DataSale inp_dataSale){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleDAO.update(dataSale);
+            dataSaleDAO.update(inp_dataSale);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
@@ -52,16 +52,16 @@ public class DataSaleDAOManager {
     }
     
     public ArrayList findAll(){
-        ArrayList<DataSale> dataSales = new ArrayList<>();
+        ArrayList<DataSale> allDataSales = new ArrayList<>();
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSales = (ArrayList<DataSale>) dataSaleDAO.findAll(DataSale.class);
+            allDataSales = (ArrayList<DataSale>) dataSaleDAO.findAll(DataSale.class);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
         
-        return dataSales;
+        return allDataSales;
     }
     
     public DataSale findByID(Integer ID){

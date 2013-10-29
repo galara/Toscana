@@ -21,10 +21,10 @@ public class ProductsDAOManager {
         productsDAO = new ProductsDAOImplementation();
     }
     
-    public void add (Product product){
+    public void add (Product inp_product){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.add(product);
+            productsDAO.add(inp_product);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -32,10 +32,10 @@ public class ProductsDAOManager {
         }
     }
     
-    public void delete (Product product){
+    public void delete (Product inp_product){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.delete(product);
+            productsDAO.delete(inp_product);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -43,10 +43,10 @@ public class ProductsDAOManager {
         }
     }
     
-    public void update (Product product){
+    public void update (Product inp_product){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.update(product);
+            productsDAO.update(inp_product);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -67,14 +67,14 @@ public class ProductsDAOManager {
     }
     
     public ArrayList findAll(){
-        ArrayList<Product> products = new ArrayList<>();
+        ArrayList<Product> allProducts = new ArrayList<>();
         try {
             ToscanaHibernateUtil.beginTransaction();
-            products = (ArrayList<Product>) productsDAO.findAll(Product.class);
+            allProducts = (ArrayList<Product>) productsDAO.findAll(Product.class);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return products;
+        return allProducts;
     }
 }
