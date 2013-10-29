@@ -1,11 +1,11 @@
-package com.toscana.model.reports;
+package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
 import javax.persistence.*;
 
 @Entity
 @Table (name = "sessionsout")
-public class ReceiptSessionOut {
+public class DataSessionOut {
     /*
      * Class methods
      */

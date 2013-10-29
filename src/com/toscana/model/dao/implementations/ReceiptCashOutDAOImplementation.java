@@ -5,9 +5,9 @@
 package com.toscana.model.dao.implementations;
 
 import com.toscana.model.dao.interfaces.ReceiptCashOutDAO;
-import com.toscana.model.reports.ReceiptCashOut;
+import com.toscana.model.reports.sources.DataCashOut;
 
 
-public class ReceiptCashOutDAOImplementation extends GenericDAOImplementation<ReceiptCashOut, Integer> implements ReceiptCashOutDAO {
+public class ReceiptCashOutDAOImplementation extends GenericDAOImplementation<DataCashOut, Integer> implements ReceiptCashOutDAO {
     
 }

@@ -1,12 +1,11 @@
-package com.toscana.model.reports;
+package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
-import com.toscana.model.reports.templates.ReceiptTemplate;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "cashout")
-public class ReceiptCashOut {
+@Table (name = "cashusersession")
+public class DataCashUserSession {
 
     /*
      * Class methods
@@ -30,12 +29,12 @@ public class ReceiptCashOut {
         this.session = session;
     }
 
-    public double getRetirementAmount() {
-        return retirementAmount;
+    public double getAmountInCash() {
+        return amountInCash;
     }
 
-    public void setRetirementAmount(double retirementAmount) {
-        this.retirementAmount = retirementAmount;
+    public void setAmountInCash(double amountInCash) {
+        this.amountInCash = amountInCash;
     }
 
     public String getCurrencyType() {
@@ -44,28 +43,27 @@ public class ReceiptCashOut {
 
     public void setCurrencyType(String currencyType) {
         this.currencyType = currencyType;
-    }  
-     /*
+    }
+    /*
      * Inner methods
      */
-    
-     /*
+    /*
      * Attributes
      */
     @Id
-    @Column (name = "ID")
+    @Column (name ="id") 
     @GeneratedValue
     private int ID;
-    
+       
     @OneToOne
-    @JoinColumn(name = "ID_SESSION")
-    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")   
+    @JoinColumn (name = "id_session")
+    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")
     private Session session;
     
-    @Column (name = "amount")
-    private double retirementAmount;
+    @Column (name ="amountInCash")
+    private double amountInCash;
     
-    @Column (name = "curencytype")
+    @Column (name = "currencyType")
     private String currencyType;
     
 }
