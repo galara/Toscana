@@ -21,10 +21,10 @@ public class ProductsDAOManager {
         productsDAO = new ProductsDAOImplementation();
     }
     
-    public void add (Product inp_product){
+    public void add (Product productToAdd){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.add(inp_product);
+            productsDAO.add(productToAdd);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -32,10 +32,10 @@ public class ProductsDAOManager {
         }
     }
     
-    public void delete (Product inp_product){
+    public void delete (Product productToDelete){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.delete(inp_product);
+            productsDAO.delete(productToDelete);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -43,10 +43,10 @@ public class ProductsDAOManager {
         }
     }
     
-    public void update (Product inp_product){
+    public void update (Product productToUpdate){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.update(inp_product);
+            productsDAO.update(productToUpdate);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -54,16 +54,16 @@ public class ProductsDAOManager {
         }
     }
     
-    public Product findByID(Integer ID){
-        Product product = null;
+    public Product findByID(Integer IDToFind){
+        Product productFound = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.findByID(Product.class, ID);
+            productsDAO.findByID(Product.class, IDToFind);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return product;
+        return productFound;
     }
     
     public ArrayList findAll(){

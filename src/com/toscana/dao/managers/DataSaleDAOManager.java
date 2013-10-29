@@ -21,30 +21,30 @@ public class DataSaleDAOManager {
         dataSaleDAO = new DataSaleDAOImplementation();
     }
     
-    public void add(DataSale inp_dataSale){
+    public void add(DataSale dataSaleToAdd){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleDAO.add(inp_dataSale);
+            dataSaleDAO.add(dataSaleToAdd);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public void delete(DataSale inp_dataSale){
+    public void delete(DataSale dataSaleToDelete){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleDAO.delete(inp_dataSale);
+            dataSaleDAO.delete(dataSaleToDelete);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public void update(DataSale inp_dataSale){
+    public void update(DataSale dataSaleToUpdate){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleDAO.update(inp_dataSale);
+            dataSaleDAO.update(dataSaleToUpdate);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
@@ -64,15 +64,15 @@ public class DataSaleDAOManager {
         return allDataSales;
     }
     
-    public DataSale findByID(Integer ID){
-        DataSale dataSale = null;
+    public DataSale findByID(Integer IDToFind){
+        DataSale dataSaleFound = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSale = dataSaleDAO.findByID(DataSale.class, ID);
+            dataSaleFound = dataSaleDAO.findByID(DataSale.class, IDToFind);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return dataSale;
+        return dataSaleFound;
     }
 }
