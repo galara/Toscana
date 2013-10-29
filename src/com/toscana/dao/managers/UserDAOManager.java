@@ -20,40 +20,40 @@ public class UserDAOManager {
         userDAO = new UserDAOImplementation();
     }
 
-    public void add(User inp_user) { //inp_user or userAdd
+    public void add(User userToAdd) { //inp_user or userAdd
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userDAO.add(inp_user);
+            userDAO.add(userToAdd);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public void delete(User inp_user){
+    public void delete(User userToDelete){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userDAO.delete(inp_user);
+            userDAO.delete(userToDelete);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
         }
     }
     
-    public void update(User inp_user){
+    public void update(User userToUpdate){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userDAO.update(inp_user);
+            userDAO.update(userToUpdate);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             ToscanaHibernateUtil.rollbackTransaction();
         }
     }
     
-    public User findByID(Integer ID){
+    public User findByID(Integer IDToFind){
         User userFound=null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userFound =  userDAO.findByID(User.class, ID);
+            userFound =  userDAO.findByID(User.class, IDToFind);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
         }
