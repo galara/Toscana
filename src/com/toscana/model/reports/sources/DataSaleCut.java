@@ -1,4 +1,4 @@
-package com.toscana.model.reports;
+package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
 import com.toscana.model.sessions.User;
@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "salecuts")
-public class ReceiptSaleCut {
+public class DataSaleCut {
 
     /*
      * Class methods

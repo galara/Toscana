@@ -1,12 +1,12 @@
 package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
-import com.toscana.model.reports.ReceiptCashOut;
+import com.toscana.model.reports.templates.ReceiptTemplate;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "cashusersession")
-public class CashUserSession {
+@Table (name = "cashout")
+public class DataCashOut {
 
     /*
      * Class methods
@@ -30,12 +30,12 @@ public class CashUserSession {
         this.session = session;
     }
 
-    public double getAmountInCash() {
-        return amountInCash;
+    public double getRetirementAmount() {
+        return retirementAmount;
     }
 
-    public void setAmountInCash(double amountInCash) {
-        this.amountInCash = amountInCash;
+    public void setRetirementAmount(double retirementAmount) {
+        this.retirementAmount = retirementAmount;
     }
 
     public String getCurrencyType() {
@@ -44,38 +44,28 @@ public class CashUserSession {
 
     public void setCurrencyType(String currencyType) {
         this.currencyType = currencyType;
-    }
-
-    public ReceiptCashOut getCashOut() {
-        return cashOut;
-    }
-
-    public void setCashOut(ReceiptCashOut cashOut) {
-        this.cashOut = cashOut;
-    }
-
-    
-    /*
+    }  
+     /*
      * Inner methods
      */
-    /*
+    
+     /*
      * Attributes
      */
     @Id
-    @Column (name ="id") 
+    @Column (name = "ID")
     @GeneratedValue
     private int ID;
-       
+    
     @OneToOne
-    @JoinColumn (name = "id_session")
-    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")
+    @JoinColumn(name = "ID_SESSION")
+    @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")   
     private Session session;
     
-    @Column (name ="amountInCash")
-    private double amountInCash;
+    @Column (name = "amount")
+    private double retirementAmount;
     
-    @Column (name = "currencyType")
+    @Column (name = "curencytype")
     private String currencyType;
     
-    private ReceiptCashOut cashOut;
 }

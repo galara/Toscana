@@ -4,12 +4,12 @@
  */
 package com.toscana.model.dao.interfaces;
 
-import com.toscana.model.reports.ReceiptCashOut;
+import com.toscana.model.reports.sources.DataCashOut;
 
 /**
  *
  * @author Arandi
  */
-public interface ReceiptCashOutDAO extends GenericDAO<ReceiptCashOut, Integer>{
+public interface ReceiptCashOutDAO extends GenericDAO<DataCashOut, Integer>{
     
 }
