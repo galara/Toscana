@@ -1,7 +1,6 @@
 package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
-import com.toscana.model.reports.templates.ReceiptTemplate;
 import javax.persistence.*;
 
 @Entity
@@ -69,3 +68,6 @@ public class DataCashOut {
     private String currencyType;
     
 }
+/*
+ * Esta clase es la referencia al retiro de efectivo
+ */
