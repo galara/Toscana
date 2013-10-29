@@ -9,6 +9,5 @@ import com.toscana.model.reports.types.SummaryPaymentsType;
 
 
 public class SummaryPaymentsTypeDAOImplementation extends GenericDAOImplementation<SummaryPaymentsType, Integer> implements SummaryPaymentsTypeDAO {
-
     
 }
