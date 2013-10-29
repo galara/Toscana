@@ -5,7 +5,7 @@
 package com.toscana.model.dao.implementations;
 
 import com.toscana.model.dao.interfaces.GenericDAO;
-import com.toscana.util.ToscanaHibernateUtil;
+import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Query;

@@ -4,7 +4,7 @@
  */
 package com.toscana.dao.managers;
 
-import com.toscana.util.ToscanaHibernateUtil;
+import com.toscana.persistance.util.ToscanaHibernateUtil;
 import com.toscana.model.dao.implementations.UserDAOImplementation;
 import com.toscana.model.dao.interfaces.UserDAO;
 import com.toscana.model.sessions.User;
