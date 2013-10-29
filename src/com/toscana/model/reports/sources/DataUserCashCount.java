@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "cashusersession")
-public class DataCashUserSession {
+public class DataUserCashCount {
 
     /*
      * Class methods
