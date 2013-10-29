@@ -5,6 +5,8 @@ import com.toscana.model.sessions.User;
 import com.toscana.model.reports.templates.ReceiptTemplate;
 import javax.persistence.*;
 
+@Entity
+@Table (name = "salecuts")
 public class ReceiptSaleCut {
 
     /*
@@ -43,17 +45,7 @@ public class ReceiptSaleCut {
 
     public void setTotalCash(double totalCash) {
         this.totalCash = totalCash;
-    }
-
-    public ReceiptTemplate getReceiptTempleate() {
-        return receiptTempleate;
-    }
-
-    public void setReceiptTempleate(ReceiptTemplate receiptTempleate) {
-        this.receiptTempleate = receiptTempleate;
-    }
-
-    
+    } 
      /*
      * Inner methods
      */
@@ -78,6 +70,4 @@ public class ReceiptSaleCut {
     
     @Column (name = "totalcash")
     private double totalCash;
-    
-    private ReceiptTemplate receiptTempleate;
 }

@@ -10,5 +10,12 @@
     <mapping class="com.toscana.model.sessions.User"/>
     <mapping class="com.toscana.model.sessions.Session"/>
     <mapping class="com.toscana.model.products.Product"/>
+    <mapping class="com.toscana.model.sales.DataSale" />
+    <mapping class="com.toscana.model.reports.sources.CashUserSession"/>
+    <mapping class="com.toscana.model.reports.types.PaymentType"/>
+    <mapping class="com.toscana.model.reports.types.SummaryPaymentsType"/>
+    <mapping class="com.toscana.model.reports.ReceiptCashOut"/>
+    <mapping class="com.toscana.model.reports.ReceiptSaleCut"/>
+    <mapping class="com.toscana.model.reports.ReceiptSessionOut"/>
   </session-factory>
 </hibernate-configuration>
