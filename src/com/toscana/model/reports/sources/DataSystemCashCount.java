@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "cashout")
-public class DataCashCount {
+public class DataSystemCashCount {
     /*
      * Class methods
      */

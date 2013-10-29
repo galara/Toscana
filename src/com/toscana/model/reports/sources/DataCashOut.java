@@ -58,11 +58,11 @@ public class DataCashOut {
     private int ID;
     
     @OneToOne
-    @JoinColumn(name = "ID_SESSION")
+    @JoinColumn(name = "id_session")
     @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")   
     private Session session;
     
-    @Column (name = "amount")
+    @Column (name = "retirementamount")
     private double retirementAmount;
     
     @Column (name = "curencytype")
