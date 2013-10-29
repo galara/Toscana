@@ -1,4 +1,4 @@
-package com.toscana.model.sales;
+package com.toscana.model.reports.sources;
 
 import com.toscana.model.products.Product;
 import com.toscana.model.reports.types.PaymentType;

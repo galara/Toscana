@@ -1,6 +1,6 @@
 package com.toscana.controller.Sales;
 
-import com.toscana.model.sales.DataSale;
+import com.toscana.model.reports.sources.DataSale;
 
 public class SaleController {
 

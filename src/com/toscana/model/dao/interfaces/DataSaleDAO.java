@@ -4,7 +4,7 @@
  */
 package com.toscana.model.dao.interfaces;
 
-import com.toscana.model.sales.DataSale;
+import com.toscana.model.reports.sources.DataSale;
 
 /**
  *

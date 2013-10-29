@@ -6,7 +6,7 @@ package com.toscana.dao.managers;
 
 import com.toscana.model.dao.implementations.DataSaleDAOImplementation;
 import com.toscana.model.dao.interfaces.DataSaleDAO;
-import com.toscana.model.sales.DataSale;
+import com.toscana.model.reports.sources.DataSale;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;
 

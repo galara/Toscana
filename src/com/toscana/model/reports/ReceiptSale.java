@@ -1,7 +1,7 @@
 package com.toscana.model.reports;
 
 import com.toscana.model.reports.templates.ReceiptTemplate;
-import com.toscana.model.sales.DataSale;
+import com.toscana.model.reports.sources.DataSale;
 
 public class ReceiptSale {
 
