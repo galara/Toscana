@@ -2,7 +2,6 @@ package com.toscana.model.reports.sources;
 
 import com.toscana.model.sessions.Session;
 import com.toscana.model.sessions.User;
-import com.toscana.model.reports.templates.ReceiptTemplate;
 import javax.persistence.*;
 
 @Entity
