@@ -10,6 +10,6 @@ import com.toscana.model.reports.sources.DataCashOut;
  *
  * @author Arandi
  */
-public interface ReceiptCashOutDAO extends GenericDAO<DataCashOut, Integer>{
+public interface DataCashOutDAO extends GenericDAO<DataCashOut, Integer>{
     
 }
