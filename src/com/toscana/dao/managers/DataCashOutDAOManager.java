@@ -21,10 +21,10 @@ public class DataCashOutDAOManager {
         dataCashOutDAO = new DataCashOutDAOImplementation();
     }
     
-    public void add (DataCashOut cashOut){
+    public void add (DataCashOut cashOutToAdd){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataCashOutDAO.add(cashOut);
+            dataCashOutDAO.add(cashOutToAdd);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -32,10 +32,10 @@ public class DataCashOutDAOManager {
         }
     }
     
-    public  void delete(DataCashOut cashOut){
+    public  void delete(DataCashOut cashOutToDelete){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataCashOutDAO.delete(cashOut);
+            dataCashOutDAO.delete(cashOutToDelete);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -43,10 +43,10 @@ public class DataCashOutDAOManager {
         }
     }
     
-    public void update (DataCashOut cashOut){
+    public void update (DataCashOut cashOutTuUpdate){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataCashOutDAO.update(cashOut);
+            dataCashOutDAO.update(cashOutTuUpdate);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -67,15 +67,15 @@ public class DataCashOutDAOManager {
     }
     
     public ArrayList findAll(){
-        ArrayList<DataCashOut> cashOuts = null;
+        ArrayList<DataCashOut> allCashOuts = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            cashOuts = (ArrayList<DataCashOut>) dataCashOutDAO.findAll(DataCashOut.class);
+            allCashOuts = (ArrayList<DataCashOut>) dataCashOutDAO.findAll(DataCashOut.class);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
         
-        return cashOuts;
+        return allCashOuts;
     }
 }
