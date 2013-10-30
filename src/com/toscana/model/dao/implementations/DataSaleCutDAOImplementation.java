@@ -4,10 +4,13 @@
  */
 package com.toscana.model.dao.implementations;
 
+import com.toscana.model.dao.interfaces.DataSaleCutDAO;
+import com.toscana.model.reports.sources.DataSaleCut;
+
 /**
  *
  * @author Arandi
  */
-public class DataSaleCutDAOImplementation {
+public class DataSaleCutDAOImplementation extends GenericDAOImplementation<DataSaleCut, Integer> implements DataSaleCutDAO{
     
 }
