@@ -31,7 +31,7 @@ public class UIMenu extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        menuTable = new javax.swing.JTable();
+        tableMenu = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Toscana - Menu");
@@ -41,7 +41,7 @@ public class UIMenu extends javax.swing.JDialog {
             }
         });
 
-        menuTable.setModel(new javax.swing.table.DefaultTableModel(
+        tableMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -52,9 +52,9 @@ public class UIMenu extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        menuTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        menuTable.setEnabled(false);
-        jScrollPane1.setViewportView(menuTable);
+        tableMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tableMenu.setEnabled(false);
+        jScrollPane1.setViewportView(tableMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,6 +126,6 @@ public class UIMenu extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable menuTable;
+    private javax.swing.JTable tableMenu;
     // End of variables declaration//GEN-END:variables
 }

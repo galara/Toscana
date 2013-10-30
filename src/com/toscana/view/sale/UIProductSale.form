@@ -8,7 +8,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -86,7 +85,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="selledProductsTable">
+            <Component class="javax.swing.JTable" name="tableSoldProducts">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -252,15 +251,15 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton24" max="32767" attributes="0"/>
-                      <Component id="jButton8" max="32767" attributes="0"/>
+                      <Component id="buttonAguaNatural" max="32767" attributes="0"/>
+                      <Component id="buttonCoca600" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonCoca1L" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonCocaLight" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonNestea" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -270,40 +269,40 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton8" pref="54" max="32767" attributes="0"/>
-                      <Component id="jButton9" max="32767" attributes="0"/>
-                      <Component id="jButton10" max="32767" attributes="0"/>
-                      <Component id="jButton11" alignment="0" max="32767" attributes="0"/>
+                      <Component id="buttonCoca600" pref="54" max="32767" attributes="0"/>
+                      <Component id="buttonCoca1L" max="32767" attributes="0"/>
+                      <Component id="buttonCocaLight" max="32767" attributes="0"/>
+                      <Component id="buttonNestea" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
-                  <Component id="jButton24" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="buttonAguaNatural" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="buttonCoca600">
           <Properties>
             <Property name="text" type="java.lang.String" value="Coca-Cola 600"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton9">
+        <Component class="javax.swing.JButton" name="buttonCoca1L">
           <Properties>
             <Property name="text" type="java.lang.String" value="Coca-Cola 1L"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton10">
+        <Component class="javax.swing.JButton" name="buttonCocaLight">
           <Properties>
             <Property name="text" type="java.lang.String" value="Coca-Cola light"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton11">
+        <Component class="javax.swing.JButton" name="buttonNestea">
           <Properties>
             <Property name="text" type="java.lang.String" value="NestTea 600"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton24">
+        <Component class="javax.swing.JButton" name="buttonAguaNatural">
           <Properties>
             <Property name="text" type="java.lang.String" value="Agua Natural 500"/>
           </Properties>
@@ -382,17 +381,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton13" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="buttonManjar" min="-2" pref="82" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton15" min="-2" pref="87" max="-2" attributes="0"/>
+                              <Component id="buttonExquisita" min="-2" pref="87" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonIrresistible" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonSupAtun" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jButton12" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="buttonDeseo" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -404,14 +403,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton13" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton15" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton16" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonManjar" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonExquisita" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonIrresistible" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton14" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="jButton12" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonSupAtun" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="buttonDeseo" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -419,27 +418,27 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton13">
+            <Component class="javax.swing.JButton" name="buttonManjar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manjar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton14">
+            <Component class="javax.swing.JButton" name="buttonSupAtun">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sup At&#xfa;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton12">
+            <Component class="javax.swing.JButton" name="buttonDeseo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Deseo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton15">
+            <Component class="javax.swing.JButton" name="buttonExquisita">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Exquisita"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton16">
+            <Component class="javax.swing.JButton" name="buttonIrresistible">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Irresistible"/>
               </Properties>
@@ -460,11 +459,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton17" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonDeliciosa" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonMarcoPolo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton18" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="buttonMixta" min="-2" pref="72" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -474,9 +473,9 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton17" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton18" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonDeliciosa" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonMarcoPolo" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonMixta" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -484,17 +483,17 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="buttonMarcoPolo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Marco Polo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton17">
+            <Component class="javax.swing.JButton" name="buttonDeliciosa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Deliciosa"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton18">
+            <Component class="javax.swing.JButton" name="buttonMixta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mixta"/>
               </Properties>
@@ -515,18 +514,18 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jButton19" min="-2" pref="87" max="-2" attributes="0"/>
+                      <Component id="buttonToscana" min="-2" pref="87" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton20" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonVegetariana" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton23" min="-2" pref="84" max="-2" attributes="0"/>
+                      <Component id="buttonVenecia" min="-2" pref="84" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton21" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonSupSalmon" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jButton22" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonDelicatessen" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -536,14 +535,14 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton20" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton23" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton19" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonVegetariana" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonVenecia" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonToscana" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton22" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jButton21" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonDelicatessen" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                          <Component id="buttonSupSalmon" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
@@ -551,27 +550,27 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton19">
+            <Component class="javax.swing.JButton" name="buttonToscana">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Toscana"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton20">
+            <Component class="javax.swing.JButton" name="buttonVegetariana">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Vegetariana"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton21">
+            <Component class="javax.swing.JButton" name="buttonSupSalmon">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sup. Salm&#xf3;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton22">
+            <Component class="javax.swing.JButton" name="buttonDelicatessen">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delicatessen"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton23">
+            <Component class="javax.swing.JButton" name="buttonVenecia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Venecia"/>
               </Properties>

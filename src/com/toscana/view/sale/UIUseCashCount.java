@@ -31,11 +31,11 @@ public class UIUseCashCount extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        textFieldPesos = new javax.swing.JTextField();
-        textFieldDolares = new javax.swing.JTextField();
+        fieldPesosAmount = new javax.swing.JTextField();
+        fieldDollarAmount = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        textFieldTarjetas = new javax.swing.JTextField();
+        fieldCardsAmount = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         textFieldTotal = new javax.swing.JTextField();
 
@@ -47,29 +47,29 @@ public class UIUseCashCount extends javax.swing.JDialog {
 
         jLabel2.setText("Pesos:");
 
-        textFieldPesos.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        textFieldPesos.setText("0.0");
-        textFieldPesos.addActionListener(new java.awt.event.ActionListener() {
+        fieldPesosAmount.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        fieldPesosAmount.setText("0.0");
+        fieldPesosAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldPesosActionPerformed(evt);
+                fieldPesosAmountActionPerformed(evt);
             }
         });
-        textFieldPesos.addFocusListener(new java.awt.event.FocusAdapter() {
+        fieldPesosAmount.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                textFieldPesosFocusLost(evt);
+                fieldPesosAmountFocusLost(evt);
             }
         });
 
-        textFieldDolares.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        textFieldDolares.setText("0.0");
-        textFieldDolares.addActionListener(new java.awt.event.ActionListener() {
+        fieldDollarAmount.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        fieldDollarAmount.setText("0.0");
+        fieldDollarAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldDolaresActionPerformed(evt);
+                fieldDollarAmountActionPerformed(evt);
             }
         });
-        textFieldDolares.addFocusListener(new java.awt.event.FocusAdapter() {
+        fieldDollarAmount.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                textFieldDolaresFocusLost(evt);
+                fieldDollarAmountFocusLost(evt);
             }
         });
 
@@ -77,16 +77,16 @@ public class UIUseCashCount extends javax.swing.JDialog {
 
         jLabel4.setText("Tarjetas:");
 
-        textFieldTarjetas.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        textFieldTarjetas.setText("0.0");
-        textFieldTarjetas.addActionListener(new java.awt.event.ActionListener() {
+        fieldCardsAmount.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        fieldCardsAmount.setText("0.0");
+        fieldCardsAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldTarjetasActionPerformed(evt);
+                fieldCardsAmountActionPerformed(evt);
             }
         });
-        textFieldTarjetas.addFocusListener(new java.awt.event.FocusAdapter() {
+        fieldCardsAmount.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                textFieldTarjetasFocusLost(evt);
+                fieldCardsAmountFocusLost(evt);
             }
         });
 
@@ -111,13 +111,13 @@ public class UIUseCashCount extends javax.swing.JDialog {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textFieldPesos, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                            .addComponent(textFieldDolares)
-                            .addComponent(textFieldTarjetas)))
+                            .addComponent(fieldPesosAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                            .addComponent(fieldDollarAmount)
+                            .addComponent(fieldCardsAmount)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(textFieldTotal, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,15 +126,15 @@ public class UIUseCashCount extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(textFieldPesos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldPesosAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textFieldDolares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldDollarAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(textFieldTarjetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldCardsAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(textFieldTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -145,37 +145,37 @@ public class UIUseCashCount extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textFieldPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPesosActionPerformed
+    private void fieldPesosAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPesosAmountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldPesosActionPerformed
+    }//GEN-LAST:event_fieldPesosAmountActionPerformed
 
-    private void textFieldTarjetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTarjetasActionPerformed
+    private void fieldCardsAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldCardsAmountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldTarjetasActionPerformed
+    }//GEN-LAST:event_fieldCardsAmountActionPerformed
 
-    private void textFieldPesosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldPesosFocusLost
+    private void fieldPesosAmountFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldPesosAmountFocusLost
         /*int total = Integer.parseInt(textFieldTotal.getText().toString());
         total= total+ Integer.parseInt(textFieldPesos.getText());
         textFieldTotal.setText(total+"");*/
-    }//GEN-LAST:event_textFieldPesosFocusLost
+    }//GEN-LAST:event_fieldPesosAmountFocusLost
 
-    private void textFieldDolaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldDolaresActionPerformed
+    private void fieldDollarAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldDollarAmountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldDolaresActionPerformed
+    }//GEN-LAST:event_fieldDollarAmountActionPerformed
 
-    private void textFieldDolaresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldDolaresFocusLost
-        int totalPesos = Integer.parseInt(textFieldPesos.getText().toString());
-        int totalDolares = Integer.parseInt(textFieldDolares.getText().toString());
-        int totalTarjetas = Integer.parseInt(textFieldTarjetas.getText().toString());
+    private void fieldDollarAmountFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldDollarAmountFocusLost
+        int totalPesos = Integer.parseInt(fieldPesosAmount.getText().toString());
+        int totalDolares = Integer.parseInt(fieldDollarAmount.getText().toString());
+        int totalTarjetas = Integer.parseInt(fieldCardsAmount.getText().toString());
         int total= totalPesos + totalDolares + totalTarjetas;
         textFieldTotal.setText(total+"");
-    }//GEN-LAST:event_textFieldDolaresFocusLost
+    }//GEN-LAST:event_fieldDollarAmountFocusLost
 
-    private void textFieldTarjetasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textFieldTarjetasFocusLost
+    private void fieldCardsAmountFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldCardsAmountFocusLost
        /* int total = Integer.parseInt(textFieldTotal.getText().toString());
         total= total+ Integer.parseInt(textFieldTarjetas.getText());
         textFieldTotal.setText(total+"");*/
-    }//GEN-LAST:event_textFieldTarjetasFocusLost
+    }//GEN-LAST:event_fieldCardsAmountFocusLost
 
     /**
      * @param args the command line arguments
@@ -220,14 +220,14 @@ public class UIUseCashCount extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField fieldCardsAmount;
+    private javax.swing.JTextField fieldDollarAmount;
+    private javax.swing.JTextField fieldPesosAmount;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField textFieldDolares;
-    private javax.swing.JTextField textFieldPesos;
-    private javax.swing.JTextField textFieldTarjetas;
     private javax.swing.JTextField textFieldTotal;
     // End of variables declaration//GEN-END:variables
 }
