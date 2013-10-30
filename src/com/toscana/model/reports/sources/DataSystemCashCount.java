@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cashout")
+@Table(name = "systemcashcount")
 public class DataSystemCashCount {
     /*
      * Class methods

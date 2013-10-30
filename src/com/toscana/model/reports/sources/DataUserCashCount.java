@@ -4,7 +4,7 @@ import com.toscana.model.sessions.Session;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "cashusersession")
+@Table (name = "cashusercount")
 public class DataUserCashCount {
 
     /*
