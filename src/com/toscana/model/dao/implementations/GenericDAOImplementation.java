@@ -11,10 +11,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-/**
- *
- * @author Arandi
- */
+
 public abstract class GenericDAOImplementation<T, ID extends Serializable> implements GenericDAO<T, ID> {
     protected Session getSession() {
         return ToscanaHibernateUtil.getSession();

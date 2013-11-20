@@ -7,10 +7,7 @@ package com.toscana.model.dao.implementations;
 import com.toscana.model.dao.interfaces.DataSaleDAO;
 import com.toscana.model.reports.sources.DataSale;
 
-/**
- *
- * @author Arandi
- */
+
 public class DataSaleDAOImplementation extends GenericDAOImplementation<DataSale, Integer> implements DataSaleDAO{
     
 }

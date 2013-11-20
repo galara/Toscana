@@ -7,10 +7,6 @@ package com.toscana.model.dao.implementations;
 import com.toscana.model.dao.interfaces.DataSystemCashCountDAO;
 import com.toscana.model.reports.sources.DataSystemCashCount;
 
-/**
- *
- * @author Arandi
- */
 public class DataSystemCashCountDAOImplementation extends GenericDAOImplementation<DataSystemCashCount, Integer> implements DataSystemCashCountDAO{
     
 }
