@@ -6,10 +6,7 @@ package com.toscana.model.dao.interfaces;
 
 import com.toscana.model.reports.sources.DataSystemCashCount;
 
-/**
- *
- * @author Arandi
- */
+
 public interface DataSystemCashCountDAO extends GenericDAO<DataSystemCashCount, Integer>{
     
 }

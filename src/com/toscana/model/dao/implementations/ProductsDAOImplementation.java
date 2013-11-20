@@ -7,10 +7,7 @@ package com.toscana.model.dao.implementations;
 import com.toscana.model.dao.interfaces.ProductDAO;
 import com.toscana.model.products.Product;
 
-/**
- *
- * @author Arandi
- */
+
 public class ProductsDAOImplementation extends GenericDAOImplementation<Product, Integer> implements ProductDAO{
 
     @Override
