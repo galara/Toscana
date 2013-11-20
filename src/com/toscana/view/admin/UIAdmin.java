@@ -40,40 +40,40 @@ public class UIAdmin extends javax.swing.JFrame {
         panelReports.setLayout(panelReportsLayout);
         panelReportsLayout.setHorizontalGroup(
             panelReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 528, Short.MAX_VALUE)
         );
         panelReportsLayout.setVerticalGroup(
             panelReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 446, Short.MAX_VALUE)
         );
 
-        TabbedPane.addTab("Reportes", panelReports);
+        TabbedPane.addTab("<html><b><h3>Reportes</h3></b></html>", panelReports);
 
         javax.swing.GroupLayout panelProductsLayout = new javax.swing.GroupLayout(panelProducts);
         panelProducts.setLayout(panelProductsLayout);
         panelProductsLayout.setHorizontalGroup(
             panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 528, Short.MAX_VALUE)
         );
         panelProductsLayout.setVerticalGroup(
             panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 446, Short.MAX_VALUE)
         );
 
-        TabbedPane.addTab("Productos", panelProducts);
+        TabbedPane.addTab("<html><b><h3>Productos</h3></b></html>", panelProducts);
 
         javax.swing.GroupLayout panelUsersLayout = new javax.swing.GroupLayout(panelUsers);
         panelUsers.setLayout(panelUsersLayout);
         panelUsersLayout.setHorizontalGroup(
             panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 528, Short.MAX_VALUE)
         );
         panelUsersLayout.setVerticalGroup(
             panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 446, Short.MAX_VALUE)
         );
 
-        TabbedPane.addTab("Usuarios", panelUsers);
+        TabbedPane.addTab("<html><b><h3>Usuarios</h3></b></html>", panelUsers);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,6 +91,8 @@ public class UIAdmin extends javax.swing.JFrame {
                 .addComponent(TabbedPane)
                 .addContainerGap())
         );
+
+        TabbedPane.getAccessibleContext().setAccessibleName("<html><b><h3>Reportes</h3></b></html>");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
