@@ -11,8 +11,6 @@ import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;
 
 /**
- *
- * @author Arandi
  */
 public class DataSaleDAOManager {
     private DataSaleDAO dataSaleDAO;

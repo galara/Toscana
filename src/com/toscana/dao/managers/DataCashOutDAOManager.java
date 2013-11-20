@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Arandi
  */
 public class DataCashOutDAOManager {
     private DataCashOutDAO dataCashOutDAO;

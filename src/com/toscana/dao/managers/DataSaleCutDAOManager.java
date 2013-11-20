@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Arandi
+ * 
  */
 public class DataSaleCutDAOManager {
     private DataSaleCutDAO dataSaleCutDAO;

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Arandi
  */
 public class DataSystemCashCountDAOManager {
     private DataSystemCashCountDAO systemCashCountDAO;
