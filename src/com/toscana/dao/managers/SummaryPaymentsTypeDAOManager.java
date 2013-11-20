@@ -6,7 +6,6 @@ package com.toscana.dao.managers;
 
 /**
  *
- * @author Arandi
  */
 public class SummaryPaymentsTypeDAOManager {
     

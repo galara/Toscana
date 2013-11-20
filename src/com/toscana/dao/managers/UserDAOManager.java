@@ -11,8 +11,6 @@ import com.toscana.model.sessions.User;
 import java.util.ArrayList;
 
 /**
- *
- * @author Arandi
  */
 public class UserDAOManager {
 
