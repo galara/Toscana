@@ -6,10 +6,6 @@ package com.toscana.model.dao.interfaces;
 
 import com.toscana.model.sessions.User;
 
-/**
- *
- * @author Arandi
- */
 public interface UserDAO extends GenericDAO<User, Integer>{
     public User findByName(String name);
 }

@@ -6,10 +6,7 @@ package com.toscana.model.dao.interfaces;
 
 import com.toscana.model.reports.types.SummaryPaymentsType;
 
-/**
- *
- * @author Arandi
- */
+
 public interface SummaryPaymentsTypeDAO extends GenericDAO<SummaryPaymentsType, Integer>{
     
 }
