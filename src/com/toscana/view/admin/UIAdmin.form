@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -271,21 +274,69 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="buttonUpdateUser" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="buttonAddUser" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="buttonDeleteUser" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                               <Component id="labelTitulo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                      <Component id="labelUserData" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="buttonShowUpdateUser" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="buttonShowAddUser" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="buttonDeleteUser" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelUserNickname" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="fieldUserNickname" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelUserName" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="fieldUserName" min="-2" pref="153" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="buttonAddUser" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="labelUserPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="labelUserPrivelege" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="radioIsAdmin" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="radioIsUser" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="fieldUserPassword" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="buttonUpdateUserData" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -300,15 +351,37 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="buttonAddUser" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonShowAddUser" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="buttonUpdateUser" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonShowUpdateUser" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="buttonDeleteUser" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" min="-2" pref="206" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="183" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="labelUserData" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelUserPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldUserPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelUserNickname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldUserNickname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelUserPrivelege" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioIsAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioIsUser" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="buttonAddUser" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonUpdateUserData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -362,23 +435,29 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="buttonAddUser">
+            <Component class="javax.swing.JButton" name="buttonShowAddUser">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonShowAddUserActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="buttonUpdateUser">
+            <Component class="javax.swing.JButton" name="buttonShowUpdateUser">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonUpdateUserActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonShowUpdateUserActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonDeleteUser">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDeleteUserActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelTitulo">
               <Properties>
@@ -387,6 +466,70 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Administraci&#xf3;n de Usuarios"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelUserName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="fieldUserName">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelUserPassword">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="fieldUserPassword">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelUserNickname">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NickName"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="fieldUserNickname">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldUserNicknameActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="radioIsAdmin">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Administrador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="radioIsUser">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Usuario"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioIsUserActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelUserPrivelege">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Priveligios"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="buttonAddUser">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Usuario"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="buttonUpdateUserData">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar Datos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelUserData">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Datos Usuarios"/>
               </Properties>
             </Component>
           </SubComponents>
