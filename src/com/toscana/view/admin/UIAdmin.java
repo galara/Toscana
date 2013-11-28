@@ -26,6 +26,7 @@ public class UIAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         TabbedPane = new javax.swing.JTabbedPane();
         panelReports = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -43,10 +44,22 @@ public class UIAdmin extends javax.swing.JFrame {
         panelUsers = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableUsers = new javax.swing.JTable();
-        buttonAddUser = new javax.swing.JButton();
-        buttonUpdateUser = new javax.swing.JButton();
+        buttonShowAddUser = new javax.swing.JButton();
+        buttonShowUpdateUser = new javax.swing.JButton();
         buttonDeleteUser = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
+        labelUserName = new javax.swing.JLabel();
+        fieldUserName = new javax.swing.JTextField();
+        labelUserPassword = new javax.swing.JLabel();
+        fieldUserPassword = new javax.swing.JTextField();
+        labelUserNickname = new javax.swing.JLabel();
+        fieldUserNickname = new javax.swing.JTextField();
+        radioIsAdmin = new javax.swing.JRadioButton();
+        radioIsUser = new javax.swing.JRadioButton();
+        labelUserPrivelege = new javax.swing.JLabel();
+        buttonAddUser = new javax.swing.JButton();
+        buttonUpdateUserData = new javax.swing.JButton();
+        labelUserData = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -191,20 +204,62 @@ public class UIAdmin extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tableUsers);
 
-        buttonAddUser.setText("Agregar");
-
-        buttonUpdateUser.setText("Editar");
-        buttonUpdateUser.addActionListener(new java.awt.event.ActionListener() {
+        buttonShowAddUser.setText("Agregar");
+        buttonShowAddUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonUpdateUserActionPerformed(evt);
+                buttonShowAddUserActionPerformed(evt);
+            }
+        });
+
+        buttonShowUpdateUser.setText("Editar");
+        buttonShowUpdateUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonShowUpdateUserActionPerformed(evt);
             }
         });
 
         buttonDeleteUser.setText("Eliminar");
+        buttonDeleteUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDeleteUserActionPerformed(evt);
+            }
+        });
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         labelTitulo.setText("Administración de Usuarios");
         labelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        labelUserName.setText("Nombre");
+
+        labelUserPassword.setText("Contraseña");
+
+        labelUserNickname.setText("NickName");
+
+        fieldUserNickname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldUserNicknameActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(radioIsAdmin);
+        radioIsAdmin.setText("Administrador");
+
+        buttonGroup1.add(radioIsUser);
+        radioIsUser.setSelected(true);
+        radioIsUser.setText("Usuario");
+        radioIsUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioIsUserActionPerformed(evt);
+            }
+        });
+
+        labelUserPrivelege.setText("Priveligios");
+
+        buttonAddUser.setText("Agregar Usuario");
+
+        buttonUpdateUserData.setText("Actualizar Datos");
+
+        labelUserData.setText("Datos Usuarios");
 
         javax.swing.GroupLayout panelUsersLayout = new javax.swing.GroupLayout(panelUsers);
         panelUsers.setLayout(panelUsersLayout);
@@ -213,17 +268,51 @@ public class UIAdmin extends javax.swing.JFrame {
             .addGroup(panelUsersLayout.createSequentialGroup()
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelUsersLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(buttonUpdateUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonAddUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(buttonDeleteUser)))
-                    .addGroup(panelUsersLayout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(labelTitulo)))
+                        .addComponent(labelTitulo))
+                    .addGroup(panelUsersLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelUsersLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(labelUserData))
+                            .addGroup(panelUsersLayout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(buttonShowUpdateUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(buttonShowAddUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(buttonDeleteUser)))))
+                    .addGroup(panelUsersLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(panelUsersLayout.createSequentialGroup()
+                                    .addComponent(labelUserNickname)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(fieldUserNickname))
+                                .addGroup(panelUsersLayout.createSequentialGroup()
+                                    .addComponent(labelUserName)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(fieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(buttonAddUser))
+                        .addGap(31, 31, 31)
+                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelUsersLayout.createSequentialGroup()
+                                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelUserPassword)
+                                    .addComponent(labelUserPrivelege))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelUsersLayout.createSequentialGroup()
+                                        .addComponent(radioIsAdmin)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(radioIsUser))
+                                    .addComponent(fieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelUsersLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(buttonUpdateUserData)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelUsersLayout.setVerticalGroup(
@@ -234,13 +323,32 @@ public class UIAdmin extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelUsersLayout.createSequentialGroup()
-                        .addComponent(buttonAddUser)
+                        .addComponent(buttonShowAddUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonUpdateUser)
+                        .addComponent(buttonShowUpdateUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonDeleteUser))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelUserData)
+                .addGap(8, 8, 8)
+                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelUserName)
+                    .addComponent(fieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelUserPassword)
+                    .addComponent(fieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelUserNickname)
+                    .addComponent(fieldUserNickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelUserPrivelege)
+                    .addComponent(radioIsAdmin)
+                    .addComponent(radioIsUser))
+                .addGap(26, 26, 26)
+                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAddUser)
+                    .addComponent(buttonUpdateUserData))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Usuarios</h3></b></html>", panelUsers);
@@ -267,14 +375,62 @@ public class UIAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonUpdateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateUserActionPerformed
+    private void buttonShowUpdateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowUpdateUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonUpdateUserActionPerformed
+        clearUserFields();
+        showUserFields(true);
+        buttonUpdateUserData.setEnabled(true);
+        buttonAddUser.setEnabled(false);
+    }//GEN-LAST:event_buttonShowUpdateUserActionPerformed
 
     private void buttonUpdateProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateProductActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonUpdateProductActionPerformed
 
+    private void fieldUserNicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUserNicknameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldUserNicknameActionPerformed
+
+    private void radioIsUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioIsUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioIsUserActionPerformed
+
+    private void buttonShowAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowAddUserActionPerformed
+        // TODO add your handling code here:
+        clearUserFields();
+        showUserFields(true);
+        buttonUpdateUserData.setEnabled(false);
+        buttonAddUser.setEnabled(true);
+    }//GEN-LAST:event_buttonShowAddUserActionPerformed
+
+    private void buttonDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteUserActionPerformed
+        // TODO add your handling code here:
+        showUserFields(false);
+    }//GEN-LAST:event_buttonDeleteUserActionPerformed
+
+    private void clearUserFields(){
+        fieldUserName.setText("");
+        fieldUserPassword.setText("");
+        fieldUserNickname.setText("");
+        
+    }
+    private void showUserFields(boolean isShown){
+        labelUserData.setVisible(isShown);
+        labelUserName.setVisible(isShown);
+        labelUserPassword.setVisible(isShown);
+        labelUserNickname.setVisible(isShown);
+        labelUserPrivelege.setVisible(isShown);
+        
+        fieldUserName.setVisible(isShown);
+        fieldUserPassword.setVisible(isShown);
+        fieldUserNickname.setVisible(isShown);
+        
+        radioIsAdmin.setVisible(isShown);
+        radioIsUser.setVisible(isShown);
+        
+        buttonAddUser.setVisible(isShown);
+        buttonUpdateUserData.setVisible(isShown);
+    }
     /**
      * @param args the command line arguments
      */
@@ -305,7 +461,10 @@ public class UIAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UIAdmin().setVisible(true);
+                UIAdmin uiAdmin = new UIAdmin();
+                uiAdmin.setVisible(true);
+                uiAdmin.showUserFields(false);
+                
             }
         });
     }
@@ -315,8 +474,14 @@ public class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JButton buttonAddUser;
     private javax.swing.JButton buttonDeleteProduct;
     private javax.swing.JButton buttonDeleteUser;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton buttonShowAddUser;
+    private javax.swing.JButton buttonShowUpdateUser;
     private javax.swing.JButton buttonUpdateProduct;
-    private javax.swing.JButton buttonUpdateUser;
+    private javax.swing.JButton buttonUpdateUserData;
+    private javax.swing.JTextField fieldUserName;
+    private javax.swing.JTextField fieldUserNickname;
+    private javax.swing.JTextField fieldUserPassword;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -326,9 +491,16 @@ public class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTitulo1;
+    private javax.swing.JLabel labelUserData;
+    private javax.swing.JLabel labelUserName;
+    private javax.swing.JLabel labelUserNickname;
+    private javax.swing.JLabel labelUserPassword;
+    private javax.swing.JLabel labelUserPrivelege;
     private javax.swing.JPanel panelProducts;
     private javax.swing.JPanel panelReports;
     private javax.swing.JPanel panelUsers;
+    private javax.swing.JRadioButton radioIsAdmin;
+    private javax.swing.JRadioButton radioIsUser;
     private javax.swing.JTable tableProducts;
     private javax.swing.JTable tableUsers;
     // End of variables declaration//GEN-END:variables
