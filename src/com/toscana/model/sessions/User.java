@@ -5,6 +5,31 @@ import javax.persistence.*;
 @Entity
 @Table (name="users")
 public class User {
+    /*
+     * Class Constructor
+     */
+    
+    public User() {
+        this.ID = 0;
+        this.name = "";
+        this.nickname = "";
+        this.password="";
+        this.privilegeAdmin = false;
+    }
+
+    public User(int ID, String name, String password, String nickname, boolean privilegeAdmin) {
+        this.ID = ID;
+        this.name = name;
+        this.password=password;
+        this.nickname = nickname;
+        this.privilegeAdmin = privilegeAdmin;
+    }
+    
+    public User(String name, String password, String nickname) {
+        this.name = name;
+        this.nickname = nickname;
+        this.privilegeAdmin = privilegeAdmin;
+    }
      /*
      * Class' Methods
      */
@@ -14,20 +39,6 @@ public class User {
      */
     public int getID() {
         return ID;
-    }
-
-    public User() {
-        this.ID = 0;
-        this.name = "";
-        this.nickname = "";
-        this.privilegeAdmin = false;
-    }
-
-    public User(int ID, String name, String nickname, boolean privilegeAdmin) {
-        this.ID = ID;
-        this.name = name;
-        this.nickname = nickname;
-        this.privilegeAdmin = privilegeAdmin;
     }
 
     public void setID(int ID) {

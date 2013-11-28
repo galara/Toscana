@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.toscana.controller;
+package com.toscana.controller.User;
 
 import com.toscana.dao.managers.UserDAOManager;
 import com.toscana.model.sessions.User;
@@ -32,7 +32,7 @@ public class UserController {
         columName.add("Password");
         
     }
- /*   
+   
     public void renderTable(JTable table){
         this.showUsersTable(table);
     }
@@ -45,16 +45,40 @@ public class UserController {
         nickname.setText(user.getNickname());
     }
     
-    public void saveUser(JTextField nameField, JTextField passwordField, JTextField nicknameField){
-        String nombre = nameField.getText();
-        String direccion = passwordField.getText();
-        String correo = nicknameField.getText();
+    public void saveUser(JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
+        String name = fieldName.getText();
+        String password = fieldPassword.getText();
+        String nickname = fieldNickname.getText();
         
-        User user = new User();
+        User user = new User(name,password,nickname);
         
         this.userDAOManager.add(user);
     }
     
+    public  void updateUser(JTextField fieldID, JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
+        String name = fieldName.getText();
+        String password  = fieldPassword.getText();
+        String nickname = fieldNickname.getText();
+        int id = Integer.parseInt(fieldID.getText());
+        
+        User user = new User(name, password, nickname);
+        user.setID(id);
+        
+        this.userDAOManager.update(user);
+    }
+    
+    public void deleteUser(JTextField fieldID, JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
+        String name = fieldName.getText();
+        String password  = fieldPassword.getText();
+        String nickname = fieldNickname.getText();
+        int ID = Integer.parseInt(fieldID.getText());
+        
+        User user = new User(name, password, nickname);
+        user.setID(ID);
+        
+        this.userDAOManager.delete(user);
+    }
+  
     private void showUsersTable(JTable tabla){
         ArrayList<User> usersArrayList = (ArrayList<User>) userDAOManager.findAll(); //cargarTodosLosClientes();
         Vector usersVector = parseVector(usersArrayList);
@@ -92,7 +116,7 @@ public class UserController {
     }
     
     private static User parseUser(Vector vector){
-        User user = new User();//((String)vector.get(1), (String)vector.get(2), (String)vector.get(3));
+        User user = new User((String)vector.get(1), (String)vector.get(2), (String)vector.get(3));
         return user;
-    }*/
+    } 
 }
