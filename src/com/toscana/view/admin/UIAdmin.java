@@ -79,7 +79,6 @@ public class UIAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
                 .addContainerGap(106, Short.MAX_VALUE))
-            .addGap(0, 528, Short.MAX_VALUE)
         );
         panelReportsLayout.setVerticalGroup(
             panelReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +150,6 @@ public class UIAdmin extends javax.swing.JFrame {
                         .addGap(102, 102, 102)
                         .addComponent(labelTitulo1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGap(0, 528, Short.MAX_VALUE)
         );
         panelProductsLayout.setVerticalGroup(
             panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,7 +225,6 @@ public class UIAdmin extends javax.swing.JFrame {
                         .addGap(102, 102, 102)
                         .addComponent(labelTitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGap(0, 528, Short.MAX_VALUE)
         );
         panelUsersLayout.setVerticalGroup(
             panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
