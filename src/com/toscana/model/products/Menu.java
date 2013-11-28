@@ -3,7 +3,16 @@ package com.toscana.model.products;
 import java.util.ArrayList;
 
 public class Menu {
+     /*
+     * Class Constructor
+     */
+    public Menu() {
+    }
 
+    public Menu(ArrayList products) {
+        this.products = products;
+    }
+    
     /*
      * Class methods
      */

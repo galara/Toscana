@@ -8,9 +8,25 @@ import javax.persistence.*;
 public class Session {
     
     /*
+     * Class Constructors
+     */
+    public Session() {
+      
+    }
+
+    public Session(int ID, Date initialTime, Date finalTime, User user, boolean isOver) {
+        this.ID = ID;
+        this.initialTime = initialTime;
+        this.finalTime = finalTime;
+        this.user = user;
+        this.isOver = isOver;
+    }
+
+    
+    /*
      * Class Methods
      */
-
+    
     /*
      * Getters and Setters
      */

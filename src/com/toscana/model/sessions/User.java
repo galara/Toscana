@@ -16,6 +16,20 @@ public class User {
         return ID;
     }
 
+    public User() {
+        this.ID = 0;
+        this.name = "";
+        this.nickname = "";
+        this.privilegeAdmin = false;
+    }
+
+    public User(int ID, String name, String nickname, boolean privilegeAdmin) {
+        this.ID = ID;
+        this.name = name;
+        this.nickname = nickname;
+        this.privilegeAdmin = privilegeAdmin;
+    }
+
     public void setID(int ID) {
         this.ID = ID;
     }
