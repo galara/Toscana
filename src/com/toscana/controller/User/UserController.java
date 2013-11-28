@@ -7,6 +7,7 @@
 package com.toscana.controller.User;
 
 import com.toscana.dao.managers.UserDAOManager;
+import com.toscana.helper.security.PasswordEncrypter;
 import com.toscana.model.sessions.User;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -48,9 +49,10 @@ public class UserController {
     public void saveUser(JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
         String name = fieldName.getText();
         String password = fieldPassword.getText();
+        String encryptedPassword = PasswordEncrypter.getEncryptedPassword(password);
         String nickname = fieldNickname.getText();
         
-        User user = new User(name,password,nickname);
+        User user = new User(name, encryptedPassword, nickname);
         
         this.userDAOManager.add(user);
     }
@@ -58,10 +60,11 @@ public class UserController {
     public  void updateUser(JTextField fieldID, JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
         String name = fieldName.getText();
         String password  = fieldPassword.getText();
+        String encryptedPassword = PasswordEncrypter.getEncryptedPassword(password);
         String nickname = fieldNickname.getText();
-        int id = Integer.parseInt(fieldID.getText());
+        Integer id = Integer.parseInt(fieldID.getText());
         
-        User user = new User(name, password, nickname);
+        User user = new User(name, encryptedPassword, nickname);
         user.setID(id);
         
         this.userDAOManager.update(user);
