@@ -28,8 +28,8 @@ public class UserController {
         columName= new Vector();
         columName.add("ID");
         columName.add("Name");
-        columName.add("Password");
         columName.add("Nickname");
+        columName.add("Password");
         
     }
  /*   
