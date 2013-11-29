@@ -57,12 +57,11 @@ public class UIAdmin extends javax.swing.JFrame {
         fieldUserPassword = new javax.swing.JTextField();
         labelUserNickname = new javax.swing.JLabel();
         fieldUserNickname = new javax.swing.JTextField();
-        radioIsAdmin = new javax.swing.JRadioButton();
-        radioIsUser = new javax.swing.JRadioButton();
         labelUserPrivelege = new javax.swing.JLabel();
         buttonAddUser = new javax.swing.JButton();
         buttonUpdateUserData = new javax.swing.JButton();
         labelUserData = new javax.swing.JLabel();
+        checkAdmin = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,7 +105,7 @@ public class UIAdmin extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addContainerGap(553, Short.MAX_VALUE))
+                .addContainerGap(442, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Reportes</h3></b></html>", panelReports);
@@ -181,7 +180,7 @@ public class UIAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonDeleteProduct))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Productos</h3></b></html>", panelProducts);
@@ -244,18 +243,6 @@ public class UIAdmin extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(radioIsAdmin);
-        radioIsAdmin.setText("Administrador");
-
-        buttonGroup1.add(radioIsUser);
-        radioIsUser.setSelected(true);
-        radioIsUser.setText("Usuario");
-        radioIsUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioIsUserActionPerformed(evt);
-            }
-        });
-
         labelUserPrivelege.setText("Priveligios");
 
         buttonAddUser.setText("Agregar Usuario");
@@ -268,6 +255,8 @@ public class UIAdmin extends javax.swing.JFrame {
         buttonUpdateUserData.setText("Actualizar Datos");
 
         labelUserData.setText("Datos Usuarios");
+
+        checkAdmin.setText("Administrador");
 
         javax.swing.GroupLayout panelUsersLayout = new javax.swing.GroupLayout(panelUsers);
         panelUsers.setLayout(panelUsersLayout);
@@ -313,11 +302,8 @@ public class UIAdmin extends javax.swing.JFrame {
                                     .addComponent(labelUserPrivelege))
                                 .addGap(18, 18, 18)
                                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelUsersLayout.createSequentialGroup()
-                                        .addComponent(radioIsAdmin)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(radioIsUser))
-                                    .addComponent(fieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(fieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkAdmin)))
                             .addGroup(panelUsersLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(buttonUpdateUserData)))))
@@ -350,13 +336,12 @@ public class UIAdmin extends javax.swing.JFrame {
                     .addComponent(labelUserNickname)
                     .addComponent(fieldUserNickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelUserPrivelege)
-                    .addComponent(radioIsAdmin)
-                    .addComponent(radioIsUser))
+                    .addComponent(checkAdmin))
                 .addGap(21, 21, 21)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonAddUser)
                     .addComponent(buttonUpdateUserData))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Usuarios</h3></b></html>", panelUsers);
@@ -372,10 +357,10 @@ public class UIAdmin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TabbedPane)
-                .addContainerGap())
+                .addComponent(TabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         TabbedPane.getAccessibleContext().setAccessibleName("<html><b><h3>Reportes</h3></b></html>");
@@ -399,10 +384,6 @@ public class UIAdmin extends javax.swing.JFrame {
     private void fieldUserNicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUserNicknameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldUserNicknameActionPerformed
-
-    private void radioIsUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioIsUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioIsUserActionPerformed
 
     private void buttonShowAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowAddUserActionPerformed
         // TODO add your handling code here:
@@ -439,8 +420,6 @@ public class UIAdmin extends javax.swing.JFrame {
         fieldUserPassword.setVisible(isShown);
         fieldUserNickname.setVisible(isShown);
         
-        radioIsAdmin.setVisible(isShown);
-        radioIsUser.setVisible(isShown);
         
         buttonAddUser.setVisible(isShown);
         buttonUpdateUserData.setVisible(isShown);
@@ -498,6 +477,7 @@ public class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JButton buttonShowUpdateUser;
     private javax.swing.JButton buttonUpdateProduct;
     private javax.swing.JButton buttonUpdateUserData;
+    private javax.swing.JCheckBox checkAdmin;
     private javax.swing.JTextField fieldUserName;
     private javax.swing.JTextField fieldUserNickname;
     private javax.swing.JTextField fieldUserPassword;
@@ -518,8 +498,6 @@ public class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel panelProducts;
     private javax.swing.JPanel panelReports;
     private javax.swing.JPanel panelUsers;
-    private javax.swing.JRadioButton radioIsAdmin;
-    private javax.swing.JRadioButton radioIsUser;
     private javax.swing.JTable tableProducts;
     private javax.swing.JTable tableUsers;
     // End of variables declaration//GEN-END:variables
