@@ -6,7 +6,6 @@
 
 package com.toscana.controller.product;
 
-import com.mchange.v2.lang.Coerce;
 import com.toscana.dao.managers.ProductsDAOManager;
 import com.toscana.model.products.Product;
 import java.util.ArrayList;
