@@ -17,7 +17,7 @@ public class UIAdmin extends javax.swing.JFrame {
      */
     public UIAdmin() {
         initComponents();
-        viewController = new AdminViewController();
+        adminViewController = new AdminViewController();
     }
 
     /**
@@ -106,13 +106,13 @@ public class UIAdmin extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addContainerGap(430, Short.MAX_VALUE))
+                .addContainerGap(553, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Reportes</h3></b></html>", panelReports);
 
         labelTitulo1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        labelTitulo1.setText("Administración de Productos");
+        labelTitulo1.setText("AdministraciÃ³n de Productos");
         labelTitulo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         tableProducts.setModel(new javax.swing.table.DefaultTableModel(
@@ -181,7 +181,7 @@ public class UIAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonDeleteProduct))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Productos</h3></b></html>", panelProducts);
@@ -229,12 +229,12 @@ public class UIAdmin extends javax.swing.JFrame {
         });
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        labelTitulo.setText("Administración de Usuarios");
+        labelTitulo.setText("AdministraciÃ³n de Usuarios");
         labelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         labelUserName.setText("Nombre");
 
-        labelUserPassword.setText("Contraseña");
+        labelUserPassword.setText("ContraseÃ±a");
 
         labelUserNickname.setText("NickName");
 
@@ -259,6 +259,11 @@ public class UIAdmin extends javax.swing.JFrame {
         labelUserPrivelege.setText("Priveligios");
 
         buttonAddUser.setText("Agregar Usuario");
+        buttonAddUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAddUserActionPerformed(evt);
+            }
+        });
 
         buttonUpdateUserData.setText("Actualizar Datos");
 
@@ -334,7 +339,7 @@ public class UIAdmin extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelUserData)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUserName)
                     .addComponent(fieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,11 +352,11 @@ public class UIAdmin extends javax.swing.JFrame {
                     .addComponent(labelUserPrivelege)
                     .addComponent(radioIsAdmin)
                     .addComponent(radioIsUser))
-                .addGap(26, 26, 26)
+                .addGap(21, 21, 21)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonAddUser)
                     .addComponent(buttonUpdateUserData))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         TabbedPane.addTab("<html><b><h3>Usuarios</h3></b></html>", panelUsers);
@@ -384,6 +389,7 @@ public class UIAdmin extends javax.swing.JFrame {
         showUserFields(true);
         buttonUpdateUserData.setEnabled(true);
         buttonAddUser.setEnabled(false);
+        adminViewController.getUserController().showUsersData(tableUsers, tableUsers.getSelectedRow(), fieldUserName, fieldUserName, fieldUserPassword, fieldUserNickname);
     }//GEN-LAST:event_buttonShowUpdateUserActionPerformed
 
     private void buttonUpdateProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateProductActionPerformed
@@ -410,6 +416,11 @@ public class UIAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         showUserFields(false);
     }//GEN-LAST:event_buttonDeleteUserActionPerformed
+
+    private void buttonAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddUserActionPerformed
+        // TODO add your handling code here:
+        adminViewController.getUserController().saveUser(fieldUserName, fieldUserPassword, fieldUserNickname);
+    }//GEN-LAST:event_buttonAddUserActionPerformed
 
     private void clearUserFields(){
         fieldUserName.setText("");
@@ -474,7 +485,7 @@ public class UIAdmin extends javax.swing.JFrame {
     
     //  Variables declaration
     
-    private AdminViewController viewController;
+    private AdminViewController adminViewController;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TabbedPane;

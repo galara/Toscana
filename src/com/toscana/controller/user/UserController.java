@@ -36,7 +36,7 @@ public class UserController {
     }
     
     //Debe ir en AdminViewController
-    public void showUsersData(JTable userTable, int selectedRow,JTextField textFieldID, JTextField textFieldName, JTextField textFieldPassword, JTextField textFieldNickname){
+    public void showUsersData(JTable userTable, int selectedRow, JTextField textFieldID, JTextField textFieldName, JTextField textFieldPassword, JTextField textFieldNickname){
         User user = parseUser(userTable, selectedRow);
         textFieldID.setText(String.valueOf(user.getID()));
         textFieldName.setText(user.getName());
