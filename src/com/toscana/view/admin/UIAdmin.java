@@ -4,6 +4,8 @@
  */
 package com.toscana.view.admin;
 
+import com.toscana.controller.admin.AdminViewController;
+
 /**
  *
  * @author Arandi
@@ -15,6 +17,7 @@ public class UIAdmin extends javax.swing.JFrame {
      */
     public UIAdmin() {
         initComponents();
+        viewController = new AdminViewController();
     }
 
     /**
@@ -468,6 +471,11 @@ public class UIAdmin extends javax.swing.JFrame {
             }
         });
     }
+    
+    //  Variables declaration
+    
+    private AdminViewController viewController;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JButton buttonAddProduct;
