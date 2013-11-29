@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.toscana.controller.User;
+package com.toscana.controller.user;
 
 import com.toscana.dao.managers.UserDAOManager;
 import com.toscana.helper.security.PasswordEncrypter;

@@ -1,4 +1,4 @@
-package com.toscana.controller.Sales;
+package com.toscana.controller.sales;
 
 import com.toscana.model.reports.sources.DataSale;
 
