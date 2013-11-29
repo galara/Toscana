@@ -5,6 +5,7 @@
 package com.toscana.view.admin;
 
 import com.toscana.controller.admin.AdminViewController;
+import javax.swing.JLabel;
 
 /**
  *
@@ -17,7 +18,9 @@ public class UIAdmin extends javax.swing.JFrame {
      */
     public UIAdmin() {
         initComponents();
+        labelUserID = new JLabel();
         adminViewController = new AdminViewController();
+        renderUserTable();
     }
 
     /**
@@ -253,6 +256,11 @@ public class UIAdmin extends javax.swing.JFrame {
         });
 
         buttonUpdateUserData.setText("Actualizar Datos");
+        buttonUpdateUserData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonUpdateUserDataActionPerformed(evt);
+            }
+        });
 
         labelUserData.setText("Datos Usuarios");
 
@@ -374,7 +382,7 @@ public class UIAdmin extends javax.swing.JFrame {
         showUserFields(true);
         buttonUpdateUserData.setEnabled(true);
         buttonAddUser.setEnabled(false);
-        adminViewController.getUserController().showUsersData(tableUsers, tableUsers.getSelectedRow(), fieldUserName, fieldUserName, fieldUserPassword, fieldUserNickname);
+        adminViewController.getUserController().showUsersData(tableUsers, tableUsers.getSelectedRow(), labelUserID, fieldUserName, fieldUserPassword, fieldUserNickname);
     }//GEN-LAST:event_buttonShowUpdateUserActionPerformed
 
     private void buttonUpdateProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateProductActionPerformed
@@ -400,8 +408,15 @@ public class UIAdmin extends javax.swing.JFrame {
 
     private void buttonAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddUserActionPerformed
         // TODO add your handling code here:
-        adminViewController.getUserController().saveUser(fieldUserName, fieldUserPassword, fieldUserNickname);
+        adminViewController.getUserController().saveUser(fieldUserName, fieldUserPassword, fieldUserNickname, checkAdmin);
+        renderUserTable();
     }//GEN-LAST:event_buttonAddUserActionPerformed
+
+    private void buttonUpdateUserDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateUserDataActionPerformed
+        // TODO add your handling code here:
+        adminViewController.getUserController().updateUser(labelUserID, fieldUserName, fieldUserPassword, fieldUserNickname);
+        renderUserTable();
+    }//GEN-LAST:event_buttonUpdateUserDataActionPerformed
 
     private void clearUserFields(){
         fieldUserName.setText("");
@@ -423,6 +438,10 @@ public class UIAdmin extends javax.swing.JFrame {
         
         buttonAddUser.setVisible(isShown);
         buttonUpdateUserData.setVisible(isShown);
+    }
+    
+    private void renderUserTable(){
+        adminViewController.getUserController().renderTable(tableUsers);
     }
     /**
      * @param args the command line arguments
@@ -466,6 +485,7 @@ public class UIAdmin extends javax.swing.JFrame {
     
     private AdminViewController adminViewController;
     
+    private JLabel labelUserID;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JButton buttonAddProduct;

@@ -11,6 +11,8 @@ import com.toscana.helper.security.PasswordEncrypter;
 import com.toscana.model.sessions.User;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -36,31 +38,32 @@ public class UserController {
     }
     
     //Debe ir en AdminViewController
-    public void showUsersData(JTable userTable, int selectedRow, JTextField textFieldID, JTextField textFieldName, JTextField textFieldPassword, JTextField textFieldNickname){
+    public void showUsersData(JTable userTable, int selectedRow, JLabel userID, JTextField textFieldName, JTextField textFieldPassword, JTextField textFieldNickname){
         User user = parseUser(userTable, selectedRow);
-        textFieldID.setText(String.valueOf(user.getID()));
+        userID.setText(String.valueOf(user.getID()));
         textFieldName.setText(user.getName());
         textFieldPassword.setText(user.getPassword());
         textFieldNickname.setText(user.getNickname());
     }
     
-    public void saveUser(JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
+    public void saveUser(JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname, JCheckBox checkAdmin){
         String name = fieldName.getText();
         String password = fieldPassword.getText();
         String encryptedPassword = PasswordEncrypter.getEncryptedPassword(password);
         String nickname = fieldNickname.getText();
+        boolean isAdmin = checkAdmin.isSelected();
         
-        User user = new User(name, encryptedPassword, nickname);
+        User user = new User(name, encryptedPassword, nickname, isAdmin);
         
         this.userDAOManager.add(user);
     }
     
-    public  void updateUser(JTextField fieldID, JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
+    public  void updateUser(JLabel userID, JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
         String name = fieldName.getText();
         String password  = fieldPassword.getText();
         String encryptedPassword = PasswordEncrypter.getEncryptedPassword(password);
         String nickname = fieldNickname.getText();
-        Integer id = Integer.parseInt(fieldID.getText());
+        Integer id = Integer.parseInt(userID.getText());
         
         User user = new User(name, encryptedPassword, nickname);
         user.setID(id);

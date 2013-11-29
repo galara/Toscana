@@ -25,6 +25,14 @@ public class User {
         this.privilegeAdmin = privilegeAdmin;
     }
     
+    public User(String name, String password, String nickname, boolean privilegeAdmin) {
+        this.ID = ID;
+        this.name = name;
+        this.password=password;
+        this.nickname = nickname;
+        this.privilegeAdmin = privilegeAdmin;
+    }
+    
     public User(String name, String nickname, String password) {
         this.name = name;
         this.nickname = nickname;
