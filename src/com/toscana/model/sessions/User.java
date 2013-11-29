@@ -25,7 +25,7 @@ public class User {
         this.privilegeAdmin = privilegeAdmin;
     }
     
-    public User(String name, String password, String nickname) {
+    public User(String name, String nickname, String password) {
         this.name = name;
         this.nickname = nickname;
         this.privilegeAdmin = privilegeAdmin;

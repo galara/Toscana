@@ -30,16 +30,18 @@ public class UserController {
       
     }
    
+    //Debe ir en AdminViewController
     public void renderTable(JTable table){
         this.showUsersTable(table);
     }
     
-    public void showUsersDataToEdit(JTable tabla, int row,JTextField id, JTextField name, JTextField password, JTextField nickname){
-        User user = parseUser(tabla, row);
-        id.setText(String.valueOf(user.getID()));
-        name.setText(user.getName());
-        password.setText(user.getPassword());
-        nickname.setText(user.getNickname());
+    //Debe ir en AdminViewController
+    public void showUsersData(JTable userTable, int selectedRow,JTextField textFieldID, JTextField textFieldName, JTextField textFieldPassword, JTextField textFieldNickname){
+        User user = parseUser(userTable, selectedRow);
+        textFieldID.setText(String.valueOf(user.getID()));
+        textFieldName.setText(user.getName());
+        textFieldPassword.setText(user.getPassword());
+        textFieldNickname.setText(user.getNickname());
     }
     
     public void saveUser(JTextField fieldName, JTextField fieldPassword, JTextField fieldNickname){
@@ -78,6 +80,7 @@ public class UserController {
         this.userDAOManager.delete(user);
     }
   
+    //Debe ir en AdminViewController
     private void showUsersTable(JTable tabla){
         ArrayList<User> usersArrayList = (ArrayList<User>) userDAOManager.findAll(); //cargarTodosLosClientes();
         Vector usersVector = parseVector(usersArrayList);
@@ -86,6 +89,7 @@ public class UserController {
         tabla.setModel(dtm);
     }
     
+    //Debe ir en AdminViewController
     private static Vector parseVector(ArrayList<User> array){
         Vector parsedVector = new Vector();
         
@@ -102,6 +106,7 @@ public class UserController {
         return parsedVector;
     }
     
+    //Debe ir en AdminViewController
      private static User parseUser(JTable table, int row){
         TableModel tableModel = table.getModel();
         User user =  new User();
@@ -119,6 +124,7 @@ public class UserController {
         return user;
     }
     
+    //Debe ir en AdminViewController
     private static Vector setTableTitles(Vector inp_tableTitles){
         Vector tableTitles = inp_tableTitles;
         
