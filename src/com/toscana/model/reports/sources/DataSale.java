@@ -78,9 +78,6 @@ public class DataSale {
     @GeneratedValue
     private int ID;
     
-    @Column (name = "product")
-    @OneToMany
-    private ArrayList<Product> productsInSale;
     
     @Column (name = "date")
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -96,4 +93,12 @@ public class DataSale {
     
     @Column (name = "totalamount")
     private double totalAmount;
+    /*****
+     INVESTIGAR ESTA FORMA DE GUARDAR
+     
+     ************/
+    @Column (name = "product")
+    @ManyToMany
+    private ArrayList<Product> productsInSale;
+    
 }

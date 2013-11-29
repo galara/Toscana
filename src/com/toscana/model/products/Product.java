@@ -1,10 +1,41 @@
 package com.toscana.model.products;
 
+import java.util.logging.Logger;
 import javax.persistence.*;
 
 @Entity
 @Table (name="products")
 public class Product {
+    /*
+     *Class Constructors
+     */
+  
+
+    
+    public Product() {
+        this.ID = 0;
+        this.name = "";
+        this.price = 0.0;
+        this.description = "";
+        this.discount = 0;
+    }
+
+    
+    public Product(int ID, String name, double price, String description, double discount) {
+        this.ID = ID;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.discount = discount;
+    }
+
+     public Product(String name, double price, String description, double discount) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.discount = discount;
+    }
+    
     /*
      * Class methods
      */
