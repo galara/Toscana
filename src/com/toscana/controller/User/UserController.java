@@ -20,17 +20,13 @@ import javax.swing.table.TableModel;
  * @author SG_05
  */
 public class UserController {
-    private UserDAOManager userDAOManager;
-    private Vector columName;
+
    
     public UserController(){
         userDAOManager = new UserDAOManager();
-        columName= new Vector();
-        columName.add("ID");
-        columName.add("Name");
-        columName.add("Nickname");
-        columName.add("Password");
-        
+        userTableTitles= new Vector();
+        userTableTitles = setTableTitles(userTableTitles);
+      
     }
    
     public void renderTable(JTable table){
@@ -82,7 +78,7 @@ public class UserController {
     private void showUsersTable(JTable tabla){
         ArrayList<User> usersArrayList = (ArrayList<User>) userDAOManager.findAll(); //cargarTodosLosClientes();
         Vector usersVector = parseVector(usersArrayList);
-        DefaultTableModel dtm = new DefaultTableModel(usersVector, columName);
+        DefaultTableModel dtm = new DefaultTableModel(usersVector, userTableTitles);
         
         tabla.setModel(dtm);
     }
@@ -118,5 +114,19 @@ public class UserController {
     private static User parseUser(Vector vector){
         User user = new User((String)vector.get(1), (String)vector.get(2), (String)vector.get(3));
         return user;
-    } 
+    }
+    
+    private static Vector setTableTitles(Vector inp_tableTitles){
+        Vector tableTitles = inp_tableTitles;
+        
+        for(int userDataTitleIndex =0; userDataTitleIndex<userDataTitles.length;userDataTitleIndex++){
+            tableTitles.add(userDataTitles[userDataTitleIndex]);
+        }
+        
+        return tableTitles;
+    }
+    
+    private UserDAOManager userDAOManager;
+    private Vector userTableTitles;
+    private static String[] userDataTitles = {"ID", "Name", "Nickname","Password"};
 }

@@ -109,7 +109,7 @@ public class UIAdmin extends javax.swing.JFrame {
         TabbedPane.addTab("<html><b><h3>Reportes</h3></b></html>", panelReports);
 
         labelTitulo1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        labelTitulo1.setText("AdministraciÃ³n de Productos");
+        labelTitulo1.setText("Administración de Productos");
         labelTitulo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         tableProducts.setModel(new javax.swing.table.DefaultTableModel(
@@ -226,12 +226,12 @@ public class UIAdmin extends javax.swing.JFrame {
         });
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        labelTitulo.setText("AdministraciÃ³n de Usuarios");
+        labelTitulo.setText("Administración de Usuarios");
         labelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         labelUserName.setText("Nombre");
 
-        labelUserPassword.setText("ContraseÃ±a");
+        labelUserPassword.setText("Contraseña");
 
         labelUserNickname.setText("NickName");
 
