@@ -81,15 +81,19 @@ public class Session {
     @Column (name = "ID")
     @GeneratedValue
     private int ID;
+    
     @Column (name = "initialtime")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date initialTime;
+    
     @Column (name = "finaltime")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date finalTime;
-    @Column (name = "user")
+    
     @ManyToOne
+    @JoinColumn (name = "user")
     private User user;
+    
     @Column (name = "isover")
     private boolean isOver;
 }
