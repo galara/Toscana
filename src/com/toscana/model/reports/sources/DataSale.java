@@ -5,11 +5,32 @@ import com.toscana.model.reports.types.PaymentType;
 import java.util.ArrayList;
 import java.util.Date;
 import com.toscana.model.sessions.Session;
+import java.util.Set;
 import javax.persistence.*;
 
 @Entity
 @Table (name = "sales")
 public class DataSale {
+     /*
+     * Class' constructors
+     */
+    public DataSale(int ID, Date date, Session session, Set<PaymentType> paymentTypes, double totalAmount, Set<Product> productsInSale) {
+        this.ID = ID;
+        this.date = date;
+        this.session = session;
+        this.paymentTypes = paymentTypes;
+        this.totalAmount = totalAmount;
+        this.productsInSale = productsInSale;
+    }
+    
+    public DataSale() {
+        this.ID = 0;
+        this.date = null ;
+        this.session = null;
+        this.paymentTypes = null;
+        this.totalAmount = 0;
+        this.productsInSale = null;
+    }
     
      /*
      * Class' methods
@@ -18,22 +39,19 @@ public class DataSale {
      /*
      * Getters and Setters
      */
+    @Id
+    @GeneratedValue()
+    @Column (name = "ID",unique = true,nullable = false)
     public int getID() {
-        return ID;
+        return this.ID;
     }
 
     public void setID(int ID) {
         this.ID = ID;
     }
 
-    public ArrayList getProductsInSale() {
-        return productsInSale;
-    }
-
-    public void setProductsInSale(ArrayList<Product> productsInSale) {
-        this.productsInSale = productsInSale;
-    }
-
+    @Column (name = "date", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     public Date getDate() {
         return date;
     }
@@ -42,6 +60,8 @@ public class DataSale {
         this.date = date;
     }
 
+    
+    @ManyToOne(cascade = CascadeType.ALL)
     public Session getSession() {
         return session;
     }
@@ -49,15 +69,18 @@ public class DataSale {
     public void setSession(Session session) {
         this.session = session;
     }
-
-    public ArrayList<PaymentType> getPaymentTypes() {
+    
+    
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sales")
+    public Set<PaymentType> getPaymentTypes() {
         return paymentTypes;
     }
 
-    public void setPaymentTypes(ArrayList<PaymentType> paymentTypes) {
+    public void setPaymentTypes(Set<PaymentType> paymentTypes) {
         this.paymentTypes = paymentTypes;
     }
-
+    
+    @Column (name = "totalamount", nullable = false)
     public double getTotal() {
         return totalAmount;
     }
@@ -66,6 +89,16 @@ public class DataSale {
         this.totalAmount = total;
     }
     
+    @ManyToMany(fetch=FetchType.LAZY, mappedBy = "products")
+    public Set<Product> getProductsInSale(){
+        return this.productsInSale;
+    } 
+    
+    public void setProductsInSale(Set<Product> productsInSale) {
+        this.productsInSale = productsInSale;
+    }
+    
+    
      /*
      * Inner methods
      */
@@ -73,32 +106,12 @@ public class DataSale {
      /*
      * Attributes
      */
-    @Id
-    @Column (name = "ID")
-    @GeneratedValue
+   
     private int ID;
-    
-    
-    @Column (name = "date")
-    @Temporal(javax.persistence.TemporalType.DATE)
     private Date date;
-    
-    @Column (name = "session")
-    @ManyToOne
     private Session session;
-    
-    @Column (name = "paymentypes")
-    @OneToMany
-    private ArrayList<PaymentType> paymentTypes;
-    
-    @Column (name = "totalamount")
+    private Set<PaymentType> paymentTypes;
     private double totalAmount;
-    /*****
-     INVESTIGAR ESTA FORMA DE GUARDAR
-     
-     ************/
-    @Column (name = "product")
-    @ManyToMany
-    private ArrayList<Product> productsInSale;
+    private Set<Product> productsInSale;
     
 }
