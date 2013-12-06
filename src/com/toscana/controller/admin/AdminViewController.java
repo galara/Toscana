@@ -4,7 +4,7 @@
  */
 package com.toscana.controller.admin;
 
-import com.toscana.controller.user.UserController;
+import com.toscana.controller.user.UserViewController;
 
 /**
  *
@@ -12,14 +12,16 @@ import com.toscana.controller.user.UserController;
  */
 public class AdminViewController {
     
-    private UserController userController;
+    private UserViewController userViewController;
 
     public AdminViewController() {
-        userController = new UserController();
+        userViewController = new UserViewController();
     }
 
-    public UserController getUserController() {
-        return userController;
+    public UserViewController getUserViewController() {
+        return userViewController;
     }
+    
+    
     
 }

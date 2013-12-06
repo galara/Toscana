@@ -10,7 +10,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -289,49 +288,52 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="buttonShowUpdateUser" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="buttonShowAddUser" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="buttonDeleteUser" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="buttonShowUpdateUser" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="buttonShowAddUser" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="labelUserNickname" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="fieldUserNickname" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="labelUserName" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="fieldUserName" min="-2" pref="153" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="buttonAddUser" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="labelUserPassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="labelUserPrivelege" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="fieldUserPassword" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="checkAdmin" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelUserNickname" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="fieldUserNickname" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="labelUserName" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fieldUserName" min="-2" pref="153" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="buttonAddUser" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="labelUserPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelUserPrivelege" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Component id="buttonUpdateUserData" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="fieldUserPassword" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="buttonDeleteUser" min="-2" max="-2" attributes="0"/>
+                                          <Component id="checkAdmin" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="userIDField" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -351,8 +353,6 @@
                               <Component id="buttonShowAddUser" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="buttonShowUpdateUser" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="buttonDeleteUser" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" min="-2" pref="206" max="-2" attributes="0"/>
                       </Group>
@@ -371,11 +371,13 @@
                           <Component id="fieldUserNickname" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelUserPrivelege" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="checkAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="userIDField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="buttonAddUser" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonUpdateUserData" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonDeleteUser" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="64" max="32767" attributes="0"/>
                   </Group>
@@ -449,7 +451,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="buttonDeleteUser">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar"/>
+                <Property name="text" type="java.lang.String" value="Eliminar Usuario"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDeleteUserActionPerformed"/>
@@ -518,6 +520,8 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Administrador"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="userIDField">
             </Component>
           </SubComponents>
         </Container>
