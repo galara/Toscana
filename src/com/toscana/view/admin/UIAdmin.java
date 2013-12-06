@@ -19,7 +19,6 @@ public class UIAdmin extends javax.swing.JFrame {
      */
     public UIAdmin() {
         initComponents();
-        labelUserID = new JLabel();
         adminViewController = new AdminViewController();
     }
 
@@ -47,24 +46,34 @@ public class UIAdmin extends javax.swing.JFrame {
         buttonAddProduct = new javax.swing.JButton();
         buttonUpdateProduct = new javax.swing.JButton();
         buttonDeleteProduct = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        productNameField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        productPriceField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        productDescriptionArea = new javax.swing.JTextArea();
+        jLabel5 = new javax.swing.JLabel();
+        productDiscountField = new javax.swing.JTextField();
         panelUsers = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableUsers = new javax.swing.JTable();
+        usersTable = new javax.swing.JTable();
         buttonShowAddUser = new javax.swing.JButton();
         buttonShowUpdateUser = new javax.swing.JButton();
         buttonDeleteUser = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
         labelUserName = new javax.swing.JLabel();
-        fieldUserName = new javax.swing.JTextField();
+        userNameField = new javax.swing.JTextField();
         labelUserPassword = new javax.swing.JLabel();
-        fieldUserPassword = new javax.swing.JTextField();
+        userPasswordField = new javax.swing.JTextField();
         labelUserNickname = new javax.swing.JLabel();
-        fieldUserNickname = new javax.swing.JTextField();
+        userNicknameField = new javax.swing.JTextField();
         labelUserPrivelege = new javax.swing.JLabel();
         buttonAddUser = new javax.swing.JButton();
         buttonUpdateUserData = new javax.swing.JButton();
         labelUserData = new javax.swing.JLabel();
-        checkAdmin = new javax.swing.JCheckBox();
+        isUserAnAdminCheckBox = new javax.swing.JCheckBox();
         userIDField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -140,6 +149,11 @@ public class UIAdmin extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tableProducts);
 
         buttonAddProduct.setText("Agregar");
+        buttonAddProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAddProductActionPerformed(evt);
+            }
+        });
 
         buttonUpdateProduct.setText("Editar");
         buttonUpdateProduct.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +164,20 @@ public class UIAdmin extends javax.swing.JFrame {
 
         buttonDeleteProduct.setText("Eliminar");
 
+        jLabel1.setText("Datos Productos");
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Precio");
+
+        jLabel4.setText("Descripción del Producto");
+
+        productDescriptionArea.setColumns(20);
+        productDescriptionArea.setRows(5);
+        jScrollPane1.setViewportView(productDescriptionArea);
+
+        jLabel5.setText("Descuento");
+
         javax.swing.GroupLayout panelProductsLayout = new javax.swing.GroupLayout(panelProducts);
         panelProducts.setLayout(panelProductsLayout);
         panelProductsLayout.setHorizontalGroup(
@@ -157,17 +185,39 @@ public class UIAdmin extends javax.swing.JFrame {
             .addGroup(panelProductsLayout.createSequentialGroup()
                 .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelProductsLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(labelTitulo1))
+                    .addGroup(panelProductsLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1))
+                    .addGroup(panelProductsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelProductsLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addGroup(panelProductsLayout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(productNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(61, 61, 61)
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(productPriceField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelProductsLayout.createSequentialGroup()
+                                        .addGap(86, 86, 86)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(productDiscountField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(buttonUpdateProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(buttonAddProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(buttonDeleteProduct)))
-                    .addGroup(panelProductsLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(labelTitulo1)))
+                            .addComponent(buttonDeleteProduct))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelProductsLayout.setVerticalGroup(
@@ -184,12 +234,28 @@ public class UIAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonDeleteProduct))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(productNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(productPriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(productDiscountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         TabbedPane.addTab("<html><b><h3>Productos</h3></b></html>", panelProducts);
 
-        tableUsers.setModel(new javax.swing.table.DefaultTableModel(
+        usersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -208,7 +274,7 @@ public class UIAdmin extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableUsers);
+        jScrollPane2.setViewportView(usersTable);
 
         buttonShowAddUser.setText("Agregar");
         buttonShowAddUser.addActionListener(new java.awt.event.ActionListener() {
@@ -241,9 +307,9 @@ public class UIAdmin extends javax.swing.JFrame {
 
         labelUserNickname.setText("NickName");
 
-        fieldUserNickname.addActionListener(new java.awt.event.ActionListener() {
+        userNicknameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldUserNicknameActionPerformed(evt);
+                userNicknameFieldActionPerformed(evt);
             }
         });
 
@@ -265,7 +331,7 @@ public class UIAdmin extends javax.swing.JFrame {
 
         labelUserData.setText("Datos Usuarios");
 
-        checkAdmin.setText("Administrador");
+        isUserAnAdminCheckBox.setText("Administrador");
 
         javax.swing.GroupLayout panelUsersLayout = new javax.swing.GroupLayout(panelUsers);
         panelUsers.setLayout(panelUsersLayout);
@@ -290,33 +356,32 @@ public class UIAdmin extends javax.swing.JFrame {
                                     .addComponent(buttonShowAddUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(panelUsersLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelUsersLayout.createSequentialGroup()
-                                .addComponent(labelUserNickname)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fieldUserNickname))
-                            .addGroup(panelUsersLayout.createSequentialGroup()
-                                .addComponent(labelUserName)
-                                .addGap(18, 18, 18)
-                                .addComponent(fieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(panelUsersLayout.createSequentialGroup()
+                                        .addComponent(labelUserNickname)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(userNicknameField))
+                                    .addGroup(panelUsersLayout.createSequentialGroup()
+                                        .addComponent(labelUserName)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(userNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(70, 70, 70)
+                                .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelUserPassword)
+                                    .addComponent(labelUserPrivelege)))
                             .addGroup(panelUsersLayout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addComponent(buttonAddUser)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelUserPassword)
-                                .addComponent(labelUserPrivelege))
-                            .addGroup(panelUsersLayout.createSequentialGroup()
-                                .addComponent(buttonUpdateUserData)
-                                .addGap(9, 9, 9)))
-                        .addGap(18, 18, 18)
+                                .addComponent(buttonAddUser)
+                                .addGap(32, 32, 32)
+                                .addComponent(buttonUpdateUserData)))
                         .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panelUsersLayout.createSequentialGroup()
                                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(buttonDeleteUser)
-                                    .addComponent(checkAdmin))
+                                    .addComponent(isUserAnAdminCheckBox))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(userIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -338,15 +403,15 @@ public class UIAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUserName)
-                    .addComponent(fieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelUserPassword)
-                    .addComponent(fieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUserNickname)
-                    .addComponent(fieldUserNickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userNicknameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelUserPrivelege)
-                    .addComponent(checkAdmin)
+                    .addComponent(isUserAnAdminCheckBox)
                     .addComponent(userIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(panelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -392,9 +457,9 @@ public class UIAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonUpdateProductActionPerformed
 
-    private void fieldUserNicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUserNicknameActionPerformed
+    private void userNicknameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNicknameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fieldUserNicknameActionPerformed
+    }//GEN-LAST:event_userNicknameFieldActionPerformed
 
     private void buttonShowAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowAddUserActionPerformed
         // TODO add your handling code here:
@@ -407,26 +472,30 @@ public class UIAdmin extends javax.swing.JFrame {
     private void buttonDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteUserActionPerformed
         // TODO add your handling code here:
         showUserFields(false);
-        adminViewController.getUserViewController().deleteUserFromGUI(userIDField, userIDField, userIDField, userIDField, checkAdmin);
-        adminViewController.getUserViewController().showAllUsersInTable(tableUsers);
+        adminViewController.getUserViewController().deleteUserFromGUI(usersTable, usersTable.getSelectedRow());
+        adminViewController.getUserViewController().showAllUsersInTable(usersTable);
     }//GEN-LAST:event_buttonDeleteUserActionPerformed
 
     private void buttonAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddUserActionPerformed
         // TODO add your handling code here:
-        adminViewController.getUserViewController().addUserFromGUI(fieldUserName, fieldUserPassword, fieldUserNickname, checkAdmin);
-        adminViewController.getUserViewController().showAllUsersInTable(tableUsers);
+        adminViewController.getUserViewController().addUserFromGUI(userNameField, userPasswordField, userNicknameField, isUserAnAdminCheckBox);
+        adminViewController.getUserViewController().showAllUsersInTable(usersTable);
     }//GEN-LAST:event_buttonAddUserActionPerformed
 
     private void buttonUpdateUserDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateUserDataActionPerformed
         // TODO add your handling code here:
-        adminViewController.getUserViewController().updateUserFromGUI(userIDField, fieldUserName, fieldUserPassword, fieldUserNickname, checkAdmin);
-        adminViewController.getUserViewController().showAllUsersInTable(tableUsers);
+        adminViewController.getUserViewController().updateUserFromGUI(userIDField, userNameField, userPasswordField, userNicknameField, isUserAnAdminCheckBox);
+        adminViewController.getUserViewController().showAllUsersInTable(usersTable);
     }//GEN-LAST:event_buttonUpdateUserDataActionPerformed
 
+    private void buttonAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddProductActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonAddProductActionPerformed
+
     private void clearUserFields(){
-        fieldUserName.setText("");
-        fieldUserPassword.setText("");
-        fieldUserNickname.setText("");
+        userNameField.setText("");
+        userPasswordField.setText("");
+        userNicknameField.setText("");
         
     }
     private void showUserFields(boolean isShown){
@@ -436,9 +505,9 @@ public class UIAdmin extends javax.swing.JFrame {
         labelUserNickname.setVisible(isShown);
         labelUserPrivelege.setVisible(isShown);
         
-        fieldUserName.setVisible(isShown);
-        fieldUserPassword.setVisible(isShown);
-        fieldUserNickname.setVisible(isShown);
+        userNameField.setVisible(isShown);
+        userPasswordField.setVisible(isShown);
+        userNicknameField.setVisible(isShown);
         
         
         buttonAddUser.setVisible(isShown);
@@ -487,7 +556,6 @@ public class UIAdmin extends javax.swing.JFrame {
     //  Variables declaration
     
     private AdminViewController adminViewController;
-    private JLabel labelUserID;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JButton buttonAddProduct;
@@ -499,15 +567,18 @@ public class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JButton buttonShowUpdateUser;
     private javax.swing.JButton buttonUpdateProduct;
     private javax.swing.JButton buttonUpdateUserData;
-    private javax.swing.JCheckBox checkAdmin;
-    private javax.swing.JTextField fieldUserName;
-    private javax.swing.JTextField fieldUserNickname;
-    private javax.swing.JTextField fieldUserPassword;
+    private javax.swing.JCheckBox isUserAnAdminCheckBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelTitulo;
@@ -520,8 +591,15 @@ public class UIAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel panelProducts;
     private javax.swing.JPanel panelReports;
     private javax.swing.JPanel panelUsers;
+    private javax.swing.JTextArea productDescriptionArea;
+    private javax.swing.JTextField productDiscountField;
+    private javax.swing.JTextField productNameField;
+    private javax.swing.JTextField productPriceField;
     private javax.swing.JTable tableProducts;
-    private javax.swing.JTable tableUsers;
     private javax.swing.JTextField userIDField;
+    private javax.swing.JTextField userNameField;
+    private javax.swing.JTextField userNicknameField;
+    private javax.swing.JTextField userPasswordField;
+    private javax.swing.JTable usersTable;
     // End of variables declaration//GEN-END:variables
 }

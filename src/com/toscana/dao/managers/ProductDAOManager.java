@@ -13,10 +13,10 @@ import java.util.ArrayList;
 /**
  *
  */
-public class ProductsDAOManager {
+public class ProductDAOManager {
     private ProductDAO productsDAO;
     
-    public ProductsDAOManager(){
+    public ProductDAOManager(){
         productsDAO = new ProductsDAOImplementation();
     }
     

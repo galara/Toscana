@@ -32,8 +32,8 @@ public class UserViewController {
         userController.updateUser(userToUpdate);
     }
 
-    public void deleteUserFromGUI(JTextField userId, JTextField userNameField, JTextField userPasswordField, JTextField userNicknameField, JCheckBox userIsAdminCheck) {
-        User userToDelete = constructUserFromFields(userId, userNameField, userPasswordField, userNicknameField, userIsAdminCheck);
+    public void deleteUserFromGUI(JTable userTable, int selectedRow) {
+        User userToDelete = constructUserFromTableRow(userTable, selectedRow);
         userController.deleteUser(userToDelete);
     }
     
@@ -170,7 +170,6 @@ public class UserViewController {
 
         return resultingVector;
     }
-
     private static UserController userController= new UserController();
     
     private static final int ID_TABLE_INDEX=0;
