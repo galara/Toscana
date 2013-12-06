@@ -44,6 +44,15 @@ public class ProductController {
 
         return allProductsList;
     }
+    
+    public Product getProductByID(int IdProduct){
+        Product foundProduct = null;
+        foundProduct = productDAOManager.findByID(IdProduct);
+        
+        return foundProduct;
+    }
 
     private ProductDAOManager productDAOManager;
+    
+    private static int MANJAR_PRODUCT_ID=1;
 }

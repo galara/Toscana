@@ -286,6 +286,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Coca-Cola 600"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCoca600ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonCoca1L">
           <Properties>
@@ -422,6 +425,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manjar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonManjarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonSupAtun">
               <Properties>
