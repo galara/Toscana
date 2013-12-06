@@ -9,8 +9,6 @@ public class Product {
     /*
      *Class Constructors
      */
-  
-
     
     public Product() {
         this.ID = 0;

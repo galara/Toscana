@@ -2,6 +2,7 @@ package com.toscana.model.reports.sources;
 
 import com.toscana.model.products.Product;
 import com.toscana.model.reports.types.PaymentType;
+import com.toscana.model.sessions.Session;
 import java.util.ArrayList;
 import java.util.Date;
 import com.toscana.model.sessions.Session;

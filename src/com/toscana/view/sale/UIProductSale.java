@@ -4,6 +4,9 @@
  */
 package com.toscana.view.sale;
 
+import com.toscana.controller.product.ProductController;
+import com.toscana.controller.product.ProductViewController;
+
 /**
  *
  * @author Arandi
@@ -166,6 +169,11 @@ public class UIProductSale extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Bebidas"));
 
         buttonCoca600.setText("Coca-Cola 600");
+        buttonCoca600.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCoca600ActionPerformed(evt);
+            }
+        });
 
         buttonCoca1L.setText("Coca-Cola 1L");
 
@@ -211,6 +219,11 @@ public class UIProductSale extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Las más pedidas"));
 
         buttonManjar.setText("Manjar");
+        buttonManjar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonManjarActionPerformed(evt);
+            }
+        });
 
         buttonSupAtun.setText("Sup Atún");
 
@@ -408,6 +421,15 @@ public class UIProductSale extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void buttonManjarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonManjarActionPerformed
+        // TODO add your handling code here:
+        productController.getProductByID(ICONIFIED);
+    }//GEN-LAST:event_buttonManjarActionPerformed
+
+    private void buttonCoca600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca600ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonCoca600ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -444,6 +466,7 @@ public class UIProductSale extends javax.swing.JFrame {
             }
         });
     }
+    private ProductController productController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAguaNatural;
     private javax.swing.JButton buttonCoca1L;
