@@ -65,6 +65,18 @@ public class ProductDAOManager {
         return productFound;
     }
     
+    public Product findByName(String NameToFind){
+        Product productFound = null;
+        try {
+            ToscanaHibernateUtil.beginTransaction();
+            productsDAO.findByName(NameToFind);
+            ToscanaHibernateUtil.commitTransaction();
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        return productFound;
+    }
+    
     public ArrayList findAll(){
         ArrayList<Product> allProducts = new ArrayList<>();
         try {

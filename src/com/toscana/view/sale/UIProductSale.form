@@ -85,7 +85,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tableSoldProducts">
+            <Component class="javax.swing.JTable" name="saleProductTable">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -151,13 +151,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                  <Component id="createNewSaleBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButton7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="233" max="-2" attributes="0"/>
+                  <Component id="totalCashToPayField" min="-2" pref="233" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -168,7 +168,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton7" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="createNewSaleBtn" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -181,29 +181,32 @@
                   <EmptySpace min="26" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="jTextField1" max="32767" attributes="0"/>
+                  <Component id="totalCashToPayField" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="createNewSaleBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nueva Venta"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createNewSaleBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton7">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cobrar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="totalCashToPayField">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="totalCashToPayFieldActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -294,21 +297,33 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Coca-Cola 1L"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCoca1LActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonCocaLight">
           <Properties>
             <Property name="text" type="java.lang.String" value="Coca-Cola light"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCocaLightActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonNestea">
           <Properties>
             <Property name="text" type="java.lang.String" value="NestTea 600"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNesteaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonAguaNatural">
           <Properties>
             <Property name="text" type="java.lang.String" value="Agua Natural 500"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAguaNaturalActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -433,21 +448,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sup At&#xfa;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSupAtunActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonDeseo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Deseo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDeseoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonExquisita">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Exquisita"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonExquisitaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonIrresistible">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Irresistible"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIrresistibleActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -493,16 +520,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Marco Polo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonMarcoPoloActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonDeliciosa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Deliciosa"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDeliciosaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonMixta">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mixta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonMixtaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -560,26 +596,41 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Toscana"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonToscanaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonVegetariana">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Vegetariana"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonVegetarianaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonSupSalmon">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sup. Salm&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSupSalmonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonDelicatessen">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delicatessen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDelicatessenActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonVenecia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Venecia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonVeneciaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

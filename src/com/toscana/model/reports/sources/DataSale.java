@@ -66,6 +66,10 @@ public class DataSale {
         this.totalAmount = total;
     }
     
+    public void addAProductToProductsInSale(Product productToAdd){
+        this.productsInSale.add(productToAdd);
+    }
+    
      /*
      * Inner methods
      */

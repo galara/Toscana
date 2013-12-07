@@ -4,8 +4,7 @@
  */
 package com.toscana.view.sale;
 
-import com.toscana.controller.product.ProductController;
-import com.toscana.controller.product.ProductViewController;
+import com.toscana.controller.gui.UIProductSaleController;
 
 /**
  *
@@ -31,11 +30,11 @@ public class UIProductSale extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableSoldProducts = new javax.swing.JTable();
+        saleProductTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        createNewSaleBtn = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        totalCashToPayField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -73,7 +72,7 @@ public class UIProductSale extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Productos"));
 
-        tableSoldProducts.setModel(new javax.swing.table.DefaultTableModel(
+        saleProductTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -84,8 +83,8 @@ public class UIProductSale extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableSoldProducts.setEnabled(false);
-        jScrollPane2.setViewportView(tableSoldProducts);
+        saleProductTable.setEnabled(false);
+        jScrollPane2.setViewportView(saleProductTable);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -102,14 +101,19 @@ public class UIProductSale extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Controles de venta"));
 
-        jButton6.setText("Nueva Venta");
+        createNewSaleBtn.setText("Nueva Venta");
+        createNewSaleBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createNewSaleBtnActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Cobrar");
 
-        jTextField1.setEnabled(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        totalCashToPayField.setEnabled(false);
+        totalCashToPayField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                totalCashToPayFieldActionPerformed(evt);
             }
         });
 
@@ -138,13 +142,13 @@ public class UIProductSale extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(createNewSaleBtn)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(totalCashToPayField, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -153,7 +157,7 @@ public class UIProductSale extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(createNewSaleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,7 +166,7 @@ public class UIProductSale extends javax.swing.JFrame {
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jTextField1)
+                .addComponent(totalCashToPayField)
                 .addContainerGap())
         );
 
@@ -176,12 +180,32 @@ public class UIProductSale extends javax.swing.JFrame {
         });
 
         buttonCoca1L.setText("Coca-Cola 1L");
+        buttonCoca1L.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCoca1LActionPerformed(evt);
+            }
+        });
 
         buttonCocaLight.setText("Coca-Cola light");
+        buttonCocaLight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCocaLightActionPerformed(evt);
+            }
+        });
 
         buttonNestea.setText("NestTea 600");
+        buttonNestea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNesteaActionPerformed(evt);
+            }
+        });
 
         buttonAguaNatural.setText("Agua Natural 500");
+        buttonAguaNatural.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAguaNaturalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -226,12 +250,32 @@ public class UIProductSale extends javax.swing.JFrame {
         });
 
         buttonSupAtun.setText("Sup Atún");
+        buttonSupAtun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSupAtunActionPerformed(evt);
+            }
+        });
 
         buttonDeseo.setText("Deseo");
+        buttonDeseo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDeseoActionPerformed(evt);
+            }
+        });
 
         buttonExquisita.setText("Exquisita");
+        buttonExquisita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonExquisitaActionPerformed(evt);
+            }
+        });
 
         buttonIrresistible.setText("Irresistible");
+        buttonIrresistible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonIrresistibleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -271,10 +315,25 @@ public class UIProductSale extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Las económicas"));
 
         buttonMarcoPolo.setText("Marco Polo");
+        buttonMarcoPolo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMarcoPoloActionPerformed(evt);
+            }
+        });
 
         buttonDeliciosa.setText("Deliciosa");
+        buttonDeliciosa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDeliciosaActionPerformed(evt);
+            }
+        });
 
         buttonMixta.setText("Mixta");
+        buttonMixta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMixtaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -303,14 +362,39 @@ public class UIProductSale extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Las Especiales"));
 
         buttonToscana.setText("Toscana");
+        buttonToscana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonToscanaActionPerformed(evt);
+            }
+        });
 
         buttonVegetariana.setText("Vegetariana");
+        buttonVegetariana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVegetarianaActionPerformed(evt);
+            }
+        });
 
         buttonSupSalmon.setText("Sup. Salmón");
+        buttonSupSalmon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSupSalmonActionPerformed(evt);
+            }
+        });
 
         buttonDelicatessen.setText("Delicatessen");
+        buttonDelicatessen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDelicatessenActionPerformed(evt);
+            }
+        });
 
         buttonVenecia.setText("Venecia");
+        buttonVenecia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVeneciaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -417,18 +501,108 @@ public class UIProductSale extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void totalCashToPayFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalCashToPayFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_totalCashToPayFieldActionPerformed
 
     private void buttonManjarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonManjarActionPerformed
         // TODO add your handling code here:
-        productController.getProductByID(ICONIFIED);
+        guiController.addProductToSale("manjar");
+        guiController.increaseSalePrice("manjar");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonManjarActionPerformed
 
     private void buttonCoca600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca600ActionPerformed
         // TODO add your handling code here:
+        guiController.addProductToSale("coca cola 600");
+        guiController.increaseSalePrice("coca cola 600");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonCoca600ActionPerformed
+
+    private void createNewSaleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewSaleBtnActionPerformed
+        // TODO add your handling code here:
+        guiController.createNewSale();
+    }//GEN-LAST:event_createNewSaleBtnActionPerformed
+
+    private void buttonCoca1LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca1LActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductButtonFunction("coca cola 1l",saleProductTable);
+    }//GEN-LAST:event_buttonCoca1LActionPerformed
+
+    private void buttonCocaLightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCocaLightActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("coca cola light");
+    }//GEN-LAST:event_buttonCocaLightActionPerformed
+
+    private void buttonNesteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNesteaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("nestea 600");
+    }//GEN-LAST:event_buttonNesteaActionPerformed
+
+    private void buttonAguaNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAguaNaturalActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductButtonFunction("agua natural 500");
+    }//GEN-LAST:event_buttonAguaNaturalActionPerformed
+
+    private void buttonExquisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExquisitaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("exquisita");
+    }//GEN-LAST:event_buttonExquisitaActionPerformed
+
+    private void buttonIrresistibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrresistibleActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("irresistible");
+    }//GEN-LAST:event_buttonIrresistibleActionPerformed
+
+    private void buttonSupAtunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupAtunActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("sup atun");
+    }//GEN-LAST:event_buttonSupAtunActionPerformed
+
+    private void buttonDeseoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeseoActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("deseo");
+    }//GEN-LAST:event_buttonDeseoActionPerformed
+
+    private void buttonDeliciosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeliciosaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("deliciosa");
+    }//GEN-LAST:event_buttonDeliciosaActionPerformed
+
+    private void buttonMarcoPoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMarcoPoloActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("marco polo");
+    }//GEN-LAST:event_buttonMarcoPoloActionPerformed
+
+    private void buttonMixtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMixtaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("mixta");
+    }//GEN-LAST:event_buttonMixtaActionPerformed
+
+    private void buttonToscanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonToscanaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("toscana");
+    }//GEN-LAST:event_buttonToscanaActionPerformed
+
+    private void buttonVegetarianaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVegetarianaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("vegetariana");
+    }//GEN-LAST:event_buttonVegetarianaActionPerformed
+
+    private void buttonVeneciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVeneciaActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("venecia");
+    }//GEN-LAST:event_buttonVeneciaActionPerformed
+
+    private void buttonSupSalmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupSalmonActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("sup salmon");
+    }//GEN-LAST:event_buttonSupSalmonActionPerformed
+
+    private void buttonDelicatessenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDelicatessenActionPerformed
+        // TODO add your handling code here:
+        guiController.addProductTosale("delicatessen");
+    }//GEN-LAST:event_buttonDelicatessenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -466,7 +640,9 @@ public class UIProductSale extends javax.swing.JFrame {
             }
         });
     }
-    private ProductController productController;
+   
+    
+    private UIProductSaleController guiController = new UIProductSaleController();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAguaNatural;
     private javax.swing.JButton buttonCoca1L;
@@ -486,11 +662,11 @@ public class UIProductSale extends javax.swing.JFrame {
     private javax.swing.JButton buttonToscana;
     private javax.swing.JButton buttonVegetariana;
     private javax.swing.JButton buttonVenecia;
+    private javax.swing.JButton createNewSaleBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -503,7 +679,7 @@ public class UIProductSale extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable tableSoldProducts;
+    private javax.swing.JTable saleProductTable;
+    private javax.swing.JTextField totalCashToPayField;
     // End of variables declaration//GEN-END:variables
 }
