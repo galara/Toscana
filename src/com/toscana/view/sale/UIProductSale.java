@@ -33,7 +33,7 @@ public class UIProductSale extends javax.swing.JFrame {
         saleProductTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         createNewSaleBtn = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        cashSaleBtn = new javax.swing.JButton();
         totalCashToPayField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -108,7 +108,12 @@ public class UIProductSale extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Cobrar");
+        cashSaleBtn.setText("Cobrar");
+        cashSaleBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashSaleBtnActionPerformed(evt);
+            }
+        });
 
         totalCashToPayField.setEnabled(false);
         totalCashToPayField.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +149,7 @@ public class UIProductSale extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(createNewSaleBtn)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                .addComponent(cashSaleBtn)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -156,7 +161,7 @@ public class UIProductSale extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cashSaleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(createNewSaleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -636,6 +641,11 @@ public class UIProductSale extends javax.swing.JFrame {
         guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDelicatessenActionPerformed
 
+    private void cashSaleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashSaleBtnActionPerformed
+        // TODO add your handling code here:
+        guiController.cashCurrentSale(); //Cash es usado como verbo en este caso significando Cobrar
+    }//GEN-LAST:event_cashSaleBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -694,12 +704,12 @@ public class UIProductSale extends javax.swing.JFrame {
     private javax.swing.JButton buttonToscana;
     private javax.swing.JButton buttonVegetariana;
     private javax.swing.JButton buttonVenecia;
+    private javax.swing.JButton cashSaleBtn;
     private javax.swing.JButton createNewSaleBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

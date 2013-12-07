@@ -4,6 +4,8 @@
  */
 package com.toscana.view.sale;
 
+import com.toscana.model.reports.sources.DataSale;
+
 /**
  *
  * @author Arandi
@@ -13,9 +15,9 @@ public class UICashPayment extends javax.swing.JDialog {
     /**
      * Creates new form UICashPayment
      */
-    public UICashPayment(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public UICashPayment(DataSale saleToCash) {
         initComponents();
+        this.saleToCash=saleToCash;
     }
 
     /**
@@ -53,7 +55,7 @@ public class UICashPayment extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        buttonAccept.setText("OK");
+        buttonAccept.setText("Cobrar");
 
         buttonCancel.setText("Cancel");
 
@@ -215,7 +217,7 @@ public class UICashPayment extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                UICashPayment dialog = new UICashPayment(new javax.swing.JFrame(), true);
+                UICashPayment dialog = new UICashPayment(saleToCash);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -226,6 +228,8 @@ public class UICashPayment extends javax.swing.JDialog {
             }
         });
     }
+    
+    private static DataSale saleToCash;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAccept;
     private javax.swing.JButton buttonCancel;

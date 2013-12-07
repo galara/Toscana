@@ -108,6 +108,19 @@ public class ProductViewController {
         DefaultTableModel productsTableModel = new DefaultTableModel(allProductsInfoVector, tableColumnTitles);
         productTable.setModel(productsTableModel);
     }
+    
+        public void showAllProductsFromSaleInTable(JTable productTable, ArrayList allProductsInSale) {
+        ArrayList<Product> allProductsArrayList;
+
+        allProductsArrayList = allProductsInSale;
+
+        //DefaultTableModel needs a Vector instead of an ArrayList, so its needed to parse the ArrayList into a Vector
+        Vector allProductsInfoVector = parseProductsArrayListToVector(allProductsArrayList);
+        Vector tableColumnTitles = getProductsTableColumnNames();
+
+        DefaultTableModel productsTableModel = new DefaultTableModel(allProductsInfoVector, tableColumnTitles);
+        productTable.setModel(productsTableModel);
+    }
 
     public void showProductsInfoInFields(Product productToShow, JTextField idField, JTextField nameField, JTextField priceField, JTextArea descriptionArea, JTextField discountField) {
         String idFieldText, nameFieldText, priceFieldText, descriptionAreaText, discountFieldText;
@@ -124,6 +137,8 @@ public class ProductViewController {
         descriptionArea.setText(descriptionAreaText);
         discountField.setText(discountFieldText);
     }
+    
+
     
     /*
      * Bloque gets Users Info

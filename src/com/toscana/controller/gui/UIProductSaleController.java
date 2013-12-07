@@ -5,9 +5,11 @@
 package com.toscana.controller.gui;
 
 import com.toscana.controller.product.ProductController;
+import com.toscana.controller.product.ProductViewController;
 import com.toscana.controller.sales.SaleController;
 import com.toscana.model.products.Product;
 import com.toscana.model.reports.sources.DataSale;
+import com.toscana.view.sale.UICashPayment;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -34,8 +36,7 @@ public class UIProductSaleController {
     }
     
     public void createNewSale(){
-        currentSale = saleController.getSale();
-        currentSale.setTotal(INITAL_TOTAL_AMOUNT);
+        currentSale = saleController.getNewSale();
     }
     
     public void refreshDataSaleUIElements(JTable saleProductTable,JTextField totalCashToPayField){
@@ -43,6 +44,15 @@ public class UIProductSaleController {
         showAllSaleProductsInTable(saleProductTable);
     }
     
+    public void cashCurrentSale(){
+        UICashPayment cashPaymentUI = new UICashPayment(currentSale);
+        cashPaymentUI.setVisible(true);
+    }
+    
+    /*
+     * Private Methods
+     */
+ 
     private void refreshTotalCashFieldText(JTextField totalCashToPayField){
         String totalCashTextField;
         totalCashTextField = String.valueOf(currentSale.getTotal());
@@ -50,14 +60,14 @@ public class UIProductSaleController {
     }
     
     private void showAllSaleProductsInTable(JTable saleProductTable){
-        ArrayList <Product> allProductInSale = currentSale.getProductsInSale();
+        ArrayList <Product> allProductsInSale = currentSale.getProductsInSale();
+        productViewController.showAllProductsFromSaleInTable(saleProductTable, allProductsInSale); 
     }
-    
-   
-    
+       
      private DataSale currentSale;
-     private ProductController productController;
      private SaleController saleController;
+     private ProductController productController;
+     private ProductViewController productViewController;
      
-     private static double INITAL_TOTAL_AMOUNT = 0.0;
+
 }

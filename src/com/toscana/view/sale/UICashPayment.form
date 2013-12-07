@@ -164,7 +164,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="buttonAccept">
       <Properties>
-        <Property name="text" type="java.lang.String" value="OK"/>
+        <Property name="text" type="java.lang.String" value="Cobrar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="buttonCancel">

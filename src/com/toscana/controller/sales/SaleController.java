@@ -17,6 +17,8 @@ public class SaleController {
     
     public DataSale getNewSale(){
         DataSale newSale = new DataSale();
+        newSale.setTotal(INITAL_TOTAL_AMOUNT);
+        
         return newSale;
     }
 
@@ -45,4 +47,5 @@ public class SaleController {
      * Attributes
      */
     private DataSale sale;
+    private static double INITAL_TOTAL_AMOUNT = 0.0;
 }
