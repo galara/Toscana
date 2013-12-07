@@ -5,8 +5,6 @@
 package com.toscana.view.admin;
 
 import com.toscana.controller.admin.AdminViewController;
-import com.toscana.controller.user.UserViewController;
-import javax.swing.JLabel;
 
 /**
  *
