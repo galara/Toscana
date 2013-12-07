@@ -1,7 +1,6 @@
 package com.toscana.model.reports.sources;
 
 import com.toscana.model.products.Product;
-import com.toscana.model.reports.types.PaymentType;
 import com.toscana.model.sessions.Session;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,11 +12,10 @@ public class DataSale {
      /*
      * Class' constructors
      */
-    public DataSale(int ID, Date date, Session session, ArrayList<PaymentType> paymentTypes, double totalAmount, ArrayList<Product> productsInSale) {
+    public DataSale(int ID, Date date, Session session, double totalAmount, ArrayList<Product> productsInSale) {
         this.ID = ID;
         this.date = date;
         this.session = session;
-        this.paymentTypes = paymentTypes;
         this.totalAmount = totalAmount;
         this.productsInSale = productsInSale;
     }
@@ -26,7 +24,6 @@ public class DataSale {
         this.ID = 0;
         this.date = null ;
         this.session = null;
-        this.paymentTypes = null;
         this.totalAmount = 0;
         this.productsInSale = null;
     }
@@ -69,16 +66,6 @@ public class DataSale {
         this.session = session;
     }
     
-    
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sales")
-    public ArrayList<PaymentType> getPaymentTypes() {
-        return paymentTypes;
-    }
-
-    public void setPaymentTypes(ArrayList<PaymentType> paymentTypes) {
-        this.paymentTypes = paymentTypes;
-    }
-    
     @Column (name = "totalamount", nullable = false)
     public double getTotal() {
         return totalAmount;
@@ -115,7 +102,6 @@ public class DataSale {
     private int ID;
     private Date date;
     private Session session;
-    private ArrayList<PaymentType> paymentTypes;
     private double totalAmount;
     private ArrayList<Product> productsInSale;
     

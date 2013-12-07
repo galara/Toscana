@@ -1,8 +1,6 @@
 package com.toscana.model.reports.sources;
 
-import com.toscana.model.reports.types.SummaryPaymentsType;
 import com.toscana.model.sessions.Session;
-import java.util.ArrayList;
 import javax.persistence.*;
 
 @Entity
@@ -28,14 +26,6 @@ public class DataSystemCashCount {
     public void setSession(Session session) {
         this.session = session;
     }
-    
-    public ArrayList<SummaryPaymentsType> getSummaryPayments() {
-        return summaryPayments;
-    }
-
-    public void setSummaryPayments(ArrayList<SummaryPaymentsType> summaryPayments) {
-        this.summaryPayments = summaryPayments;
-    }
      /*
      * Inner methods
      */
@@ -53,7 +43,5 @@ public class DataSystemCashCount {
     @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")
     private Session session;
 
-    @OneToMany
-    private ArrayList<SummaryPaymentsType> summaryPayments;
 }
  
