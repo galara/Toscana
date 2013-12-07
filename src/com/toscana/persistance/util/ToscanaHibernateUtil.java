@@ -5,8 +5,8 @@
 package com.toscana.persistance.util;
 
 import org.hibernate.Session;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
@@ -22,7 +22,7 @@ public class ToscanaHibernateUtil {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml) 
             // config file.
-            sessionFactory = new AnnotationConfiguration().configure(
+            sessionFactory = new Configuration().configure(
                                  "/com/toscana/config/hibernate.cfg.xml"
                                  ).buildSessionFactory();
         } catch (Throwable ex) {
