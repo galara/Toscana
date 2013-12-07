@@ -526,82 +526,114 @@ public class UIProductSale extends javax.swing.JFrame {
 
     private void buttonCoca1LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca1LActionPerformed
         // TODO add your handling code here:
-        guiController.addProductButtonFunction("coca cola 1l",saleProductTable);
+        guiController.addProductToSale("coca cola 1l");
+        guiController.increaseSalePrice("coca cola 1l");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonCoca1LActionPerformed
 
     private void buttonCocaLightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCocaLightActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("coca cola light");
+        guiController.addProductToSale("coca cola light");
+        guiController.increaseSalePrice("coca cola light");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonCocaLightActionPerformed
 
     private void buttonNesteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNesteaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("nestea 600");
+        guiController.addProductToSale("nestea 600");
+        guiController.increaseSalePrice("nestea 600");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonNesteaActionPerformed
 
     private void buttonAguaNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAguaNaturalActionPerformed
         // TODO add your handling code here:
-        guiController.addProductButtonFunction("agua natural 500");
+        guiController.addProductToSale("agua natural 500");
+        guiController.increaseSalePrice("agua natural 500");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonAguaNaturalActionPerformed
 
     private void buttonExquisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExquisitaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("exquisita");
+        guiController.addProductToSale("exquisita");
+        guiController.increaseSalePrice("exquisita");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonExquisitaActionPerformed
 
     private void buttonIrresistibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrresistibleActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("irresistible");
+        guiController.addProductToSale("irresistible");
+        guiController.increaseSalePrice("irresistible");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonIrresistibleActionPerformed
 
     private void buttonSupAtunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupAtunActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("sup atun");
+        guiController.addProductToSale("sup atun");
+        guiController.increaseSalePrice("sup atun");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonSupAtunActionPerformed
 
     private void buttonDeseoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeseoActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("deseo");
+        guiController.addProductToSale("deseo");
+        guiController.increaseSalePrice("deseo");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDeseoActionPerformed
 
     private void buttonDeliciosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeliciosaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("deliciosa");
+        guiController.addProductToSale("deliciosa");
+        guiController.increaseSalePrice("deliciosa");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDeliciosaActionPerformed
 
     private void buttonMarcoPoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMarcoPoloActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("marco polo");
+        guiController.addProductToSale("marco polo");
+        guiController.increaseSalePrice("marco polo");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonMarcoPoloActionPerformed
 
     private void buttonMixtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMixtaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("mixta");
+        guiController.addProductToSale("mixta");
+        guiController.increaseSalePrice("mixta");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonMixtaActionPerformed
 
     private void buttonToscanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonToscanaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("toscana");
+        guiController.addProductToSale("toscana");
+        guiController.increaseSalePrice("toscana");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonToscanaActionPerformed
 
     private void buttonVegetarianaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVegetarianaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("vegetariana");
+        guiController.addProductToSale("vegetariana");
+        guiController.increaseSalePrice("vegetariana");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonVegetarianaActionPerformed
 
     private void buttonVeneciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVeneciaActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("venecia");
+        guiController.addProductToSale("venecia");
+        guiController.increaseSalePrice("venecia");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonVeneciaActionPerformed
 
     private void buttonSupSalmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupSalmonActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("sup salmon");
+        guiController.addProductToSale("sup salmon");
+        guiController.increaseSalePrice("sup salmon");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonSupSalmonActionPerformed
 
     private void buttonDelicatessenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDelicatessenActionPerformed
         // TODO add your handling code here:
-        guiController.addProductTosale("delicatessen");
+        guiController.addProductToSale("delicatessen");
+        guiController.increaseSalePrice("delicatessen");
+        guiController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDelicatessenActionPerformed
 
     /**
