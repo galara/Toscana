@@ -26,17 +26,17 @@ public class UIProductSaleController {
          */
         Product productToAdd=null;
         productToAdd =productController.getProductByName(productName);
-        saleController.addProductToCurrentSale(productToAdd,currentSale);   
+        saleController.addProductToCurrentSale(productToAdd);   
     }
     
     public void increaseSalePrice(String productName){
         Product product=null;
         product =productController.getProductByName(productName);
-        saleController.increaseSaleTotalAmount(product, currentSale);
+        saleController.increaseSaleTotalAmount(product);
     }
     
     public void createNewSale(){
-        currentSale = saleController.getNewSale();
+        saleController.getNewSale();
     }
     
     public void refreshDataSaleUIElements(JTable saleProductTable,JTextField totalCashToPayField){
@@ -45,7 +45,7 @@ public class UIProductSaleController {
     }
     
     public void cashCurrentSale(){
-        UICashPayment cashPaymentUI = new UICashPayment(currentSale);
+        UICashPayment cashPaymentUI = new UICashPayment(saleController.getSale());
         cashPaymentUI.setVisible(true);
     }
     
@@ -55,16 +55,15 @@ public class UIProductSaleController {
  
     private void refreshTotalCashFieldText(JTextField totalCashToPayField){
         String totalCashTextField;
-        totalCashTextField = String.valueOf(currentSale.getTotal());
+        totalCashTextField = String.valueOf(saleController.getSale().getTotal());
         totalCashToPayField.setText(totalCashTextField);
     }
     
     private void showAllSaleProductsInTable(JTable saleProductTable){
-        ArrayList <Product> allProductsInSale = currentSale.getProductsInSale();
+        ArrayList <Product> allProductsInSale = saleController.getSale().getProductsInSale();
         productViewController.showAllProductsFromSaleInTable(saleProductTable, allProductsInSale); 
     }
        
-     private DataSale currentSale;
      private SaleController saleController;
      private ProductController productController;
      private ProductViewController productViewController;

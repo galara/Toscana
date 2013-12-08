@@ -1,5 +1,7 @@
 package com.toscana.controller.sales;
 
+import com.toscana.model.dao.implementations.DataSaleDAOImplementation;
+import com.toscana.model.dao.interfaces.DataSaleDAO;
 import com.toscana.model.products.Product;
 import com.toscana.model.reports.sources.DataSale;
 
@@ -8,6 +10,34 @@ public class SaleController {
     /*
      * Class methods
      */
+    
+    
+    public SaleController(){
+        this.sale = new DataSale();
+        this.saleDAO = new DataSaleDAOImplementation();
+    }
+
+    
+    
+    public void addProductToCurrentSale(Product productToAdd){
+        sale.addAProductToProductsInSale(productToAdd);
+    }
+    
+    public void increaseSaleTotalAmount(Product product){
+        double productPrice = product.getPrice();
+        double oldSaleAmount, newSaleAmount;
+        oldSaleAmount=sale.getTotal();
+        newSaleAmount= oldSaleAmount + productPrice;
+        sale.setTotal(newSaleAmount);
+    }
+    
+    public void saveCurrentSale(){
+        try {
+            saleDAO.add(sale);
+        } catch (Exception e) {
+        }
+    }
+    
     /*
      * Getters and Setters
      */
@@ -25,19 +55,6 @@ public class SaleController {
     public void setSale(DataSale sale) {
         this.sale = sale;
     }
-    
-    public void addProductToCurrentSale(Product productToAdd,DataSale currentSale){
-        currentSale.addAProductToProductsInSale(productToAdd);
-    }
-    
-    public void increaseSaleTotalAmount(Product product,DataSale currentSale){
-        double productPrice = product.getPrice();
-        double oldSaleAmount, newSaleAmount;
-        oldSaleAmount=currentSale.getTotal();
-        newSaleAmount= oldSaleAmount + productPrice;
-        currentSale.setTotal(newSaleAmount);
-    }
-    
 
      /*
      * Inner methods
@@ -47,5 +64,6 @@ public class SaleController {
      * Attributes
      */
     private DataSale sale;
+    private DataSaleDAO saleDAO;
     private static double INITAL_TOTAL_AMOUNT = 0.0;
 }
