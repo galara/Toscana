@@ -8,7 +8,6 @@ import com.toscana.controller.product.ProductController;
 import com.toscana.controller.product.ProductViewController;
 import com.toscana.controller.sales.SaleController;
 import com.toscana.model.products.Product;
-import com.toscana.model.reports.sources.DataSale;
 import com.toscana.view.sale.UICashPayment;
 import java.util.ArrayList;
 import javax.swing.JTable;
@@ -45,7 +44,8 @@ public class UIProductSaleController {
     }
     
     public void cashCurrentSale(){
-        UICashPayment cashPaymentUI = new UICashPayment(saleController.getSale());
+        UICashPayment cashPaymentUI;
+        cashPaymentUI = new UICashPayment(saleController.getSale());
         cashPaymentUI.setVisible(true);
     }
     
