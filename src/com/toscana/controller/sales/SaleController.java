@@ -1,5 +1,6 @@
 package com.toscana.controller.sales;
 
+import com.toscana.dao.managers.DataSaleDAOManager;
 import com.toscana.model.dao.implementations.DataSaleDAOImplementation;
 import com.toscana.model.dao.interfaces.DataSaleDAO;
 import com.toscana.model.products.Product;
@@ -14,7 +15,7 @@ public class SaleController {
     
     public SaleController(){
         this.sale = new DataSale();
-        this.saleDAO = new DataSaleDAOImplementation();
+        this.saleDAOManager = new DataSaleDAOManager();
     }
 
     
@@ -33,7 +34,7 @@ public class SaleController {
     
     public void saveCurrentSale(){
         try {
-            saleDAO.add(sale);
+            saleDAOManager.add(sale);
         } catch (Exception e) {
         }
     }
@@ -64,6 +65,6 @@ public class SaleController {
      * Attributes
      */
     private DataSale sale;
-    private DataSaleDAO saleDAO;
+    private DataSaleDAOManager saleDAOManager;
     private static double INITAL_TOTAL_AMOUNT = 0.0;
 }
