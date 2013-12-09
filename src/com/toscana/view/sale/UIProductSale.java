@@ -4,7 +4,7 @@
  */
 package com.toscana.view.sale;
 
-import com.toscana.controller.gui.UIProductSaleController;
+import com.toscana.controller.gui.ProductSaleViewController;
 import com.toscana.model.products.ProductsNames;
 
 /**
@@ -18,7 +18,7 @@ public class UIProductSale extends javax.swing.JFrame {
      */
     public UIProductSale() {
         initComponents();
-        productSaleController = new UIProductSaleController();
+        productSaleController = new ProductSaleViewController();
     }
 
     /**
@@ -528,7 +528,7 @@ public class UIProductSale extends javax.swing.JFrame {
 
     private void createNewSaleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewSaleBtnActionPerformed
         // TODO add your handling code here:
-        productSaleController = new UIProductSaleController();
+        productSaleController = new ProductSaleViewController(); 
     }//GEN-LAST:event_createNewSaleBtnActionPerformed
 
     private void buttonCoca1LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca1LActionPerformed
@@ -686,7 +686,7 @@ public class UIProductSale extends javax.swing.JFrame {
     }
    
     
-    private UIProductSaleController productSaleController;
+    private ProductSaleViewController productSaleController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAguaNatural;
     private javax.swing.JButton buttonCoca1L;

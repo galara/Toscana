@@ -4,7 +4,7 @@
  */
 package com.toscana.view.sale;
 
-import com.toscana.controller.gui.UICashPaymentController;
+import com.toscana.controller.gui.CashPaymentViewController;
 import com.toscana.model.reports.sources.DataSale;
 
 /**
@@ -218,7 +218,7 @@ public class UICashPayment extends javax.swing.JDialog {
     }
     
     private static DataSale saleToCash;
-    private UICashPaymentController cashPaymentController = new UICashPaymentController(saleToCash);
+    private CashPaymentViewController cashPaymentController = new CashPaymentViewController(saleToCash);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField amountToPayField;
     private javax.swing.JButton buttonCancel;

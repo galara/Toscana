@@ -12,12 +12,12 @@ import javax.swing.JTextField;
  *
  * @author Compac
  */
-public class UICashPaymentController {
+public class CashPaymentViewController {
     
     /*
      * Public Methods
      */
-    public UICashPaymentController(DataSale saleToCash){
+    public CashPaymentViewController(DataSale saleToCash){
         this.saleToCash =saleToCash;
     }
     

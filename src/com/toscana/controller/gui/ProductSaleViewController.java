@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author Compac
  */
-public class UIProductSaleController {
+public class ProductSaleViewController {
     
     public void addProductToSale(String productName){
         /*
