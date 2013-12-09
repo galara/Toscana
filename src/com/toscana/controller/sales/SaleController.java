@@ -56,7 +56,8 @@ public class SaleController {
     
     public void increaseSaleTotalAmount(Product product){
         double productPrice = product.getPrice();
-        double oldSaleAmount, newSaleAmount;
+        double oldSaleAmount; 
+        double newSaleAmount;
         
         oldSaleAmount=sale.getTotal();
         newSaleAmount= oldSaleAmount + productPrice;

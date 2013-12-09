@@ -4,12 +4,9 @@
  */
 package com.toscana.controller.product;
 
-import com.toscana.controller.user.UserController;
 import com.toscana.model.products.Product;
-import com.toscana.model.sessions.User;
 import java.util.ArrayList;
 import java.util.Vector;
-import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -25,6 +22,14 @@ public class ProductViewController {
      * Altas, Bajas y Cambios desde la GUI
      */
     
+    public ProductViewController() {
+        productController = new ProductController();
+    }
+    
+    public ProductController getProductController() {
+        return productController;
+    }
+
     public void addProductFromGUI(JTextField productNameField, JTextField productPriceField, JTextArea productDescArea, JTextField productDiscountField) {
         Product productToAdd = constructProductFromFields(productNameField, productPriceField,productDescArea, productDiscountField);
         productController.addProduct(productToAdd);
@@ -109,7 +114,7 @@ public class ProductViewController {
         productTable.setModel(productsTableModel);
     }
     
-        public void showAllProductsFromSaleInTable(JTable productTable, ArrayList allProductsInSale) {
+        public void showAllProductsInTable(JTable productTable, ArrayList allProductsInSale) {
         ArrayList<Product> allProductsArrayList;
 
         allProductsArrayList = allProductsInSale;
@@ -178,7 +183,7 @@ public class ProductViewController {
 
         return resultingVector;
     }
-    private static ProductController productController= new ProductController();
+    private ProductController productController= new ProductController();
     
     private static final int ID_TABLE_INDEX=0;
     private static final int NAME_TABLE_INDEX=1;

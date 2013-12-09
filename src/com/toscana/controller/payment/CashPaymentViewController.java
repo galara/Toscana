@@ -5,7 +5,9 @@
 package com.toscana.controller.payment;
 
 import com.toscana.controller.sales.SaleController;
+import com.toscana.helper.parsing.ToscanaParseUtility;
 import com.toscana.model.reports.sources.DataSale;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -19,6 +21,12 @@ public class CashPaymentViewController {
      */
     public CashPaymentViewController(DataSale saleToCash){
         this.saleToCash =saleToCash;
+        dataSaleController = new SaleController();
+    }
+
+    public CashPaymentViewController() {
+        dataSaleController = new SaleController();
+        saleToCash = new DataSale();
     }
     
     public void setTextAmountToPayField(JTextField amountToPayField){
@@ -26,7 +34,7 @@ public class CashPaymentViewController {
         Double totalCashToPay;
         
         totalCashToPay = saleToCash.getTotal();
-        fieldText = doubleToString(totalCashToPay);
+        fieldText = ToscanaParseUtility.doubleToString(totalCashToPay);
         
         amountToPayField.setText(fieldText);
     }
@@ -36,7 +44,7 @@ public class CashPaymentViewController {
         String paidPesosString;
         
         paidPesosString =paidPesosAmountField.getText();
-        paidPesos = stringToDouble(paidPesosString);
+        paidPesos = ToscanaParseUtility.stringToDouble(paidPesosString);
         
         return paidPesos;
     }
@@ -44,9 +52,9 @@ public class CashPaymentViewController {
     public void cashingSale(Double paidAmount){
         
         if(isEnoughCash(paidAmount)){
-           saleController.addSale(saleToCash);
+           dataSaleController.addSale(saleToCash);
         }else{
-            
+            JOptionPane.showMessageDialog(null, WARNING_MESSAGE_NOT_ENOUGH_CASH, WARNING_TITLE, JOptionPane.WARNING_MESSAGE);
         }
         
     }
@@ -61,13 +69,8 @@ public class CashPaymentViewController {
         return isEnoughCash;
     }
     
-    private String doubleToString(Double doubleToParse){
-        return String.valueOf(doubleToParse);
-    }
-    
-    private Double stringToDouble(String stringToParse){
-        return Double.parseDouble(stringToParse);
-    }
     private DataSale saleToCash; 
-    private SaleController saleController;
+    private SaleController dataSaleController;
+    private static final String WARNING_TITLE = "Advertancia";
+    private static final String WARNING_MESSAGE_NOT_ENOUGH_CASH = "Falta dinero";
 }

@@ -4,7 +4,6 @@
  */
 package com.toscana.controller.payment;
 
-import com.toscana.controller.product.ProductController;
 import com.toscana.controller.product.ProductViewController;
 import com.toscana.controller.sales.SaleController;
 import com.toscana.model.products.Product;
@@ -18,24 +17,26 @@ import javax.swing.JTextField;
  * @author Compac
  */
 public class ProductSaleViewController {
+
+    public ProductSaleViewController() {
+        //productController = new ProductController();
+        productViewController = new ProductViewController();
+        dataSaleController = new SaleController();
+    }
     
     public void addProductToSale(String productName){
         /*
          * Adding the product to the Sale
          */
         Product productToAdd=null;
-        productToAdd =productController.getProductByName(productName);
-        saleController.addProductToCurrentSale(productToAdd);   
+        productToAdd = productViewController.getProductController().getProductByName(productName);
+        dataSaleController.addProductToCurrentSale(productToAdd);   
     }
     
-    public void increaseSalePrice(String productName){
+    public void increaseSaleTotalAmount(String productName){
         Product product=null;
-        product =productController.getProductByName(productName);
-        saleController.increaseSaleTotalAmount(product);
-    }
-    
-    public void createNewSale(){
-        saleController.getNewSale();
+        product = productViewController.getProductController().getProductByName(productName);
+        dataSaleController.increaseSaleTotalAmount(product);
     }
     
     public void refreshDataSaleUIElements(JTable saleProductTable,JTextField totalCashToPayField){
@@ -43,9 +44,9 @@ public class ProductSaleViewController {
         showAllSaleProductsInTable(saleProductTable);
     }
     
-    public void cashCurrentSale(){
+    public void showCashPaymentUI(){
         UICashPayment cashPaymentUI;
-        cashPaymentUI = new UICashPayment(saleController.getSale());
+        cashPaymentUI = new UICashPayment(dataSaleController.getSale());
         cashPaymentUI.setVisible(true);
     }
     
@@ -55,17 +56,17 @@ public class ProductSaleViewController {
  
     private void refreshTotalCashFieldText(JTextField totalCashToPayField){
         String totalCashTextField;
-        totalCashTextField = String.valueOf(saleController.getSale().getTotal());
+        totalCashTextField = String.valueOf(dataSaleController.getSale().getTotal());
         totalCashToPayField.setText(totalCashTextField);
     }
     
     private void showAllSaleProductsInTable(JTable saleProductTable){
-        ArrayList <Product> allProductsInSale = saleController.getSale().getProductsInSale();
-        productViewController.showAllProductsFromSaleInTable(saleProductTable, allProductsInSale); 
+        ArrayList <Product> allProductsInSale = dataSaleController.getSale().getProductsInSale();
+        productViewController.showAllProductsInTable(saleProductTable, allProductsInSale); 
     }
        
-     private SaleController saleController;
-     private ProductController productController;
+     private SaleController dataSaleController;
+     //private ProductController productController;
      private ProductViewController productViewController;
      
 

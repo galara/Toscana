@@ -18,7 +18,7 @@ public class UIProductSale extends javax.swing.JFrame {
      */
     public UIProductSale() {
         initComponents();
-        productSaleController = new ProductSaleViewController();
+        productSaleViewController = new ProductSaleViewController();
     }
 
     /**
@@ -514,138 +514,138 @@ public class UIProductSale extends javax.swing.JFrame {
 
     private void buttonManjarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonManjarActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.MANJAR_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.MANJAR_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.MANJAR_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.MANJAR_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonManjarActionPerformed
 
     private void buttonCoca600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca600ActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.COCA600_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.COCA600_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.COCA600_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.COCA600_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonCoca600ActionPerformed
 
     private void createNewSaleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewSaleBtnActionPerformed
         // TODO add your handling code here:
-        productSaleController = new ProductSaleViewController(); 
+        productSaleViewController = new ProductSaleViewController(); 
     }//GEN-LAST:event_createNewSaleBtnActionPerformed
 
     private void buttonCoca1LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCoca1LActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.COCA1L_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.COCA1L_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.COCA1L_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.COCA1L_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonCoca1LActionPerformed
 
     private void buttonCocaLightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCocaLightActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.COCALIGHT_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.COCALIGHT_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.COCALIGHT_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.COCALIGHT_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonCocaLightActionPerformed
 
     private void buttonNesteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNesteaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.NESTEA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.NESTEA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.NESTEA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.NESTEA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonNesteaActionPerformed
 
     private void buttonAguaNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAguaNaturalActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.AGUA_NATURAL_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.AGUA_NATURAL_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.AGUA_NATURAL_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.AGUA_NATURAL_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonAguaNaturalActionPerformed
 
     private void buttonExquisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExquisitaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.EXQUISITA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.EXQUISITA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.EXQUISITA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.EXQUISITA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonExquisitaActionPerformed
 
     private void buttonIrresistibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIrresistibleActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.IRRESISTEBLE_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.IRRESISTEBLE_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.IRRESISTEBLE_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.IRRESISTEBLE_PRODUCT_NAME);        
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonIrresistibleActionPerformed
 
     private void buttonSupAtunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupAtunActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.SUPR_AUTUN_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.SUPR_AUTUN_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.SUPR_AUTUN_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.SUPR_AUTUN_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonSupAtunActionPerformed
 
     private void buttonDeseoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeseoActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.DESEO_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.DESEO_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.DESEO_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.DESEO_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDeseoActionPerformed
 
     private void buttonDeliciosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeliciosaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.DELICIOSA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.DELICIOSA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.DELICIOSA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.DELICIOSA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDeliciosaActionPerformed
 
     private void buttonMarcoPoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMarcoPoloActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.MARCOPOLO_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.MARCOPOLO_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.MARCOPOLO_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.MARCOPOLO_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonMarcoPoloActionPerformed
 
     private void buttonMixtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMixtaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.MIXTA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.MIXTA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.MIXTA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.MIXTA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonMixtaActionPerformed
 
     private void buttonToscanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonToscanaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.TOSCANA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.TOSCANA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.TOSCANA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.TOSCANA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonToscanaActionPerformed
 
     private void buttonVegetarianaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVegetarianaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.VEGETARIANA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.VEGETARIANA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.VEGETARIANA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.VEGETARIANA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonVegetarianaActionPerformed
 
     private void buttonVeneciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVeneciaActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.VENECIA_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.VENECIA_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.VENECIA_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.VENECIA_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonVeneciaActionPerformed
 
     private void buttonSupSalmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupSalmonActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.SUPR_SALMON_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.SUPR_AUTUN_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.SUPR_SALMON_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.SUPR_SALMON_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonSupSalmonActionPerformed
 
     private void buttonDelicatessenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDelicatessenActionPerformed
         // TODO add your handling code here:
-        productSaleController.addProductToSale(ProductsNames.DELICATESSEN_PRODUCT_NAME);
-        productSaleController.increaseSalePrice(ProductsNames.DELICATESSEN_PRODUCT_NAME);
-        productSaleController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
+        productSaleViewController.addProductToSale(ProductsNames.DELICATESSEN_PRODUCT_NAME);
+        productSaleViewController.increaseSaleTotalAmount(ProductsNames.DELICATESSEN_PRODUCT_NAME);
+        productSaleViewController.refreshDataSaleUIElements(saleProductTable,totalCashToPayField);
     }//GEN-LAST:event_buttonDelicatessenActionPerformed
 
     private void cashSaleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashSaleBtnActionPerformed
         // TODO add your handling code here:
-        productSaleController.cashCurrentSale(); //Cash es usado como verbo en este caso significando Cobrar
+        productSaleViewController.showCashPaymentUI(); //Cash es usado como verbo en este caso significando Cobrar
     }//GEN-LAST:event_cashSaleBtnActionPerformed
 
     /**
@@ -686,7 +686,7 @@ public class UIProductSale extends javax.swing.JFrame {
     }
    
     
-    private ProductSaleViewController productSaleController;
+    private ProductSaleViewController productSaleViewController;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAguaNatural;
     private javax.swing.JButton buttonCoca1L;
