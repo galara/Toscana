@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.toscana.controller.gui;
+package com.toscana.controller.payment;
 
 import com.toscana.controller.sales.SaleController;
 import com.toscana.model.reports.sources.DataSale;

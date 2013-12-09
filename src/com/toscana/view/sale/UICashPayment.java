@@ -4,7 +4,7 @@
  */
 package com.toscana.view.sale;
 
-import com.toscana.controller.gui.CashPaymentViewController;
+import com.toscana.controller.payment.CashPaymentViewController;
 import com.toscana.model.reports.sources.DataSale;
 
 /**
