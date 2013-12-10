@@ -4,13 +4,13 @@ import com.toscana.dao.managers.DataSaleDAOManager;
 import com.toscana.model.products.Product;
 import com.toscana.model.reports.sources.DataSale;
 
-public class SaleController {
+public class DataSaleController {
 
     /*
      * Constructors
      */
-    public SaleController(){
-        this.sale = new DataSale();
+    public DataSaleController(){
+        this.dataSale = new DataSale();
         this.saleDAOManager = new DataSaleDAOManager();
     }
 
@@ -33,25 +33,19 @@ public class SaleController {
      * Getters and Setters
      */
     public DataSale getSale() {
-        return sale;
+        return dataSale;
     }
     
     public void setSale(DataSale sale) {
-        this.sale = sale;
+        this.dataSale = sale;
     }
     
-    public DataSale getNewSale(){
-        DataSale newSale = new DataSale();
-        newSale.setTotal(INITAL_TOTAL_AMOUNT);
-        
-        return newSale;
-    }
     /*
      * Others public methods
      */
     
     public void addProductToCurrentSale(Product productToAdd){
-        sale.addAProductToProductsInSale(productToAdd);
+        dataSale.addAProductToProductsInSale(productToAdd);
     }
     
     public void increaseSaleTotalAmount(Product product){
@@ -59,21 +53,22 @@ public class SaleController {
         double oldSaleAmount; 
         double newSaleAmount;
         
-        oldSaleAmount=sale.getTotal();
+        oldSaleAmount=dataSale.getTotal();
         newSaleAmount= oldSaleAmount + productPrice;
-        sale.setTotal(newSaleAmount);
+        dataSale.setTotal(newSaleAmount);
     }
     
-    public void saveCurrentSale(){
-        try {
-            saleDAOManager.add(sale);
-        } catch (Exception e) {
-        }
-    }
+//    public void saveCurrentSale(){
+//        try {
+//            saleDAOManager.add(dataSale);
+//        } catch (Exception e) {
+//            
+//        }
+ //   }
+    
      /*
      * Attributes
      */
-    private DataSale sale;
+    private DataSale dataSale;
     private DataSaleDAOManager saleDAOManager;
-    private static double INITAL_TOTAL_AMOUNT = 0.0;
 }

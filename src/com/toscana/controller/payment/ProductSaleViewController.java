@@ -5,7 +5,7 @@
 package com.toscana.controller.payment;
 
 import com.toscana.controller.product.ProductViewController;
-import com.toscana.controller.sales.SaleController;
+import com.toscana.controller.sales.DataSaleController;
 import com.toscana.model.products.Product;
 import com.toscana.view.sale.UICashPayment;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class ProductSaleViewController {
     public ProductSaleViewController() {
         //productController = new ProductController();
         productViewController = new ProductViewController();
-        dataSaleController = new SaleController();
+        dataSaleController = new DataSaleController();
     }
     
     public void addProductToSale(String productName){
@@ -65,7 +65,7 @@ public class ProductSaleViewController {
         productViewController.showAllProductsInTable(saleProductTable, allProductsInSale); 
     }
        
-     private SaleController dataSaleController;
+     DataSaleController dataSaleController;
      //private ProductController productController;
      private ProductViewController productViewController;
      

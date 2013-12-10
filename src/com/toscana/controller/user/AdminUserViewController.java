@@ -16,12 +16,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Compac
  */
-public class UserViewController {
-    
+public class AdminUserViewController {
+
+    public AdminUserViewController() {
+        userController = new UserController();
+    }
+
     /*
      * Altas, Bajas y Cambios desde la GUI
      */
-    
     public void addUserFromGUI(JTextField userNameField, JTextField userPasswordField, JTextField userNicknameField, JCheckBox userIsAdminCheck) {
         User userToAdd = constructUserFromFields(userNameField, userPasswordField, userNicknameField, userIsAdminCheck);
         userController.addUser(userToAdd);
@@ -37,62 +40,7 @@ public class UserViewController {
         userController.deleteUser(userToDelete);
     }
     
-    
     /*
-     * Bloque Constructs
-     */
-    public User constructUserFromTableRow(JTable userTable, int selectedRow) {
-        int userId;
-        String userName, userPassword, userNickname;
-        boolean isUserAnAdmin;
-
-
-        //Getting info from table in the selected row
-        userId = (Integer) userTable.getValueAt(selectedRow, ID_TABLE_INDEX);
-        userName = (String) userTable.getValueAt(selectedRow, NAME_TABLE_INDEX);
-        userPassword = (String) userTable.getValueAt(selectedRow, PASSWORD_TABLE_INDEX);
-        userNickname = (String) userTable.getValueAt(selectedRow, NICKNAME_TABLE_INDEX);
-        isUserAnAdmin = userHasAdminPrivilege(userTable, selectedRow);
-
-        User constructedUser;
-        constructedUser = new User(userId, userName, userPassword, userNickname, isUserAnAdmin);
-
-        return constructedUser;
-    }
-    
-        private User constructUserFromFields(JTextField idField, JTextField nameField, JTextField passwordField, JTextField nicknameField, JCheckBox isAdminCheck) {
-        int userId;
-        String userName, userPassword, userNickname;
-        boolean isUserAnAdmin;
-
-        userId = Integer.parseInt(idField.getText());
-        userName = nameField.getText();
-        userPassword = passwordField.getText();
-        userNickname = nicknameField.getText();
-        isUserAnAdmin = isAdminCheck.isSelected();
-
-        User constructedUser;
-        constructedUser = new User(userId, userName, userPassword, userNickname, isUserAnAdmin);
-
-        return constructedUser;
-    }
-
-    private User constructUserFromFields(JTextField nameField, JTextField passwordField, JTextField nicknameField, JCheckBox isAdminCheck) {
-        String userName, userPassword, userNickname;
-        boolean isUserAnAdmin;
-
-        userName = nameField.getText();
-        userPassword = passwordField.getText();
-        userNickname = nicknameField.getText();
-        isUserAnAdmin = isAdminCheck.isSelected();
-
-        User constructedUser;
-        constructedUser = new User(userName, userPassword, userNickname, isUserAnAdmin);
-
-        return constructedUser;
-    }
-    
-     /*
      * Bloque Shows
      */
     public void showAllUsersInTable(JTable usersTable) {
@@ -121,7 +69,64 @@ public class UserViewController {
         passwordField.setText(passwordFieldText);
         nicknameField.setText(nicknameFieldText);
     }
-    
+
+    /*
+     * Bloque Constructs
+     */
+    private User constructUserFromTableRow(JTable userTable, int selectedRow) {
+        int userId;
+        String userName, userPassword, userNickname;
+        boolean isUserAnAdmin;
+
+        //Getting info from table in the selected row
+        userId = (Integer) userTable.getValueAt(selectedRow, ID_TABLE_INDEX);
+        userName = (String) userTable.getValueAt(selectedRow, NAME_TABLE_INDEX);
+        userPassword = (String) userTable.getValueAt(selectedRow, PASSWORD_TABLE_INDEX);
+        userNickname = (String) userTable.getValueAt(selectedRow, NICKNAME_TABLE_INDEX);
+        isUserAnAdmin = userHasAdminPrivilege(userTable, selectedRow);
+
+        User constructedUser;
+        constructedUser = new User(userId, userName, userPassword, userNickname, isUserAnAdmin);
+
+        return constructedUser;
+    }
+
+    private User constructUserFromFields(JTextField idField, JTextField nameField, JTextField passwordField, JTextField nicknameField, JCheckBox isAdminCheck) {
+        int userId;
+        String userName; 
+        String userPassword; 
+        String userNickname;
+        boolean isUserAnAdmin;
+
+        userId = Integer.parseInt(idField.getText());
+        userName = nameField.getText();
+        userPassword = passwordField.getText();
+        userNickname = nicknameField.getText();
+        isUserAnAdmin = isAdminCheck.isSelected();
+
+        User constructedUser;
+        constructedUser = new User(userId, userName, userPassword, userNickname, isUserAnAdmin);
+
+        return constructedUser;
+    }
+
+    private User constructUserFromFields(JTextField nameField, JTextField passwordField, JTextField nicknameField, JCheckBox isAdminCheck) {
+        String userName; 
+        String userPassword; 
+        String userNickname;
+        boolean isUserAnAdmin;
+
+        userName = nameField.getText();
+        userPassword = passwordField.getText();
+        userNickname = nicknameField.getText();
+        isUserAnAdmin = isAdminCheck.isSelected();
+
+        User constructedUser;
+        constructedUser = new User(userName, userPassword, userNickname, isUserAnAdmin);
+
+        return constructedUser;
+    }
+
     /*
      * Bloque gets Users Info
      */
@@ -133,9 +138,9 @@ public class UserViewController {
         if (userPrivilegeStatus.equals(USER_IS_ADMIN)) {
             userIsAdmin = true;
         }
-         return userIsAdmin;
+        return userIsAdmin;
     }
-    
+
     private static Vector getUsersTableColumnNames() {
 
         Vector usersTableColumnNames = new Vector();
@@ -148,8 +153,8 @@ public class UserViewController {
 
         return usersTableColumnNames;
     }
-    
-        /*
+
+    /*
      * Bloque Parses
      */
     private static Vector parseUsersArrayListToVector(ArrayList<User> ArrayListToParse) {
@@ -170,21 +175,19 @@ public class UserViewController {
 
         return resultingVector;
     }
-    private static UserController userController= new UserController();
-    
-    private static final int ID_TABLE_INDEX=0;
-    private static final int NAME_TABLE_INDEX=1;
-    private static final int PASSWORD_TABLE_INDEX=2;
-    private static final int NICKNAME_TABLE_INDEX=3;
-    private static final int PRIVILEGE_TABLE_INDEX=4;
-    
-    private static final String ID_TABLE_COLUMN_NAME="ID";
-    private static final String NAME_TABLE_COLUMN_NAME="Nombre";
-    private static final String PASSWORD_TABLE_COLUMN_NAME="Contraseña";
-    private static final String NICKNAME_TABLE_COLUMN_NAME="Nickname";
-    private static final String PRIVILEGE_TABLE_COLUMN_NAME="Privelegios";
-    
-    private static final String USER_IS_ADMIN="Administrador";
-}
-    
+    private static UserController userController;
 
+    private static final int ID_TABLE_INDEX = 0;
+    private static final int NAME_TABLE_INDEX = 1;
+    private static final int PASSWORD_TABLE_INDEX = 2;
+    private static final int NICKNAME_TABLE_INDEX = 3;
+    private static final int PRIVILEGE_TABLE_INDEX = 4;
+
+    private static final String ID_TABLE_COLUMN_NAME = "ID";
+    private static final String NAME_TABLE_COLUMN_NAME = "Nombre";
+    private static final String PASSWORD_TABLE_COLUMN_NAME = "Contraseña";
+    private static final String NICKNAME_TABLE_COLUMN_NAME = "Nickname";
+    private static final String PRIVILEGE_TABLE_COLUMN_NAME = "Privelegios";
+
+    private static final String USER_IS_ADMIN = "Administrador";
+}

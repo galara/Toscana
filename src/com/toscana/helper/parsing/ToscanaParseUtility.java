@@ -12,12 +12,21 @@ package com.toscana.helper.parsing;
  */
 public class ToscanaParseUtility {
     
-    public static String doubleToString(Double doubleToParse){
+    public static String toString(Double doubleToParse){
         return String.valueOf(doubleToParse);
+    }
+    
+    public static String toString(Integer integerToParse){
+        return String.valueOf(integerToParse);
     }
     
     public static Double stringToDouble(String stringToParse){
         return Double.parseDouble(stringToParse);
     }
+    
+    public static int stringToInt(String stringToParse){
+        return Integer.parseInt(stringToParse);
+    }
+    
     
 }

@@ -4,7 +4,7 @@
  */
 package com.toscana.controller.payment;
 
-import com.toscana.controller.sales.SaleController;
+import com.toscana.controller.sales.DataSaleController;
 import com.toscana.helper.parsing.ToscanaParseUtility;
 import com.toscana.model.reports.sources.DataSale;
 import javax.swing.JOptionPane;
@@ -21,11 +21,11 @@ public class CashPaymentViewController {
      */
     public CashPaymentViewController(DataSale saleToCash){
         this.saleToCash =saleToCash;
-        dataSaleController = new SaleController();
+        dataSaleController = new DataSaleController();
     }
 
     public CashPaymentViewController() {
-        dataSaleController = new SaleController();
+        dataSaleController = new DataSaleController();
         saleToCash = new DataSale();
     }
     
@@ -34,7 +34,7 @@ public class CashPaymentViewController {
         Double totalCashToPay;
         
         totalCashToPay = saleToCash.getTotal();
-        fieldText = ToscanaParseUtility.doubleToString(totalCashToPay);
+        fieldText = ToscanaParseUtility.toString(totalCashToPay);
         
         amountToPayField.setText(fieldText);
     }
@@ -70,7 +70,7 @@ public class CashPaymentViewController {
     }
     
     private DataSale saleToCash; 
-    private SaleController dataSaleController;
+    private DataSaleController dataSaleController;
     private static final String WARNING_TITLE = "Advertancia";
     private static final String WARNING_MESSAGE_NOT_ENOUGH_CASH = "Falta dinero";
 }

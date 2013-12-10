@@ -4,6 +4,7 @@
  */
 package com.toscana.controller.product;
 
+import com.toscana.helper.parsing.ToscanaParseUtility;
 import com.toscana.model.products.Product;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -65,37 +66,21 @@ public class ProductViewController {
 
         return constructedProduct;
     }
-    
-        private Product constructProductFromFields(JTextField productIDField ,JTextField productNameField, JTextField productPriceField, JTextArea productDescArea, JTextField productDiscountField) {
-        int productId;
-        double productPrice,productDiscount;
-        String productName,  productDescription;
+   
+    public void showProductsInfoInFields(Product productToShow, JTextField idField, JTextField nameField, JTextField priceField, JTextArea descriptionArea, JTextField discountField) {
+        String idFieldText, nameFieldText, priceFieldText, descriptionAreaText, discountFieldText;
 
-        productId = Integer.parseInt(productIDField.getText());
-        productName = productNameField.getText();
-        productPrice = Double.parseDouble(productPriceField.getText());
-        productDescription = productDescArea.getText();
-        productDiscount = Double.parseDouble(productDiscountField.getText());
+        idFieldText = ToscanaParseUtility.toString(productToShow.getID());
+        nameFieldText = productToShow.getName();
+        priceFieldText = ToscanaParseUtility.toString(productToShow.getPrice());
+        descriptionAreaText = productToShow.getDescription();
+        discountFieldText = ToscanaParseUtility.toString(productToShow.getDiscount());
 
-        Product constructedProduct;
-        constructedProduct = new Product(productId, productName, productPrice,productDescription, productDiscount);
-
-        return constructedProduct;
-    }
-
-    private Product constructProductFromFields(JTextField productNameField, JTextField productPriceField, JTextArea productDescArea, JTextField productDiscountField) {
-        double productPrice,productDiscount;
-        String productName,  productDescription;
-
-        productName = productNameField.getText();
-        productPrice = Double.parseDouble(productPriceField.getText());
-        productDescription = productDescArea.getText();
-        productDiscount = Double.parseDouble(productDiscountField.getText());
-
-        Product constructedProduct;
-        constructedProduct = new Product(productName, productPrice,productDescription, productDiscount);
-
-        return constructedProduct;
+        idField.setText(idFieldText);
+        nameField.setText(nameFieldText);
+        priceField.setText(priceFieldText);
+        descriptionArea.setText(descriptionAreaText);
+        discountField.setText(discountFieldText);
     }
     
      /*
@@ -114,7 +99,7 @@ public class ProductViewController {
         productTable.setModel(productsTableModel);
     }
     
-        public void showAllProductsInTable(JTable productTable, ArrayList allProductsInSale) {
+    public void showAllProductsInTable(JTable productTable, ArrayList allProductsInSale) {
         ArrayList<Product> allProductsArrayList;
 
         allProductsArrayList = allProductsInSale;
@@ -126,28 +111,8 @@ public class ProductViewController {
         DefaultTableModel productsTableModel = new DefaultTableModel(allProductsInfoVector, tableColumnTitles);
         productTable.setModel(productsTableModel);
     }
-
-    public void showProductsInfoInFields(Product productToShow, JTextField idField, JTextField nameField, JTextField priceField, JTextArea descriptionArea, JTextField discountField) {
-        String idFieldText, nameFieldText, priceFieldText, descriptionAreaText, discountFieldText;
-
-        idFieldText = String.valueOf(productToShow.getID());
-        nameFieldText = productToShow.getName();
-        priceFieldText = String.valueOf(productToShow.getPrice());
-        descriptionAreaText = productToShow.getDescription();
-        discountFieldText = String.valueOf(productToShow.getDiscount());
-
-        idField.setText(idFieldText);
-        nameField.setText(nameFieldText);
-        priceField.setText(priceFieldText);
-        descriptionArea.setText(descriptionAreaText);
-        discountField.setText(discountFieldText);
-    }
     
 
-    
-    /*
-     * Bloque gets Users Info
-     */
     private static Vector getProductsTableColumnNames() {
 
         Vector usersTableColumnNames = new Vector();
@@ -159,6 +124,42 @@ public class ProductViewController {
         usersTableColumnNames.add(DISCOUNT_TABLE_COLUMN_NAME);
 
         return usersTableColumnNames;
+    }
+    
+        
+    /*
+     * 
+     */
+    private Product constructProductFromFields(JTextField productIDField ,JTextField productNameField, JTextField productPriceField, JTextArea productDescArea, JTextField productDiscountField) {
+        int productId;
+        double productPrice,productDiscount;
+        String productName,  productDescription;
+
+        productId = ToscanaParseUtility.stringToInt(productIDField.getText());
+        productName = productNameField.getText();
+        productPrice = ToscanaParseUtility.stringToDouble(productPriceField.getText());
+        productDescription = productDescArea.getText();
+        productDiscount = ToscanaParseUtility.stringToDouble(productDiscountField.getText());
+
+        Product constructedProduct;
+        constructedProduct = new Product(productId, productName, productPrice,productDescription, productDiscount);
+
+        return constructedProduct;
+    }
+    
+    private Product constructProductFromFields(JTextField productNameField, JTextField productPriceField, JTextArea productDescArea, JTextField productDiscountField) {
+        double productPrice,productDiscount;
+        String productName,  productDescription;
+
+        productName = productNameField.getText();
+        productPrice = ToscanaParseUtility.stringToDouble(productPriceField.getText());
+        productDescription = productDescArea.getText();
+        productDiscount = ToscanaParseUtility.stringToDouble(productDiscountField.getText());
+
+        Product constructedProduct;
+        constructedProduct = new Product(productName, productPrice,productDescription, productDiscount);
+
+        return constructedProduct;
     }
     
         /*
@@ -183,7 +184,7 @@ public class ProductViewController {
 
         return resultingVector;
     }
-    private ProductController productController= new ProductController();
+    private ProductController productController;
     
     private static final int ID_TABLE_INDEX=0;
     private static final int NAME_TABLE_INDEX=1;

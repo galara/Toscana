@@ -5,7 +5,7 @@
 package com.toscana.controller.admin;
 
 import com.toscana.controller.product.ProductViewController;
-import com.toscana.controller.user.UserViewController;
+import com.toscana.controller.user.AdminUserViewController;
 
 /**
  *
@@ -16,7 +16,7 @@ public class AdminViewController {
     
 
     public AdminViewController() {
-        userViewController = new UserViewController();
+        userViewController = new AdminUserViewController();
         productViewController = new ProductViewController();
     }
 
@@ -24,12 +24,11 @@ public class AdminViewController {
         return productViewController;
     }
 
-    public UserViewController getUserViewController() {
+    public AdminUserViewController getUserViewController() {
         return userViewController;
     }
     
-    
-    private UserViewController userViewController;
+    private AdminUserViewController userViewController;
     private ProductViewController productViewController;
     
 }
