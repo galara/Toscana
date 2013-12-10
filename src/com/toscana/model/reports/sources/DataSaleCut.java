@@ -11,6 +11,19 @@ public class DataSaleCut {
     /*
      * Class methods
      */
+    public DataSaleCut(Session session, User authorizerAdmin, double totalCash) {
+        this.session = session;
+        this.authorizerAdmin = authorizerAdmin;
+        this.totalCash = totalCash;
+    }
+
+    public DataSaleCut() {
+        this.session = null;
+        this.authorizerAdmin = null;
+        this.totalCash = 0.0;
+    }
+
+    
     /*
      * Getters and Setters
      */

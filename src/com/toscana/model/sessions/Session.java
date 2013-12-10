@@ -1,3 +1,4 @@
+
 package com.toscana.model.sessions;
 
 import java.util.Date;
@@ -11,7 +12,11 @@ public class Session {
      * Class Constructors
      */
     public Session() {
-      
+      this.ID = 0;
+        this.initialTime = null;
+        this.finalTime = null;
+        this.user = null;
+        this.isOver = false;
     }
 
     public Session(int ID, Date initialTime, Date finalTime, User user, boolean isOver) {

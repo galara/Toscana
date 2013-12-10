@@ -36,10 +36,11 @@ public class User {
     public User(String name, String nickname, String password) {
         this.name = name;
         this.nickname = nickname;
-        this.privilegeAdmin = privilegeAdmin;
+        this.password = password;
+        this.privilegeAdmin = false;
     }
      /*
-     * Class' Methods
+     * Class' Method
      */
     
     /*
