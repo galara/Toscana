@@ -7,6 +7,6 @@ package com.toscana.model.dao.interfaces;
 import com.toscana.model.sessions.Session;
 
 
-public interface SessionDAO extends GenericDAO<Session, Integer>{
+public interface SessionDAO extends DAO<Session, Integer>{
     
 }

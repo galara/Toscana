@@ -4,7 +4,7 @@
  */
 package com.toscana.model.dao.implementations;
 
-import com.toscana.model.dao.interfaces.GenericDAO;
+import com.toscana.model.dao.interfaces.DAO;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 
-public abstract class GenericDAOImplementation<T, ID extends Serializable> implements GenericDAO<T, ID> {
+public abstract class DAOImplementation<T, ID extends Serializable> implements DAO<T, ID> {
     protected Session getSession() {
         return ToscanaHibernateUtil.getSession();
     }

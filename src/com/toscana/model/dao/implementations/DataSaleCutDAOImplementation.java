@@ -8,6 +8,6 @@ import com.toscana.model.dao.interfaces.DataSaleCutDAO;
 import com.toscana.model.reports.sources.DataSaleCut;
 
 
-public class DataSaleCutDAOImplementation extends GenericDAOImplementation<DataSaleCut, Integer> implements DataSaleCutDAO{
+public class DataSaleCutDAOImplementation extends DAOImplementation<DataSaleCut, Integer> implements DataSaleCutDAO{
     
 }

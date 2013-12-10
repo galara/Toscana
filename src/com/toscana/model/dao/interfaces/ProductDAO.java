@@ -7,6 +7,6 @@ package com.toscana.model.dao.interfaces;
 import com.toscana.model.products.Product;
 
 
-public interface ProductDAO extends GenericDAO<Product, Integer> {
+public interface ProductDAO extends DAO<Product, Integer> {
     public Product findByName(String name);
 }

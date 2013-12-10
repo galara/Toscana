@@ -6,6 +6,6 @@ package com.toscana.model.dao.interfaces;
 
 import com.toscana.model.reports.sources.DataSaleCut;
 
-public interface DataSaleCutDAO extends GenericDAO<DataSaleCut, Integer>{
+public interface DataSaleCutDAO extends DAO<DataSaleCut, Integer>{
     
 }

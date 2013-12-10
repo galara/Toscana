@@ -8,7 +8,7 @@ import com.toscana.model.dao.interfaces.ProductDAO;
 import com.toscana.model.products.Product;
 
 
-public class ProductsDAOImplementation extends GenericDAOImplementation<Product, Integer> implements ProductDAO{
+public class ProductsDAOImplementation extends DAOImplementation<Product, Integer> implements ProductDAO{
 
     @Override
     public Product findByName(String name) {

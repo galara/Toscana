@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  */
 public class DataCashOutDAOManager {
-    private DataCashOutDAO dataCashOutDAO;
+    
     
     public DataCashOutDAOManager (){
         dataCashOutDAO = new DataCashOutDAOImplementation();
@@ -77,4 +77,6 @@ public class DataCashOutDAOManager {
         
         return allCashOuts;
     }
+    
+    private DataCashOutDAO dataCashOutDAO;
 }

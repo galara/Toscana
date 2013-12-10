@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * 
  */
 public class DataSaleCutDAOManager {
-    private DataSaleCutDAO dataSaleCutDAO;
+    
     
     public void add(DataSaleCut dataSaleCut){
         try {
@@ -72,4 +72,6 @@ public class DataSaleCutDAOManager {
         }
         return dataSaleCuts;
     }
+    
+    private DataSaleCutDAO dataSaleCutDAO;
 }

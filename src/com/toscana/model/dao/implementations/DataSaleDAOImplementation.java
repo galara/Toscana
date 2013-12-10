@@ -8,6 +8,6 @@ import com.toscana.model.dao.interfaces.DataSaleDAO;
 import com.toscana.model.reports.sources.DataSale;
 
 
-public class DataSaleDAOImplementation extends GenericDAOImplementation<DataSale, Integer> implements DataSaleDAO{
+public class DataSaleDAOImplementation extends DAOImplementation<DataSale, Integer> implements DataSaleDAO{
     
 }
