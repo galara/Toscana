@@ -11,6 +11,8 @@ import com.toscana.model.products.ProductsNames;
  *
  * @author Arandi
  */
+//Cambiar el nombre por UIProductsSale
+//Especifica que no es la venta de un solo producto
 public class UIProductSale extends javax.swing.JFrame {
 
     /**
