@@ -729,3 +729,4 @@ public class UIProductSale extends javax.swing.JFrame {
     private javax.swing.JTextField totalCashToPayField;
     // End of variables declaration//GEN-END:variables
 }
+// Cambiar saleProductsTable

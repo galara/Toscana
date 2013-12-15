@@ -493,9 +493,9 @@ public class UIAdmin extends javax.swing.JFrame {
 
     // Cambiar el nombre por clearUserDataFields
     private void clearUserFields(){
-        userNameField.setText("");
-        userPasswordField.setText("");
-        userNicknameField.setText("");
+        userNameField.setText(EMPTY_TEXT);
+        userPasswordField.setText(EMPTY_TEXT);
+        userNicknameField.setText(EMPTY_TEXT);
         
     }
     
@@ -558,6 +558,7 @@ public class UIAdmin extends javax.swing.JFrame {
     //  Variables declaration
     
     private AdminViewController adminViewController;
+    private final String EMPTY_TEXT = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane TabbedPane;
     private javax.swing.JButton buttonAddProduct;
