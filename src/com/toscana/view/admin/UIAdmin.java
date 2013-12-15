@@ -491,12 +491,15 @@ public class UIAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonAddProductActionPerformed
 
+    // Cambiar el nombre por clearUserDataFields
     private void clearUserFields(){
         userNameField.setText("");
         userPasswordField.setText("");
         userNicknameField.setText("");
         
     }
+    
+    // Cambiar el nombre por showUserDataFields
     private void showUserFields(boolean isShown){
         labelUserData.setVisible(isShown);
         labelUserName.setVisible(isShown);
