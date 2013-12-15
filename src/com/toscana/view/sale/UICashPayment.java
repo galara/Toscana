@@ -15,12 +15,21 @@ public class UICashPayment extends javax.swing.JDialog {
 
     /**
      * Creates new form UICashPayment
+     * @param saleToCash
      */
     public UICashPayment(DataSale saleToCash) {
         initComponents();
         this.saleToCash=saleToCash;
         cashPaymentController.setTextAmountToPayField(amountToPayField);
     }
+
+    public UICashPayment() {
+        initComponents();
+        this.saleToCash = null;
+        cashPaymentController.setTextAmountToPayField(amountToPayField);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -205,7 +214,7 @@ public class UICashPayment extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                UICashPayment dialog = new UICashPayment(saleToCash);
+                UICashPayment dialog = new UICashPayment();
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -217,7 +226,7 @@ public class UICashPayment extends javax.swing.JDialog {
         });
     }
     
-    private static DataSale saleToCash;
+    private DataSale saleToCash;
     private CashPaymentViewController cashPaymentController = new CashPaymentViewController(saleToCash);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField amountToPayField;
