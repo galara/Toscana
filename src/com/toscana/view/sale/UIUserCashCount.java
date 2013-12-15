@@ -168,7 +168,7 @@ public class UIUserCashCount extends javax.swing.JDialog {
         int totalDolares = Integer.parseInt(fieldDollarAmount.getText().toString());
         int totalTarjetas = Integer.parseInt(fieldCardsAmount.getText().toString());
         int total= totalPesos + totalDolares + totalTarjetas;
-        textFieldTotal.setText(total+"");
+        textFieldTotal.setText(total+EMPTY_STRING);
     }//GEN-LAST:event_fieldDollarAmountFocusLost
 
     private void fieldCardsAmountFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldCardsAmountFocusLost
@@ -219,6 +219,7 @@ public class UIUserCashCount extends javax.swing.JDialog {
         });
     }
 
+    private final String EMPTY_STRING = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptAmountsButton;
     private javax.swing.JTextField fieldCardsAmount;
