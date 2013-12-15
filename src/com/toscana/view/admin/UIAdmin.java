@@ -446,8 +446,8 @@ public class UIAdmin extends javax.swing.JFrame {
 
     private void buttonShowUpdateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowUpdateUserActionPerformed
         // TODO add your handling code here:
-        clearUserFields();
-        showUserFields(true);
+        clearUserDataFields();
+        showUserDataFields(true);
         buttonUpdateUserData.setEnabled(true);
         buttonAddUser.setEnabled(false);
     }//GEN-LAST:event_buttonShowUpdateUserActionPerformed
@@ -462,15 +462,15 @@ public class UIAdmin extends javax.swing.JFrame {
 
     private void buttonShowAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowAddUserActionPerformed
         // TODO add your handling code here:
-        clearUserFields();
-        showUserFields(true);
+        clearUserDataFields();
+        showUserDataFields(true);
         buttonUpdateUserData.setEnabled(false);
         buttonAddUser.setEnabled(true);
     }//GEN-LAST:event_buttonShowAddUserActionPerformed
 
     private void buttonDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteUserActionPerformed
         // TODO add your handling code here:
-        showUserFields(false);
+        showUserDataFields(false);
         adminViewController.getUserViewController().deleteUserFromGUI(usersTable, usersTable.getSelectedRow());
         adminViewController.getUserViewController().showAllUsersInTable(usersTable);
     }//GEN-LAST:event_buttonDeleteUserActionPerformed
@@ -492,7 +492,7 @@ public class UIAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonAddProductActionPerformed
 
     // Cambiar el nombre por clearUserDataFields
-    private void clearUserFields(){
+    private void clearUserDataFields(){
         userNameField.setText(EMPTY_TEXT);
         userPasswordField.setText(EMPTY_TEXT);
         userNicknameField.setText(EMPTY_TEXT);
@@ -500,7 +500,7 @@ public class UIAdmin extends javax.swing.JFrame {
     }
     
     // Cambiar el nombre por showUserDataFields
-    private void showUserFields(boolean isShown){
+    private void showUserDataFields(boolean isShown){
         labelUserData.setVisible(isShown);
         labelUserName.setVisible(isShown);
         labelUserPassword.setVisible(isShown);
@@ -549,7 +549,7 @@ public class UIAdmin extends javax.swing.JFrame {
             public void run() {
                 UIAdmin uiAdmin = new UIAdmin();
                 uiAdmin.setVisible(true);
-                uiAdmin.showUserFields(false);
+                uiAdmin.showUserDataFields(false);
                 
             }
         });
