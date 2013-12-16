@@ -47,16 +47,16 @@ public class UserDAOManager {
         }
     }
     
-    public User findByID(Integer IDToFind){
-        User userFound=null;
+    public User findByID(Integer ID){
+        User foundUser=null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            userFound =  userDAO.findByID(User.class, IDToFind);
+            foundUser =  userDAO.findByID(User.class, ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
         }
         
-        return userFound;
+        return foundUser;
     }
     
     public ArrayList<User> findAll(){

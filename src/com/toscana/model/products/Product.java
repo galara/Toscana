@@ -11,11 +11,11 @@ public class Product {
      */
     
     public Product() {
-        this.ID = 0;
-        this.name = "";
-        this.price = 0.0;
-        this.description = "";
-        this.discount = 0;
+        this.ID = DEFAULT_ID;
+        this.name = DEFAULT_NAME;
+        this.price = DEFAULT_PRICE;
+        this.description = DEFAULT_DESCRIPTION;
+        this.discount = DEFAULT_DISCOUNT;
     }
 
     
@@ -100,4 +100,11 @@ public class Product {
     private String description;
     @Column (name="discount")
     private double discount;
+    
+    private final static int DEFAULT_ID=0;
+    private final static String DEFAULT_NAME="";
+    private final static double DEFAULT_PRICE=0.0;
+    private final static String DEFAULT_DESCRIPTION="";
+    private final static double DEFAULT_DISCOUNT=0.0;
+    
 }

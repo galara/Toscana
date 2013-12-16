@@ -50,15 +50,15 @@ public class DataSaleCutDAOManager {
     }
     
     public DataSaleCut findByID(Integer ID){
-        DataSaleCut dataSaleCut = null;
+        DataSaleCut foundDataSaleCut = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleCut = dataSaleCutDAO.findByID(DataSaleCut.class, ID);
+            foundDataSaleCut = dataSaleCutDAO.findByID(DataSaleCut.class, ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return dataSaleCut;
+        return foundDataSaleCut;
     }
     
     public ArrayList findAll(){

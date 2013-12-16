@@ -54,15 +54,15 @@ public class DataCashOutDAOManager {
     }
     
     public DataCashOut findByID(Integer ID){
-        DataCashOut cashOut = null;
+        DataCashOut foundCashOut = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            cashOut =  dataCashOutDAO.findByID(DataCashOut.class, ID);
+            foundCashOut =  dataCashOutDAO.findByID(DataCashOut.class, ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return cashOut;
+        return foundCashOut;
     }
     
     public ArrayList findAll(){

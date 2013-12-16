@@ -6,6 +6,6 @@ package com.toscana.model.dao.interfaces;
 
 import com.toscana.model.reports.sources.DataCashOut;
 
-public interface DataCashOutDAO extends DAO<DataCashOut, Integer>{
+public interface DataCashOutDAO extends GeneralDAO<DataCashOut, Integer>{
     
 }

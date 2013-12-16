@@ -11,8 +11,9 @@ import com.toscana.model.sessions.User;
 public class UserDAOImplementation extends DAOImplementation<User, Integer> implements UserDAO {
 
     @Override
-    public User findByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public User findByName(String userName) {
+        throw new UnsupportedOperationException(UNSUPPORTED_OPERATION_MESSAGE); //To change body of generated methods, choose Tools | Templates.
     }
-    
+ 
+    private static final String UNSUPPORTED_OPERATION_MESSAGE="Not supported yet.";
 }

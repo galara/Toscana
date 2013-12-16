@@ -63,14 +63,14 @@ public class DataSaleDAOManager {
     }
     
     public DataSale findByID(Integer IDToFind){
-        DataSale dataSaleFound = null;
+        DataSale foundDataSale = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            dataSaleFound = dataSaleDAO.findByID(DataSale.class, IDToFind);
+            foundDataSale = dataSaleDAO.findByID(DataSale.class, IDToFind);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return dataSaleFound;
+        return foundDataSale;
     }
 }

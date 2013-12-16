@@ -3,7 +3,7 @@ package com.toscana.model.dao.interfaces;
 import java.io.Serializable;
 import java.util.List;
 
-public interface DAO<T, ID extends Serializable> {
+public interface GeneralDAO<T, ID extends Serializable> {
 
     public void update(T e);
 

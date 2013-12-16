@@ -11,8 +11,10 @@ import com.toscana.model.products.Product;
 public class ProductsDAOImplementation extends DAOImplementation<Product, Integer> implements ProductDAO{
 
     @Override
-    public Product findByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Product findByName(String productName) {
+        throw new UnsupportedOperationException(UNSUPPORTED_OPERATION_MESSAGE); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    private static final String UNSUPPORTED_OPERATION_MESSAGE="Not supported yet.";
     
 }

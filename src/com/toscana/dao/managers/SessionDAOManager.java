@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class SessionDAOManager {
     private SessionDAO sessionDAO;
     
-    public void add(Session session){
+    public void add(Session sessionToAdd){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            sessionDAO.add(session);
+            sessionDAO.add(sessionToAdd);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -26,10 +26,10 @@ public class SessionDAOManager {
         }
     }
     
-    public void delete(Session dataSaleCut){
+    public void delete(Session sessionToDelete){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            sessionDAO.delete(dataSaleCut);
+            sessionDAO.delete(sessionToDelete);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -37,10 +37,10 @@ public class SessionDAOManager {
         }
     }
     
-    public void update(Session session){
+    public void update(Session sessionToUpdate){
         try {
             ToscanaHibernateUtil.beginTransaction();
-            sessionDAO.update(session);
+            sessionDAO.update(sessionToUpdate);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
@@ -49,15 +49,15 @@ public class SessionDAOManager {
     }
     
     public Session findByID(Integer ID){
-        Session session = null;
+        Session foundSession = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            session = sessionDAO.findByID(Session.class, ID);
+            foundSession = sessionDAO.findByID(Session.class, ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return session;
+        return foundSession;
     }
     
     public ArrayList findAll(){

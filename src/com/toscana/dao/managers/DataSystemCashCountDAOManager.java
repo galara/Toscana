@@ -61,14 +61,14 @@ public class DataSystemCashCountDAOManager {
     }
     
     public DataSystemCashCount findByID(Integer ID){
-        DataSystemCashCount cashCount =null;
+        DataSystemCashCount foundCashCount =null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            cashCount = systemCashCountDAO.findByID(DataSystemCashCount.class , ID);
+            foundCashCount = systemCashCountDAO.findByID(DataSystemCashCount.class , ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return cashCount;
+        return foundCashCount;
     }
 }

@@ -53,23 +53,23 @@ public class ProductDAOManager {
         }
     }
     
-    public Product findByID(Integer IDToFind){
-        Product productFound = null;
+    public Product findByID(Integer ID){
+        Product foundProduct = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.findByID(Product.class, IDToFind);
+            productsDAO.findByID(Product.class, ID);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);
         }
-        return productFound;
+        return foundProduct;
     }
     
-    public Product findByName(String NameToFind){
+    public Product findByName(String Name){
         Product productFound = null;
         try {
             ToscanaHibernateUtil.beginTransaction();
-            productsDAO.findByName(NameToFind);
+            productsDAO.findByName(Name);
             ToscanaHibernateUtil.commitTransaction();
         } catch (Exception e) {
             System.err.println(e);

@@ -4,7 +4,7 @@
  */
 package com.toscana.model.dao.implementations;
 
-import com.toscana.model.dao.interfaces.DAO;
+import com.toscana.model.dao.interfaces.GeneralDAO;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 
-public abstract class DAOImplementation<T, ID extends Serializable> implements DAO<T, ID> {
+public abstract class DAOImplementation<T, ID extends Serializable> implements GeneralDAO<T, ID> {
     protected Session getSession() {
         return ToscanaHibernateUtil.getSession();
     }
@@ -46,8 +46,10 @@ public abstract class DAOImplementation<T, ID extends Serializable> implements D
     public List findAll(Class c){
         Session hibernateSession = this.getSession();
         List T = null;
-        Query query = hibernateSession.createQuery("from " + c.getName());
+        Query query = hibernateSession.createQuery(FIND_ALL_QUERY + c.getName());
         T = query.list();
         return T;
     }
+    
+    private final static String FIND_ALL_QUERY = "from";
 }
