@@ -1,6 +1,7 @@
 
 package com.toscana.model.sessions;
 
+import java.sql.Time;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -12,11 +13,11 @@ public class Session {
      * Class Constructors
      */
     public Session() {
-      this.ID = 0;
-        this.initialTime = null;
-        this.finalTime = null;
-        this.user = null;
-        this.isOver = false;
+      this.ID = DEFAULT_ID;
+        this.initialTime = DEFAULT_INITIAL_TIME;
+        this.finalTime = DEFAULT_FINAL_TIME;
+        this.user = DEFAULT_USER;
+        this.isOver = DEFAULT_IS_OVER_STATE;
     }
 
     public Session(int ID, Date initialTime, Date finalTime, User user, boolean isOver) {
@@ -101,4 +102,10 @@ public class Session {
     
     @Column (name = "isover")
     private boolean isOver;
+    
+    private final static int DEFAULT_ID=0;
+    private final static Time DEFAULT_INITIAL_TIME=null;
+    private final static Time DEFAULT_FINAL_TIME=null;
+    private final static User DEFAULT_USER=null;
+    private final static boolean DEFAULT_IS_OVER_STATE=false;
 }
