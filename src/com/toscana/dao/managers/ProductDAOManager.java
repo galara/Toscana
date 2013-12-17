@@ -4,8 +4,8 @@
  */
 package com.toscana.dao.managers;
 
-import com.toscana.model.dao.implementations.ProductsDAOImplementation;
-import com.toscana.model.dao.interfaces.ProductDAO;
+import com.toscana.dao.implementations.ProductsDAOImplementation;
+import com.toscana.dao.interfaces.ProductDAO;
 import com.toscana.model.products.Product;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;

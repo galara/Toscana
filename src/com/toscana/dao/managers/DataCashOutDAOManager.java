@@ -4,8 +4,8 @@
  */
 package com.toscana.dao.managers;
 
-import com.toscana.model.dao.implementations.DataCashOutDAOImplementation;
-import com.toscana.model.dao.interfaces.DataCashOutDAO;
+import com.toscana.dao.implementations.DataCashOutDAOImplementation;
+import com.toscana.dao.interfaces.DataCashOutDAO;
 import com.toscana.model.reports.sources.DataCashOut;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;

@@ -4,7 +4,7 @@
  */
 package com.toscana.dao.managers;
 
-import com.toscana.model.dao.interfaces.SessionDAO;
+import com.toscana.dao.interfaces.SessionDAO;
 import com.toscana.model.sessions.Session;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;

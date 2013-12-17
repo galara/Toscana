@@ -5,8 +5,8 @@
 package com.toscana.dao.managers;
 
 import com.toscana.persistance.util.ToscanaHibernateUtil;
-import com.toscana.model.dao.implementations.UserDAOImplementation;
-import com.toscana.model.dao.interfaces.UserDAO;
+import com.toscana.dao.implementations.UserDAOImplementation;
+import com.toscana.dao.interfaces.UserDAO;
 import com.toscana.model.sessions.User;
 import java.util.ArrayList;
 

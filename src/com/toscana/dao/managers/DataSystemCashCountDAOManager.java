@@ -4,7 +4,7 @@
  */
 package com.toscana.dao.managers;
 
-import com.toscana.model.dao.interfaces.DataSystemCashCountDAO;
+import com.toscana.dao.interfaces.DataSystemCashCountDAO;
 import com.toscana.model.reports.sources.DataSystemCashCount;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;

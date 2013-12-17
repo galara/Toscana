@@ -1,4 +1,4 @@
-package com.toscana.model.dao.interfaces;
+package com.toscana.dao.interfaces;
 
 import java.io.Serializable;
 import java.util.List;

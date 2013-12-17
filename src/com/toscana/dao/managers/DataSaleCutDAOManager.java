@@ -4,7 +4,7 @@
  */
 package com.toscana.dao.managers;
 
-import com.toscana.model.dao.interfaces.DataSaleCutDAO;
+import com.toscana.dao.interfaces.DataSaleCutDAO;
 import com.toscana.model.reports.sources.DataSaleCut;
 import com.toscana.persistance.util.ToscanaHibernateUtil;
 import java.util.ArrayList;
