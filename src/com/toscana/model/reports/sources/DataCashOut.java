@@ -10,6 +10,20 @@ public class DataCashOut {
     /*
      * Class methods
      */
+    public DataCashOut(Session session, double retirementAmount, String currencyType) {
+        this.session = session;
+        this.retirementAmount = retirementAmount;
+        this.currencyType = currencyType;
+    }
+
+    public DataCashOut() {
+        this.ID=DEFAULT_ID;
+        this.currencyType = DEFAULT_CURRENCY_TYPE;
+        this.retirementAmount = DEFAULT_RETIRAMENT_AMOUNT;
+        this.session = DEFAULT_SESSION;
+    }
+
+    
     /*
      * Getters and Setters
      */
@@ -67,6 +81,10 @@ public class DataCashOut {
     @Column (name = "curencytype")
     private String currencyType;
     
+    private final static int DEFAULT_ID=0;
+    private final static String DEFAULT_CURRENCY_TYPE=null;
+    private final static double DEFAULT_RETIRAMENT_AMOUNT=0.0;
+    private final static Session DEFAULT_SESSION=null;
 }
 /*
  * Esta clase es la referencia al retiro de efectivo

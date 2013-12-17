@@ -10,6 +10,19 @@ public class DataUserCashCount {
     /*
      * Class methods
      */
+    public DataUserCashCount(Session session, double amountInCash, String currencyType) {
+        this.session = session;
+        this.amountInCash = amountInCash;
+        this.currencyType = currencyType;
+    }
+
+    public DataUserCashCount() {
+        this.session = DEFAULT_SESSION;
+        this.amountInCash = DEFAULT_AMOUNT_CASH;
+        this.currencyType = DEFAULT_CURRENCY_TYPE;
+    }
+    
+    
     /*
      * Getters and Setters
      */
@@ -66,4 +79,7 @@ public class DataUserCashCount {
     @Column (name = "currencyType")
     private String currencyType;
     
+    private final static String DEFAULT_CURRENCY_TYPE=null;
+    private final static double DEFAULT_AMOUNT_CASH=0.0;
+    private final static Session DEFAULT_SESSION=null;
 }

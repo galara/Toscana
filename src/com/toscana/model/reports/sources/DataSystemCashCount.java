@@ -9,6 +9,15 @@ public class DataSystemCashCount {
     /*
      * Class methods
      */
+    public DataSystemCashCount(Session session) {
+        this.session = session;
+    }
+
+    public DataSystemCashCount() {
+        this.session = null;
+    }
+
+    
     /*
      * Getters and Setters
      */
@@ -43,5 +52,6 @@ public class DataSystemCashCount {
     @org.hibernate.annotations.ForeignKey(name="FK_SESSION_ID")
     private Session session;
 
+    
 }
  
