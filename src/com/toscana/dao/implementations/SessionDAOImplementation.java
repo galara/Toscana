@@ -8,7 +8,7 @@ import com.toscana.dao.interfaces.SessionDAO;
 import com.toscana.model.sessions.Session;
 
 
-public class SessionDAOImplementation extends DAOImplementation<Session, Integer> implements SessionDAO {
+public class SessionDAOImplementation extends GeneralDAOImplementation<Session, Integer> implements SessionDAO {
 
     
     

@@ -8,7 +8,7 @@ import com.toscana.dao.interfaces.UserDAO;
 import com.toscana.model.sessions.User;
 
 
-public class UserDAOImplementation extends DAOImplementation<User, Integer> implements UserDAO {
+public class UserDAOImplementation extends GeneralDAOImplementation<User, Integer> implements UserDAO {
 
     @Override
     public User findByName(String userName) {

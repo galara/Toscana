@@ -12,7 +12,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 
-public abstract class DAOImplementation<T, ID extends Serializable> implements GeneralDAO<T, ID> {
+public abstract class GeneralDAOImplementation<T, ID extends Serializable> implements GeneralDAO<T, ID> {
     protected Session getSession() {
         return ToscanaHibernateUtil.getSession();
     }

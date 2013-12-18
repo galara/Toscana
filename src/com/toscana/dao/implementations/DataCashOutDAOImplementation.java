@@ -8,6 +8,6 @@ import com.toscana.dao.interfaces.DataCashOutDAO;
 import com.toscana.model.reports.sources.DataCashOut;
 
 
-public class DataCashOutDAOImplementation extends DAOImplementation<DataCashOut, Integer> implements DataCashOutDAO {
+public class DataCashOutDAOImplementation extends GeneralDAOImplementation<DataCashOut, Integer> implements DataCashOutDAO {
     
 }
