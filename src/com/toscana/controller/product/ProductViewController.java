@@ -115,15 +115,15 @@ public class ProductViewController {
 
     private static Vector getProductsTableColumnNames() {
 
-        Vector usersTableColumnNames = new Vector();
+        Vector productsTableColumnNames = new Vector();
 
-        usersTableColumnNames.add(ID_TABLE_COLUMN_NAME);
-        usersTableColumnNames.add(NAME_TABLE_COLUMN_NAME);
-        usersTableColumnNames.add(PRICE_TABLE_COLUMN_NAME);
-        usersTableColumnNames.add(DESCRIPTION_TABLE_COLUMN_NAME);
-        usersTableColumnNames.add(DISCOUNT_TABLE_COLUMN_NAME);
+        productsTableColumnNames.add(ID_TABLE_COLUMN_NAME);
+        productsTableColumnNames.add(NAME_TABLE_COLUMN_NAME);
+        productsTableColumnNames.add(PRICE_TABLE_COLUMN_NAME);
+        productsTableColumnNames.add(DESCRIPTION_TABLE_COLUMN_NAME);
+        productsTableColumnNames.add(DISCOUNT_TABLE_COLUMN_NAME);
 
-        return usersTableColumnNames;
+        return productsTableColumnNames;
     }
     
         
